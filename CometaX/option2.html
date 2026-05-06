@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE ALEST | Quiet Excellence</title>
+    <meta name="description"
+        content="The Alest Hotel - Designed for slow living. A sanctuary of quiet excellence in Polanco, Mexico City.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Alex+Brush&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Iconify -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+    <!-- Tailwind Config for The Alest Brand Guide -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alest: {
+                            dark: '#0C1720',    /* Midnight Room */
+                            wood: '#896C49',    /* Warm Wood */
+                            gold: '#DEB175',    /* Golden Hour */
+                            linen: '#EDE6E2',   /* Soft Linen */
+                            white: '#E3DFD6',   /* Still White */
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        italic: ['"Playfair Display"', 'serif'],
+                        signature: ['"Alex Brush"', 'cursive'],
+                    },
+                    letterSpacing: {
+                        'brand-wide': '0.15em',
+                        'brand-wider': '0.22em', // Emulates 222pts tracking
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0C1720;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #896C49;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #DEB175;
+        }
+
+        /* Selection */
+        ::selection {
+            background: #DEB175;
+            color: #0C1720;
+        }
+
+        /* Smooth Reveal Animation Utilities */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-element.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Delay classes */
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        .delay-400 {
+            transition-delay: 400ms;
+        }
+
+        .delay-500 {
+            transition-delay: 500ms;
+        }
+
+        /* Grid Lines overlay */
+        .grid-lines {
+            background-size: 100% 100%;
+            background-image: linear-gradient(to right, rgba(237, 230, 226, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(237, 230, 226, 0.03) 1px, transparent 1px);
+            background-size: 14.28% 100px;
+            /* approximates a column grid */
+            pointer-events: none;
+        }
+
+        /* Image hover zoom */
+        .img-zoom-container {
+            overflow: hidden;
+        }
+
+        .img-zoom {
+            transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .group:hover .img-zoom {
+            transform: scale(1.05);
+        }
+
+        /* Marquee Text */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 40s linear infinite;
+        }
+
+        body {
+            font-feature-settings: "ss01", "ss02", "salt";
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+
+<body class="bg-alest-dark text-alest-linen font-sans overflow-x-hidden relative">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full z-50 mix-blend-difference text-white px-6 py-6 transition-all duration-300"
+        id="navbar">
+        <div class="max-w-[1920px] mx-auto flex justify-between items-center border-b border-white/20 pb-4">
+            <a href="#" class="group flex flex-col">
+                <span
+                    class="text-2xl font-serif tracking-brand-wider font-medium group-hover:text-alest-gold transition-colors uppercase">The
+                    Alest</span>
+                <span class="text-[9px] tracking-[0.3em] uppercase opacity-70 mt-0.5">Mexico City</span>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-12 text-xs font-medium tracking-brand-wide uppercase">
+                <a href="subpages_option2/history.html" class="hover:text-alest-gold transition-colors relative group">
+                    History
+                    <span
+                        class="absolute -bottom-2 left-0 w-0 h-[1px] bg-alest-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="subpages_option2/essence.html" class="hover:text-alest-gold transition-colors relative group">
+                    Essence
+                    <span
+                        class="absolute -bottom-2 left-0 w-0 h-[1px] bg-alest-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="subpages_option2/rooms.html" class="hover:text-alest-gold transition-colors relative group">
+                    Rooms
+                    <span
+                        class="absolute -bottom-2 left-0 w-0 h-[1px] bg-alest-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="subpages_option2/location.html" class="hover:text-alest-gold transition-colors relative group">
+                    Location
+                    <span
+                        class="absolute -bottom-2 left-0 w-0 h-[1px] bg-alest-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="subpages_option2/contact.html" class="hover:text-alest-gold transition-colors relative group">
+                    Contact
+                    <span
+                        class="absolute -bottom-2 left-0 w-0 h-[1px] bg-alest-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+
+            <a href="#contact"
+                class="hidden md:flex items-center gap-2 border border-white/30 px-5 py-2 rounded-full hover:bg-white hover:text-black transition-all duration-300 text-xs tracking-brand-wide uppercase">
+                <span>Reservar</span>
+                <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-2xl" aria-label="Menu">
+                <iconify-icon icon="solar:hamburger-menu-linear"></iconify-icon>
+            </button>
+        </div>
+    </nav>
+
+    <!-- CHAPTER 01: HERO -->
+    <header class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Asset -->
+        <div class="absolute inset-0 z-0 bg-alest-dark">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipPJWSpoul5U5yQsLW_EW3dk9w6jAIiemq-MYD4h=s1360-w1360-h1020-rw"
+                alt="The Alest Facade"
+                class="w-full h-full object-cover opacity-50 scale-105 animate-[pulse_10s_ease-in-out_infinite]">
+            <div class="absolute inset-0 bg-gradient-to-t from-alest-dark via-alest-dark/30 to-transparent"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-20">
+            <div class="reveal-element">
+                <p class="text-xs md:text-sm tracking-[0.4em] uppercase text-alest-gold mb-6 font-medium">Designed for
+                    slow living</p>
+                <h1
+                    class="font-serif text-5xl md:text-7xl lg:text-9xl tracking-brand-wider leading-[0.9] text-white mb-8 uppercase">
+                    THE <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-white via-alest-linen to-alest-wood">ALEST</span>
+                </h1>
+                <p
+                    class="text-white/70 max-w-2xl mx-auto text-sm md:text-lg font-light leading-relaxed font-sans tracking-wide">
+                    Polanco, CDMX. Un refugio sofisticado y acogedor. <br class="hidden md:block">
+                    A place that doesn't try to impress you—it simply understands you.
+                </p>
+            </div>
+
+            <div class="reveal-element delay-300 mt-12 flex flex-col md:flex-row gap-6 justify-center items-center">
+                <div class="flex items-center gap-4 text-xs font-medium tracking-widest text-white/50 uppercase">
+                    <span class="flex items-center gap-2"><iconify-icon icon="solar:map-point-linear"
+                            class="text-alest-gold"></iconify-icon> EUGENIO SUE 45</span>
+                    <span class="w-px h-3 bg-white/20"></span>
+                    <span class="flex items-center gap-2"><iconify-icon icon="solar:star-linear"
+                            class="text-alest-gold"></iconify-icon> BOUTIQUE HOTEL</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div
+            class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 reveal-element delay-500">
+            <span class="text-[10px] tracking-widest uppercase opacity-50">Descubrir</span>
+            <div class="w-px h-12 bg-gradient-to-b from-alest-gold to-transparent"></div>
+        </div>
+    </header>
+
+    <!-- CHAPTER 02: THE MANIFESTO (Historia) -->
+    <section id="historia"
+        class="bg-alest-linen text-alest-dark py-24 md:py-32 relative overflow-hidden border-t border-b border-black/5">
+        <div class="absolute top-0 left-0 w-full h-full opacity-[0.02] pointer-events-none"
+            style="background-image: url('data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.8\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E');">
+        </div>
+
+        <div class="max-w-[1920px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+            <div class="lg:col-span-4 reveal-element">
+                <h2
+                    class="text-xs font-bold tracking-[0.2em] uppercase text-alest-wood mb-4 border-l-2 border-alest-wood pl-4">
+                    Hogar & Comodidad</h2>
+                <div class="text-7xl md:text-9xl font-serif text-alest-wood opacity-10 select-none uppercase">A</div>
+                <p class="mt-2 text-sm font-medium uppercase tracking-wider">Polanco, CDMX</p>
+            </div>
+
+            <div class="lg:col-span-8 reveal-element delay-200">
+                <h3
+                    class="font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.1] mb-8 text-alest-dark uppercase tracking-wide">
+                    We believe in<br>
+                    <span class="font-italic text-alest-wood lowercase tracking-normal">quiet excellence.</span>
+                </h3>
+                <p class="text-lg md:text-xl font-light text-alest-dark/80 leading-relaxed max-w-3xl mb-12">
+                    The Alest nació del sueño de un joven apasionado por la decoración, la arquitectura y el arte de
+                    recibir. Diseñado para ofrecer una hospitalidad auténtica y un lujo íntimo. Aquí, el confort fluye
+                    con la naturalidad de un hogar, uniendo elegancia europea con la cultura contemporánea mexicana.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-black/10">
+                    <div>
+                        <iconify-icon icon="solar:key-linear" class="text-3xl text-alest-wood mb-3"></iconify-icon>
+                        <h4 class="font-serif text-xl mb-2 uppercase tracking-widest">Anfitrión</h4>
+                        <p class="text-xs text-alest-dark/60 leading-relaxed">Buscamos recuperar la hospitalidad humana:
+                            esa sensación de ser visto y valorado.</p>
+                    </div>
+                    <div>
+                        <iconify-icon icon="solar:sofa-linear" class="text-3xl text-alest-wood mb-3"></iconify-icon>
+                        <h4 class="font-serif text-xl mb-2 uppercase tracking-widest">Diseño</h4>
+                        <p class="text-xs text-alest-dark/60 leading-relaxed">Raíz europea y un perfil de buen gusto.
+                            Cada detalle está pensado para brindar tranquilidad.</p>
+                    </div>
+                    <div>
+                        <iconify-icon icon="solar:hearts-linear" class="text-3xl text-alest-wood mb-3"></iconify-icon>
+                        <h4 class="font-serif text-xl mb-2 uppercase tracking-widest">Pertenencia</h4>
+                        <p class="text-xs text-alest-dark/60 leading-relaxed">La casa favorita de quienes buscan algo
+                            más profundo que un simple hotel.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPTER 03: THE CRAFT (Esencia) -->
+    <section id="esencia" class="bg-alest-dark text-white py-0 border-b border-white/10 relative">
+        <!-- Decorative Grid Lines -->
+        <div class="absolute inset-0 grid-lines opacity-10"></div>
+
+        <div
+            class="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 border-l border-r border-white/10">
+
+            <!-- Service 1 -->
+            <div
+                class="group relative p-10 md:p-16 hover:bg-white/5 transition-colors duration-500 reveal-element border-b md:border-b-0 border-white/10">
+                <div class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <iconify-icon icon="solar:arrow-right-up-linear" class="text-2xl text-alest-gold"></iconify-icon>
+                </div>
+                <div
+                    class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center mb-12 text-alest-gold group-hover:bg-alest-gold group-hover:text-black transition-all duration-300">
+                    <iconify-icon icon="solar:wineglass-linear" class="text-xl"></iconify-icon>
+                </div>
+                <h3 class="font-serif text-3xl mb-4 uppercase tracking-widest">Gastronomía</h3>
+                <p class="text-white/60 text-sm leading-relaxed mb-8">
+                    Sabores curados que reflejan la vibrante escena culinaria de México con un toque de sofisticación
+                    europea. Un deleite para los sentidos.
+                </p>
+                <ul class="space-y-3">
+                    <li
+                        class="flex items-center gap-3 text-xs tracking-wide text-white/40 group-hover:text-white/80 transition-colors uppercase">
+                        <span class="w-1 h-1 bg-alest-gold rounded-full"></span> Desayuno Signature
+                    </li>
+                    <li
+                        class="flex items-center gap-3 text-xs tracking-wide text-white/40 group-hover:text-white/80 transition-colors uppercase">
+                        <span class="w-1 h-1 bg-alest-gold rounded-full"></span> El Bar
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Service 2 -->
+            <div
+                class="group relative p-10 md:p-16 hover:bg-white/5 transition-colors duration-500 reveal-element delay-100 border-b md:border-b-0 border-white/10">
+                <div class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <iconify-icon icon="solar:arrow-right-up-linear" class="text-2xl text-alest-gold"></iconify-icon>
+                </div>
+                <div
+                    class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center mb-12 text-alest-gold group-hover:bg-alest-gold group-hover:text-black transition-all duration-300">
+                    <iconify-icon icon="solar:gallery-minimalistic-linear" class="text-xl"></iconify-icon>
+                </div>
+                <h3 class="font-serif text-3xl mb-4 uppercase tracking-widest">Arte & Diseño</h3>
+                <p class="text-white/60 text-sm leading-relaxed mb-8">
+                    Cada rincón de The Alest es una galería íntima. Materiales nobles, iluminación cinemática y piezas
+                    que cuentan una historia.
+                </p>
+                <ul class="space-y-3">
+                    <li
+                        class="flex items-center gap-3 text-xs tracking-wide text-white/40 group-hover:text-white/80 transition-colors uppercase">
+                        <span class="w-1 h-1 bg-alest-gold rounded-full"></span> Lino & Madera
+                    </li>
+                    <li
+                        class="flex items-center gap-3 text-xs tracking-wide text-white/40 group-hover:text-white/80 transition-colors uppercase">
+                        <span class="w-1 h-1 bg-alest-gold rounded-full"></span> Arquitectura
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Service 3 -->
+            <div
+                class="group relative p-10 md:p-16 hover:bg-white/5 transition-colors duration-500 reveal-element delay-200">
+                <div class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <iconify-icon icon="solar:arrow-right-up-linear" class="text-2xl text-alest-gold"></iconify-icon>
+                </div>
+                <div
+                    class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center mb-12 text-alest-gold group-hover:bg-alest-gold group-hover:text-black transition-all duration-300">
+                    <iconify-icon icon="solar:cup-hot-linear" class="text-xl"></iconify-icon>
+                </div>
+                <h3 class="font-serif text-3xl mb-4 uppercase tracking-widest">Slow Living</h3>
+                <p class="text-white/60 text-sm leading-relaxed mb-8">
+                    El lujo de la pausa. Espacios diseñados para desconectar, leer un libro bajo la luz natural o
+                    disfrutar de un café sin prisas.
+                </p>
+                <ul class="space-y-3">
+                    <li
+                        class="flex items-center gap-3 text-xs tracking-wide text-white/40 group-hover:text-white/80 transition-colors uppercase">
+                        <span class="w-1 h-1 bg-alest-gold rounded-full"></span> Confort Emocional
+                    </li>
+                    <li
+                        class="flex items-center gap-3 text-xs tracking-wide text-white/40 group-hover:text-white/80 transition-colors uppercase">
+                        <span class="w-1 h-1 bg-alest-gold rounded-full"></span> Santuario Privado
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA to Subpages -->
+    <section class="py-24 bg-alest-white text-center">
+        <a href="subpages_option2/rooms.html" class="text-title-caps text-2xl border-b border-alest-gold pb-2 hover:text-alest-dark transition-colors">Discover Our Suites</a>
+    </section>
+
+    <!-- CHAPTER 05: THE BRIDGE (Locations) -->
+    <section id="contact" class="bg-alest-linen text-alest-dark relative">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+
+            <!-- Location -->
+            <div
+                class="relative min-h-[600px] border-b lg:border-b-0 lg:border-r border-black/10 group overflow-hidden">
+                <div
+                    class="absolute inset-0 grayscale opacity-10 bg-[url('https://images.unsplash.com/photo-1518105779142-d971f2285764?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-alest-linen/90 to-alest-linen/40"></div>
+
+                <div class="relative z-10 p-12 md:p-24 flex flex-col h-full justify-between">
+                    <div class="reveal-element">
+                        <span class="text-alest-wood tracking-widest text-xs font-bold uppercase mb-4 block">El
+                            Santuario</span>
+                        <h2 class="text-5xl md:text-7xl font-serif uppercase tracking-widest">Polanco</h2>
+                        <p class="mt-4 text-alest-dark/60 font-light max-w-md tracking-wide">El corazón cultural de la
+                            Ciudad de México. Un barrio vibrante que abraza nuestra quietud.</p>
+                    </div>
+
+                    <div class="space-y-6 reveal-element delay-100">
+                        <div class="flex items-start gap-4">
+                            <iconify-icon icon="solar:map-point-bold"
+                                class="text-xl mt-1 text-alest-wood"></iconify-icon>
+                            <div>
+                                <p class="text-sm font-semibold uppercase tracking-wider mb-1">Dirección</p>
+                                <p class="text-alest-dark/80 font-light leading-relaxed">Eugenio Sue 45<br>Polanco, CDMX
+                                    11560, México</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <iconify-icon icon="solar:phone-bold" class="text-xl mt-1 text-alest-wood"></iconify-icon>
+                            <div>
+                                <p class="text-sm font-semibold uppercase tracking-wider mb-1">Contacto</p>
+                                <a href="tel:+525512345678"
+                                    class="text-alest-dark/80 font-light hover:text-alest-wood transition-colors block">+52
+                                    55 1234 5678</a>
+                                <a href="mailto:concierge@thealest.com"
+                                    class="text-alest-dark/80 font-light hover:text-alest-wood transition-colors block mt-1">concierge@thealest.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Atmosphere Image -->
+            <div class="relative min-h-[600px] group overflow-hidden">
+                <div class="absolute inset-0 img-zoom-container">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFWzc2BTOJUM8JOwzl6nEm2Q_fqkMHD-GCaxCH8tPCJ_A0rCg3WmvDcISPBRUhrCk7youDdniFmrDsvD2OnPNICP0Ln7Esn0n6bYvPQ2y-rgZlxkGjvMLDbTNomR3IqzLRSGGwYvA=s1360-w1360-h1020-rw"
+                        alt="Dining Atmosphere" class="w-full h-full object-cover img-zoom">
+                </div>
+                <div
+                    class="absolute inset-0 bg-alest-dark/20 group-hover:bg-alest-dark/40 transition-colors duration-700">
+                </div>
+
+                <div class="relative z-10 p-12 md:p-24 flex flex-col h-full justify-center items-center text-center">
+                    <div class="reveal-element">
+                        <span class="font-signature text-white text-4xl mb-4 block">Awakening Senses</span>
+                        <h2 class="text-3xl md:text-5xl font-serif text-white uppercase tracking-widest">El Restaurante
+                        </h2>
+                        <a href="#"
+                            class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold border-b border-white text-white pb-1 hover:text-alest-gold hover:border-alest-gold transition-all mt-8">
+                            Descubrir Menú <iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION / SLOGAN STRIP -->
+    <div class="bg-alest-wood text-alest-dark overflow-hidden py-4 border-t border-b border-alest-dark/10">
+        <div
+            class="animate-marquee whitespace-nowrap flex gap-12 text-sm md:text-base font-bold tracking-widest uppercase">
+            <span>Designed for slow living.</span>
+            <span class="mx-4">•</span>
+            <span>We believe in quiet excellence.</span>
+            <span class="mx-4">•</span>
+            <span>A place that doesn't try to impress you—it simply understands you.</span>
+            <span class="mx-4">•</span>
+            <span>Designed for slow living.</span>
+            <span class="mx-4">•</span>
+            <span>We believe in quiet excellence.</span>
+            <span class="mx-4">•</span>
+            <span>A place that doesn't try to impress you—it simply understands you.</span>
+        </div>
+    </div>
+
+    <!-- CHAPTER 06: FOOTER -->
+    <footer class="bg-alest-dark text-alest-linen/50 pt-24 pb-12 border-t border-white/5">
+        <div class="max-w-[1920px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20 border-b border-white/5 pb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <span class="text-3xl font-serif text-alest-linen block mb-4 uppercase tracking-widest">The
+                        Alest</span>
+                    <p class="text-xs leading-relaxed max-w-xs font-light tracking-wide uppercase">
+                        Mexico City<br>
+                        Boutique Hotel & Sanctuary
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-alest-linen text-xs uppercase tracking-widest mb-6">Explorar</h4>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="#" class="hover:text-alest-gold transition-colors uppercase">Home</a></li>
+                        <li><a href="subpages_option2/history.html" class="hover:text-alest-gold transition-colors uppercase">History</a></li>
+                        <li><a href="subpages_option2/rooms.html" class="hover:text-alest-gold transition-colors uppercase">Suites</a></li>
+                        <li><a href="subpages_option2/location.html" class="hover:text-alest-gold transition-colors uppercase">Location</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-alest-linen text-xs uppercase tracking-widest mb-6">Experiencias</h4>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="#" class="hover:text-alest-gold transition-colors uppercase">Restaurante</a></li>
+                        <li><a href="#" class="hover:text-alest-gold transition-colors uppercase">El Bar</a></li>
+                        <li><a href="#" class="hover:text-alest-gold transition-colors uppercase">Concierge</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-alest-linen text-xs uppercase tracking-widest mb-6">Social</h4>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="#" class="hover:text-alest-gold transition-colors uppercase">Instagram</a></li>
+                        <li><a href="#" class="hover:text-alest-gold transition-colors uppercase">Facebook</a></li>
+                        <li><a href="#" class="hover:text-alest-gold transition-colors uppercase">Pinterest</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-wider">
+                <div class="flex gap-6 mb-4 md:mb-0">
+                    <a href="#" class="hover:text-alest-linen transition-colors">Aviso de Privacidad</a>
+                    <a href="#" class="hover:text-alest-linen transition-colors">Términos y Condiciones</a>
+                </div>
+                <div class="flex flex-col items-end">
+                    <span class="font-signature text-alest-linen text-xl capitalize mb-1">By The Alest</span>
+                    <p>© 2026 THE ALEST. ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts for Interactions -->
+    <script>
+        // Smooth Scroll & Reveal Animation Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal-element');
+            revealElements.forEach(el => observer.observe(el));
+
+            // Navbar Glass Effect on Scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-alest-dark/95', 'backdrop-blur-md', 'py-4');
+                    navbar.classList.remove('py-6', 'mix-blend-difference');
+                    navbar.classList.add('border-b-0', 'shadow-lg');
+                } else {
+                    navbar.classList.remove('bg-alest-dark/95', 'backdrop-blur-md', 'py-4', 'border-b-0', 'shadow-lg');
+                    navbar.classList.add('py-6', 'mix-blend-difference');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

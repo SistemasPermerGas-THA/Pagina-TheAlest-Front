@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection | THE ALEST - Midnight Concept</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alest: {
+                            dark: '#0C1720',
+                            wood: '#896C49',
+                            gold: '#DEB175',
+                            linen: '#EDE6E2',
+                            white: '#E3DFD6',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        italic: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0C1720; color: #EDE6E2; }
+        .text-title-caps { font-family: '"Times New Roman"', Times, serif; text-transform: uppercase; letter-spacing: 0.15em; }
+        .text-body-caps { font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.2em; }
+        .text-highlight-italic { font-family: '"Playfair Display"', serif; font-style: italic; }
+        .border-gold-thin { border-color: rgba(222, 177, 117, 0.2); }
+        .fade-in-up { opacity: 0; transform: translateY(30px); transition: all 1s ease; }
+        .fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+
+<body class="antialiased">
+    <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-6 md:px-12 bg-alest-dark/95 backdrop-blur-md border-b border-gold-thin">
+        <a href="../option5.html" class="text-title-caps text-2xl text-alest-gold">THE ALEST</a>
+        <div class="hidden md:flex gap-12">
+            <a href="vision.html" class="text-body-caps text-[10px] hover:text-alest-gold transition-colors">Vision</a>
+            <a href="collection.html" class="text-body-caps text-[10px] text-alest-gold">Collection</a>
+            <a href="location.html" class="text-body-caps text-[10px] hover:text-alest-gold">Location</a>
+        </div>
+        <a href="#" class="text-body-caps text-[10px] border border-alest-gold/30 px-6 py-3 hover:bg-alest-gold hover:text-alest-dark transition-colors">Reserve</a>
+    </nav>
+
+    <main class="pt-40">
+        <div class="px-6 md:px-12 mb-20 text-center fade-in-up is-visible">
+            <h1 class="text-title-caps text-5xl md:text-8xl text-alest-white">The Collection</h1>
+            <p class="text-highlight-italic text-alest-gold text-2xl mt-4">Private Sanctuaries</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-y border-gold-thin">
+            <!-- Suite 1 -->
+            <div class="border-b md:border-b-0 md:border-r border-gold-thin p-12 group hover:bg-[#111f2c] transition-colors">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipPSKR9Jrb-toaT_e_5WTmbvG5und1_n8P6PkFxS=s1360-w1360-h1020-rw" class="aspect-[3/4] object-cover mb-8 transition-transform duration-1000 group-hover:scale-105">
+                <h3 class="text-title-caps text-3xl mb-4">The Alest Suite</h3>
+                <p class="text-sm font-light text-alest-linen/50 leading-relaxed">The pinnacle of our quiet excellence. Private terraces and carefully curated European design.</p>
+            </div>
+            <!-- Suite 2 -->
+            <div class="border-b md:border-b-0 lg:border-r border-gold-thin p-12 group hover:bg-[#111f2c] transition-colors">
+                <img src="https://lh3.googleusercontent.com/proxy/LwAS086FDu7c0VhOP0j6lfwUGlP8yIdNRnZdKjJ6YHMDqfjMRWy-rNnaWr1_fZSOBw1KqfTFBPnzvUJxWnd1mHHjxu_bV8EfPmtJc9QiuAGO8kESPmxUg8u-VYbkwLXuGmxmKkH_k7t6BrpoDxI4iVsWbxSfdfM=s1360-w1360-h1020-rw" class="aspect-[3/4] object-cover mb-8 transition-transform duration-1000 group-hover:scale-105">
+                <h3 class="text-title-caps text-3xl mb-4">The Master Suite</h3>
+                <p class="text-sm font-light text-alest-linen/50 leading-relaxed">Expansive windows, marble bathtubs, and a deep sense of belonging in Polanco.</p>
+            </div>
+            <!-- Suite 3 -->
+            <div class="p-12 group hover:bg-[#111f2c] transition-colors">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFWzc2BTOJUM8JOwzl6nEm2Q_fqkMHD-GCaxCH8tPCJ_A0rCg3WmvDcISPBRUhrCk7youDdniFmrDsvD2OnPNICP0Ln7Esn0n6bYvPQ2y-rgZlxkGjvMLDbTNomR3IqzLRSGGwYvA=s1360-w1360-h1020-rw" class="aspect-[3/4] object-cover mb-8 transition-transform duration-1000 group-hover:scale-105">
+                <h3 class="text-title-caps text-3xl mb-4">The Junior Suite</h3>
+                <p class="text-sm font-light text-alest-linen/50 leading-relaxed">The perfect retreat for the modern traveler. Warm wood accents and uncompromising comfort.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-alest-dark py-12 px-6 md:px-12 border-t border-gold-thin text-center">
+        <span class="text-title-caps text-3xl text-alest-gold">THE ALEST</span>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

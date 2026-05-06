@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location | THE ALEST - Option 2</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alest: {
+                            dark: '#0C1720',
+                            wood: '#896C49',
+                            gold: '#DEB175',
+                            linen: '#EDE6E2',
+                            white: '#E3DFD6',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        italic: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0C1720; color: #EDE6E2; font-family: 'Inter', sans-serif; }
+        .text-title-caps { font-family: '"Times New Roman"', Times, serif; text-transform: uppercase; letter-spacing: 0.22em; }
+        .grid-lines {
+            background-image: linear-gradient(to right, rgba(237, 230, 226, 0.03) 1px, transparent 1px);
+            background-size: 14.28% 100%;
+        }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+    <div class="fixed inset-0 grid-lines pointer-events-none"></div>
+
+    <nav class="fixed top-0 w-full z-50 bg-alest-dark/80 backdrop-blur-md border-b border-white/10 px-6 py-6">
+        <div class="max-w-[1920px] mx-auto flex justify-between items-center">
+            <a href="../option2.html" class="flex flex-col">
+                <span class="text-2xl font-serif text-alest-gold uppercase tracking-widest">The Alest</span>
+            </a>
+            <div class="hidden md:flex gap-12 text-[10px] uppercase tracking-[0.2em]">
+                <a href="history.html" class="hover:text-alest-gold transition-colors">History</a>
+                <a href="essence.html" class="hover:text-alest-gold transition-colors">Essence</a>
+                <a href="rooms.html" class="hover:text-alest-gold transition-colors">Rooms</a>
+                <a href="location.html" class="text-alest-gold">Location</a>
+            </div>
+            <a href="#" class="border border-white/30 px-6 py-2 rounded-full text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all">Reserve</a>
+        </div>
+    </nav>
+
+    <main class="pt-40 pb-20 relative z-10">
+        <div class="max-w-[1920px] mx-auto px-6">
+            <div class="mb-20">
+                <span class="text-alest-gold text-xs font-bold tracking-[0.2em] uppercase mb-4 block">Neighborhood</span>
+                <h1 class="text-5xl md:text-8xl font-serif text-white uppercase tracking-widest">Polanco</h1>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-20">
+                <div class="space-y-12">
+                    <p class="text-2xl md:text-3xl font-light text-alest-linen/80 leading-relaxed">
+                        In the most exclusive district of Mexico City, The Alest stands as a sanctuary of quietude amidst the cosmopolitan energy.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <iconify-icon icon="solar:map-point-bold" class="text-2xl text-alest-gold"></iconify-icon>
+                            <div>
+                                <p class="text-sm font-semibold uppercase tracking-wider mb-1">Location</p>
+                                <p class="text-alest-linen/60 font-light">Eugenio Sue 45, Polanco, CDMX</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <iconify-icon icon="solar:routing-bold" class="text-2xl text-alest-gold"></iconify-icon>
+                            <div>
+                                <p class="text-sm font-semibold uppercase tracking-wider mb-1">Accessibility</p>
+                                <p class="text-alest-linen/60 font-light">AICM Airport — 20 min<br>Helipad — 6 min walk</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative aspect-video lg:aspect-auto bg-alest-white/5 border border-white/10 rounded-sm overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipPJWSpoul5U5yQsLW_EW3dk9w6jAIiemq-MYD4h=s1360-w1360-h1020-rw" class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-alest-dark py-20 border-t border-white/5 text-center">
+        <span class="text-2xl font-serif text-white uppercase tracking-widest">The Alest</span>
+    </footer>
+</body>
+
+</html>

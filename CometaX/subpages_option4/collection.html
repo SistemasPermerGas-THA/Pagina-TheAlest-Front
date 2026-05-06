@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection | THE ALEST - Quiet Excellence</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alest: {
+                            dark: '#0C1720',
+                            wood: '#896C49',
+                            gold: '#DEB175',
+                            linen: '#EDE6E2',
+                            white: '#E3DFD6',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        italic: ['"Playfair Display"', 'serif'],
+                        signature: ['"Alex Brush"', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #E3DFD6; color: #0C1720; }
+        .text-title-caps { font-family: '"Times New Roman"', Times, serif; text-transform: uppercase; letter-spacing: 0.22em; }
+        .text-body-caps { font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.15em; }
+        .text-highlight-italic { font-family: '"Playfair Display"', serif; font-style: italic; }
+        .font-signature { font-family: '"Alex Brush"', cursive; }
+    </style>
+</head>
+
+<body class="antialiased">
+    <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-6 md:px-12 bg-white/80 backdrop-blur-md border-b border-alest-dark/10">
+        <a href="../opction4.html" class="text-title-caps text-2xl text-alest-gold">THE ALEST</a>
+        <div class="hidden md:flex gap-12">
+            <a href="vision.html" class="text-body-caps text-[9px] hover:text-alest-gold transition-colors">Vision</a>
+            <a href="collection.html" class="text-body-caps text-[9px] text-alest-gold">Collection</a>
+            <a href="location.html" class="text-body-caps text-[9px] hover:text-alest-gold transition-colors">Location</a>
+        </div>
+        <a href="#" class="text-body-caps text-[9px] border border-alest-dark/30 px-6 py-3 hover:bg-alest-dark hover:text-white transition-all">Reserve</a>
+    </nav>
+
+    <main class="pt-40 pb-20">
+        <div class="max-w-[1920px] mx-auto px-6 md:px-12">
+            <div class="text-center mb-32">
+                <span class="font-signature text-3xl text-alest-wood mb-4 block">The Collection</span>
+                <h1 class="text-title-caps text-5xl md:text-7xl">Private Sanctuaries</h1>
+            </div>
+
+            <div class="grid grid-cols-12 gap-12 items-center mb-32">
+                <div class="col-span-12 md:col-span-7">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipPSKR9Jrb-toaT_e_5WTmbvG5und1_n8P6PkFxS=s1360-w1360-h1020-rw" class="w-full aspect-video object-cover">
+                </div>
+                <div class="col-span-12 md:col-span-5 space-y-6">
+                    <h2 class="text-title-caps text-4xl">The Alest Suite</h2>
+                    <p class="text-body-caps text-[10px] text-alest-dark/60 leading-loose">DESIGNED TO OFFER AUTHENTIC HOSPITALITY. OUR FLAGSHIP SUITE FEATURES PRIVATE TERRACES AND CURATED DESIGN.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 gap-12 items-center">
+                <div class="col-span-12 md:col-span-5 order-2 md:order-1 space-y-6">
+                    <h2 class="text-title-caps text-4xl">The Master Suite</h2>
+                    <p class="text-body-caps text-[10px] text-alest-dark/60 leading-loose">EXPANSIVE WINDOWS AND NOBLE MATERIALS CONVERGE TO CREATE THE PERFECT REST IN THE HEART OF POLANCO.</p>
+                </div>
+                <div class="col-span-12 md:col-span-7 order-1 md:order-2">
+                    <img src="https://lh3.googleusercontent.com/proxy/LwAS086FDu7c0VhOP0j6lfwUGlP8yIdNRnZdKjJ6YHMDqfjMRWy-rNnaWr1_fZSOBw1KqfTFBPnzvUJxWnd1mHHjxu_bV8EfPmtJc9QiuAGO8kESPmxUg8u-VYbkwLXuGmxmKkH_k7t6BrpoDxI4iVsWbxSfdfM=s1360-w1360-h1020-rw" class="w-full aspect-video object-cover">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

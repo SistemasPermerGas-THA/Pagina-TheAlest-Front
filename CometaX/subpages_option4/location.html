@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location | THE ALEST - Quiet Excellence</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alest: {
+                            dark: '#0C1720',
+                            wood: '#896C49',
+                            gold: '#DEB175',
+                            linen: '#EDE6E2',
+                            white: '#E3DFD6',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        italic: ['"Playfair Display"', 'serif'],
+                        signature: ['"Alex Brush"', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #EDE6E2; color: #0C1720; }
+        .text-title-caps { font-family: '"Times New Roman"', Times, serif; text-transform: uppercase; letter-spacing: 0.22em; }
+        .text-body-caps { font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.15em; }
+        .text-highlight-italic { font-family: '"Playfair Display"', serif; font-style: italic; }
+    </style>
+</head>
+
+<body class="antialiased">
+    <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-6 md:px-12 bg-white/80 backdrop-blur-md border-b border-alest-dark/10">
+        <a href="../opction4.html" class="text-title-caps text-2xl text-alest-gold">THE ALEST</a>
+        <div class="hidden md:flex gap-12">
+            <a href="vision.html" class="text-body-caps text-[9px] hover:text-alest-gold transition-colors">Vision</a>
+            <a href="collection.html" class="text-body-caps text-[9px] hover:text-alest-gold transition-colors">Collection</a>
+            <a href="location.html" class="text-body-caps text-[9px] text-alest-gold">Location</a>
+        </div>
+        <a href="#" class="text-body-caps text-[9px] border border-alest-dark/30 px-6 py-3 hover:bg-alest-dark hover:text-white transition-all">Reserve</a>
+    </nav>
+
+    <main class="pt-40 pb-20 max-w-7xl mx-auto px-6 md:px-12">
+        <span class="text-body-caps text-[10px] text-alest-gold tracking-[0.3em] block mb-4">POLANCO, CDMX</span>
+        <h1 class="text-title-caps text-5xl md:text-8xl mb-20">Location</h1>
+
+        <div class="grid md:grid-cols-2 gap-16 items-center mb-32">
+            <div>
+                <p class="text-title-caps text-2xl md:text-4xl leading-tight mb-8">EUGENIO SUE #45, POLANCO, 11540 MEXICO CITY</p>
+                <p class="text-body-caps text-[10px] text-alest-dark/60 leading-loose">THE ALEST HOTEL IS LOCATED IN ONE OF THE MOST EXCLUSIVE NEIGHBORHOODS IN MEXICO CITY. POLANCO HOUSES HIGH-END BOUTIQUES, DESIRABLE URBAN RESIDENCES, AND THE MOST IMPORTANT MUSEUMS IN THE CAPITAL.</p>
+            </div>
+            <div class="aspect-square bg-alest-dark overflow-hidden">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipPJWSpoul5U5yQsLW_EW3dk9w6jAIiemq-MYD4h=s1360-w1360-h1020-rw" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-12 border-t border-alest-dark/10 pt-20">
+            <div>
+                <h3 class="text-title-caps text-xl mb-6">ACCESSIBILITY</h3>
+                <ul class="text-body-caps text-[9px] space-y-4 text-alest-dark/60">
+                    <li><strong class="text-alest-dark">AICM</strong> — 16 KM / 20 MIN</li>
+                    <li><strong class="text-alest-dark">AIFA</strong> — 57.8 KM / 60 MIN</li>
+                    <li><strong class="text-alest-dark">HELIPAD</strong> — 6 MIN WALK</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-title-caps text-xl mb-6">CONCIERGE</h3>
+                <p class="text-body-caps text-[9px] text-alest-dark/60 leading-loose">OUR EXPERIENCED CONCIERGE SERVICE CAN COORDINATE PERSONALIZED SHOPPING APPOINTMENTS AND BILINGUAL PRIVATE TOURS.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

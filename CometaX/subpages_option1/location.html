@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased overflow-x-hidden">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location | THE ALEST - Option 1</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --c-bg: #EDE6E2;
+            --c-dark: #0C1720;
+            --c-accent: #896C49;
+            --c-accent-light: #DEB175;
+            --c-card: #E3DFD6;
+            --font-display: 'Times New Roman', Times, serif;
+            --font-body: 'Inter', sans-serif;
+            --font-italic: 'Playfair Display', serif;
+        }
+
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-dark);
+            font-family: var(--font-body);
+            margin: 0;
+        }
+
+        .display-font {
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .accent-italic {
+            font-family: var(--font-italic);
+            font-style: italic;
+        }
+
+        .nav-scrolled {
+            background-color: rgba(12, 23, 32, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(237, 230, 226, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="main-nav" class="fixed top-0 w-full px-6 py-8 md:px-12 flex justify-between items-center z-50 text-alest-dark transition-all duration-500">
+        <div class="flex items-center">
+            <a href="../option1.html" id="nav-logo" class="display-font text-2xl md:text-3xl tracking-[0.2em] transition-colors duration-500">THE ALEST</a>
+        </div>
+        <div class="hidden md:flex gap-12 text-[10px] uppercase tracking-widest">
+            <a href="history.html" class="hover:text-alest-gold transition-colors">History</a>
+            <a href="essence.html" class="hover:text-alest-gold transition-colors">Essence</a>
+            <a href="rooms.html" class="hover:text-alest-gold transition-colors">Rooms</a>
+            <a href="location.html" class="text-alest-gold">Location</a>
+            <a href="contact.html" class="hover:text-alest-gold transition-colors">Contact</a>
+        </div>
+        <a href="#" class="border border-alest-dark/30 px-6 py-3 text-[10px] uppercase tracking-widest hover:bg-alest-dark hover:text-white transition-all">
+            Reserve
+        </a>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="pt-40 pb-20 px-6 md:px-12 text-center">
+        <span class="text-[10px] uppercase tracking-[0.3em] text-alest-gold block mb-6">Polanco, CDMX</span>
+        <h1 class="display-font text-5xl md:text-7xl lg:text-8xl mb-8">Location</h1>
+        <p class="accent-italic text-2xl md:text-3xl text-alest-accent">In the heart of Polanco's elegance.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 md:px-12 pb-40">
+        <!-- Intro -->
+        <div class="grid md:grid-cols-2 gap-16 mb-32 items-center">
+            <div class="fade-in">
+                <h2 class="display-font text-3xl mb-8">Polanco District</h2>
+                <p class="text-lg leading-relaxed text-alest-dark/70 font-light mb-6">
+                    The Alest Hotel is located in one of the most exclusive neighborhoods in Mexico City. Polanco houses high-end boutiques, desirable urban residences, important museums, and a vibrant cosmopolitan atmosphere.
+                </p>
+                <p class="text-lg leading-relaxed text-alest-dark/70 font-light">
+                    Its central location is ideal for planning visits to all points of interest the city offers. Designing the ideal itinerary is easy with our experienced Concierge Service.
+                </p>
+            </div>
+            <div class="bg-alest-card aspect-square overflow-hidden shadow-2xl">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipPJWSpoul5U5yQsLW_EW3dk9w6jAIiemq-MYD4h=s1360-w1360-h1020-rw" alt="Polanco" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="grid md:grid-cols-3 gap-12 border-t border-alest-dark/10 pt-20">
+            <div class="fade-in">
+                <h3 class="display-font text-xl mb-6">Accessibility</h3>
+                <ul class="text-sm space-y-4 text-alest-dark/60">
+                    <li><strong class="text-alest-dark">AICM Airport</strong> — 16 Km / 20 min</li>
+                    <li><strong class="text-alest-dark">AIFA Airport</strong> — 57.8 Km / 60 min</li>
+                    <li><strong class="text-alest-dark">Toluca Private</strong> — 53 Km / 45 min</li>
+                    <li><strong class="text-alest-dark">Helipads</strong> — Within 10 min walk</li>
+                </ul>
+            </div>
+            <div class="fade-in" style="transition-delay: 200ms;">
+                <h3 class="display-font text-xl mb-6">Address</h3>
+                <p class="text-sm text-alest-dark/60 leading-relaxed">
+                    Eugenio Sue #45, Polanco,<br>
+                    11540 Mexico City,<br>
+                    Mexico.
+                </p>
+                <div class="mt-8">
+                    <a href="https://www.google.com/maps/search/?api=1&query=The+Alest+Hotel+Polanco" target="_blank" class="text-[10px] uppercase tracking-widest border-b border-alest-gold text-alest-dark hover:text-alest-gold transition-colors">Open in Maps</a>
+                </div>
+            </div>
+            <div class="fade-in" style="transition-delay: 400ms;">
+                <h3 class="display-font text-xl mb-6">Concierge</h3>
+                <p class="text-sm text-alest-dark/60 leading-relaxed">
+                    Our team can coordinate personalized shopping appointments and private tours with bilingual guides through our Alest Signature Experiences.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-alest-dark text-alest-linen py-20 px-6 md:px-12 text-center">
+        <span class="display-font text-2xl tracking-widest block mb-8">THE ALEST</span>
+        <div class="flex justify-center gap-8 text-[9px] uppercase tracking-[0.2em] opacity-50">
+            <a href="history.html" class="hover:text-alest-gold transition-colors">History</a>
+            <a href="essence.html" class="hover:text-alest-gold transition-colors">Essence</a>
+            <a href="location.html" class="text-alest-gold">Location</a>
+            <a href="contact.html" class="hover:text-alest-gold transition-colors">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Scroll animation for nav
+        ScrollTrigger.create({
+            start: 'top -50',
+            onToggle: self => {
+                const nav = document.getElementById('main-nav');
+                const logo = document.getElementById('nav-logo');
+                if (self.isActive) {
+                    nav.classList.add('nav-scrolled', 'text-white');
+                    nav.classList.remove('py-8');
+                    nav.classList.add('py-4');
+                    logo.classList.add('text-alest-gold');
+                } else {
+                    nav.classList.remove('nav-scrolled', 'text-white');
+                    nav.classList.remove('py-4');
+                    nav.classList.add('py-8');
+                    logo.classList.remove('text-alest-gold');
+                }
+            }
+        });
+
+        // Fade in animations
+        gsap.utils.toArray('.fade-in').forEach(el => {
+            gsap.from(el, {
+                y: 30,
+                opacity: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 85%'
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

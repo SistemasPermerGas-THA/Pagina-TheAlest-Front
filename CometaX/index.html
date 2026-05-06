@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="es" class="antialiased overflow-x-hidden">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE ALEST | Quiet Excellence</title>
+
+    <!-- Fuentes Oficiales -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&family=Alex+Brush&display=swap"
+        rel="stylesheet">
+
+    <!-- Librerías de Animación y Estilos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
+    <style>
+        /* --- VARIABLES DE MARCA: THE ALEST --- */
+        :root {
+            --c-bg: #EDE6E2;
+            /* Soft Linen */
+            --c-dark: #0C1720;
+            /* Midnight Room */
+            --c-accent: #896C49;
+            /* Warm Wood */
+            --c-accent-light: #DEB175;
+            /* Golden Hour */
+            --c-card: #E3DFD6;
+            /* Still White */
+            --font-display: 'Times New Roman', Times, serif;
+            --font-body: 'Inter', sans-serif;
+            --font-italic: 'Playfair Display', serif;
+            --font-signature: 'Alex Brush', cursive;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-dark);
+            font-family: var(--font-body);
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- TIPOGRAFÍA Y JERARQUÍA --- */
+        .display-font {
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            /* Emulando el tracking de 222pts */
+        }
+
+        .body-caps {
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            /* Emulando tracking 150pts */
+        }
+
+        .accent-italic {
+            font-family: var(--font-italic);
+            font-style: italic;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .signature-font {
+            font-family: var(--font-signature);
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 1.5em;
+        }
+
+        /* --- ESTRUCTURA Y ANIMACIONES --- */
+        .wrapper {
+            position: relative;
+            z-index: 10;
+            background-color: var(--c-bg);
+            margin-bottom: 100vh;
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.15);
+            border-bottom-left-radius: 0;
+            /* Removido para mantener líneas rectas editoriales */
+            border-bottom-right-radius: 0;
+            overflow: hidden;
+        }
+
+        .stack-section {
+            position: relative;
+            background: var(--c-bg);
+        }
+
+        .card-item {
+            position: sticky;
+            top: 10vh;
+            height: auto;
+            min-height: 80vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5vh;
+        }
+
+        .card-inner {
+            width: 95%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 60px -15px rgba(12, 23, 32, 0.1);
+            background: var(--c-card);
+        }
+
+        .footer-sticky {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+            background: var(--c-dark);
+            color: var(--c-bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-text-huge {
+            font-size: 15vw;
+            line-height: 0.85;
+            letter-spacing: 0.05em;
+            color: var(--c-bg);
+            text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Ruido sutil para textura editorial */
+        .noise {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Mobile Menu Transitions */
+        #mobile-menu {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .menu-open {
+            overflow: hidden;
+        }
+
+        /* Custom selection color */
+        ::selection {
+            background-color: var(--c-accent);
+            color: var(--c-bg);
+        }
+    </style>
+</head>
+
+<body class="text-base font-light leading-relaxed">
+    <div class="noise"></div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-40 bg-[#0C1720] text-[#EDE6E2] transform translate-x-full flex flex-col items-center justify-center">
+        <nav class="flex flex-col gap-10 text-center">
+            <a href="#"
+                class="display-font text-3xl font-normal tracking-widest hover:text-[#DEB175] transition-colors">Historia</a>
+            <a href="#"
+                class="display-font text-3xl font-normal tracking-widest hover:text-[#DEB175] transition-colors">Esencia</a>
+            <a href="#"
+                class="display-font text-3xl font-normal tracking-widest hover:text-[#DEB175] transition-colors">Habitaciones</a>
+            <a href="#"
+                class="display-font text-3xl font-normal tracking-widest hover:text-[#DEB175] transition-colors">Contacto</a>
+        </nav>
+        <div class="absolute bottom-12 text-xs body-caps text-[#EDE6E2]/40">
+            Polanco, Mexico City
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full px-6 py-8 md:px-12 md:py-10 flex justify-between items-center z-50 text-[#EDE6E2] transition-colors duration-500"
+        id="main-nav">
+        <div class="flex items-center md:flex-1">
+            <a href="#" class="display-font text-2xl md:text-3xl tracking-[0.2em] relative z-50">THE ALEST</a>
+        </div>
+
+        <div class="hidden md:flex gap-12 text-[10px] body-caps">
+            <a href="#" class="hover:text-[#DEB175] transition-colors">Historia</a>
+            <a href="#" class="hover:text-[#DEB175] transition-colors">Esencia</a>
+            <a href="#" class="hover:text-[#DEB175] transition-colors">Habitaciones</a>
+            <a href="#" class="hover:text-[#DEB175] transition-colors">Contacto</a>
+        </div>
+
+        <div class="flex md:flex-1 justify-end">
+            <a href="#"
+                class="hidden md:block border border-[#EDE6E2]/30 px-6 py-3 text-[10px] body-caps hover:bg-[#EDE6E2] hover:text-[#0C1720] transition-all duration-300">
+                Reservar
+            </a>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn"
+                class="z-50 group flex items-center justify-center md:hidden w-10 h-10 relative text-[#EDE6E2]">
+                <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="w-6 h-6 absolute transition-opacity duration-300">
+                    <path d="M4 5h16"></path>
+                    <path d="M4 12h16"></path>
+                    <path d="M4 19h16"></path>
+                </svg>
+                <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="w-6 h-6 absolute opacity-0 transition-opacity duration-300">
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 18 18"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <!-- Hero Section -->
+        <section class="h-screen relative flex items-center justify-center overflow-hidden" id="hero">
+            <div class="absolute inset-0 w-full h-full hero-img-wrap">
+                <!-- Imagen natural, luz cinemática -->
+                <img src="https://lh3.googleusercontent.com/p/AF1QipPJWSpoul5U5yQsLW_EW3dk9w6jAIiemq-MYD4h=s1360-w1360-h1020-rw"
+                    class="hero-img w-full h-full object-cover" alt="The Alest Lobby">
+                <div class="absolute inset-0 bg-gradient-to-b from-[#0C1720]/40 to-[#0C1720]/70"></div>
+            </div>
+
+            <div
+                class="relative z-10 w-full h-full flex flex-col justify-between pointer-events-none py-32 px-6 md:px-12">
+                <div class="overflow-hidden self-start mt-10 md:mt-0">
+                    <h1 class="hero-text-huge hero-title-l translate-y-full block display-font">
+                        THE
+                    </h1>
+                </div>
+
+                <div class="overflow-hidden self-end pr-4 md:pr-10 mb-10 md:mb-0">
+                    <h1 class="hero-text-huge hero-title-r translate-y-full block display-font">
+                        ALEST
+                    </h1>
+                </div>
+            </div>
+
+            <div class="absolute bottom-12 left-6 md:left-12 text-[#EDE6E2] flex flex-col gap-2">
+                <span class="text-[10px] body-caps text-[#DEB175]">
+                    Quiet Excellence
+                </span>
+                <span class="text-[10px] body-caps opacity-70">
+                    Polanco • Mexico City
+                </span>
+            </div>
+        </section>
+
+        <!-- The Vision Section -->
+        <section
+            class="py-40 px-6 md:px-20 max-w-[1600px] mx-auto bg-[var(--c-bg)] relative z-20 border-b border-[#0C1720]/5">
+            <div class="grid lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-4 hidden lg:flex flex-col justify-between border-t border-[#0C1720]/10 pt-8">
+                    <span class="text-[10px] body-caps text-[#896C49]">01 — THE VISION</span>
+                    <span class="display-font text-4xl text-[#0C1720]">A</span>
+                </div>
+                <div class="lg:col-span-8 lg:col-start-5 pt-8">
+                    <h2 class="display-font text-3xl md:text-5xl lg:text-6xl font-normal leading-[1.2] text-[#0C1720]">
+                        WE BELIEVE IN <span class="accent-italic text-[#896C49]">quiet excellence.</span> A PLACE THAT
+                        DOESN'T TRY TO IMPRESS YOU—IT SIMPLY UNDERSTANDS YOU.
+                    </h2>
+                    <p class="mt-12 text-gray-600 font-light max-w-2xl leading-relaxed text-lg">
+                        The Alest nació del sueño de un joven apasionado por el arte de recibir. Diseñado para ofrecer
+                        una hospitalidad auténtica y un lujo íntimo. Aquí, el confort fluye con la naturalidad de un
+                        hogar.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stacked Cards (Habitaciones) -->
+        <section class="stack-section pb-40 pt-32">
+            <div class="px-6 md:px-20 mb-24 flex justify-between items-end">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#DEB175]"></div>
+                        <span class="text-[10px] body-caps text-[#896C49]">
+                            Santuarios Privados
+                        </span>
+                    </div>
+                    <h2 class="display-font text-4xl md:text-5xl font-normal uppercase">
+                        Nuestras
+                        <br>
+                        <span class="accent-italic text-[#896C49] text-5xl md:text-6xl lowercase">habitaciones</span>
+                    </h2>
+                </div>
+                <div class="hidden md:block">
+                    <button
+                        class="group flex items-center gap-4 text-[10px] body-caps hover:text-[#896C49] transition-colors">
+                        Descubrir Suites
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="w-4 h-4 group-hover:translate-x-1 transition-transform">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="stack-container px-4 md:px-20">
+                <!-- Card 1 -->
+                <div class="card-item group">
+                    <div class="card-inner flex flex-col md:grid md:grid-cols-[1.2fr_1fr] border border-[#0C1720]/10">
+                        <!-- Image Section -->
+                        <div class="h-[350px] md:h-full w-full relative overflow-hidden order-1 md:order-2">
+                            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=2653&auto=format&fit=crop"
+                                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                alt="The Master Suite">
+                        </div>
+                        <!-- Content Section -->
+                        <div class="flex flex-col p-8 md:p-12 lg:p-16 order-2 md:order-1 bg-[#E3DFD6] relative">
+                            <div class="flex justify-between items-start mb-6 md:mb-12">
+                                <span class="text-[10px] body-caps text-[#896C49] mt-2">
+                                    Polanco View
+                                </span>
+                                <div
+                                    class="w-10 h-10 rounded-full border border-[#0C1720]/20 flex items-center justify-center text-[#0C1720] group-hover:bg-[#0C1720] group-hover:text-[#E3DFD6] transition-all duration-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-4 h-4">
+                                        <path d="M7 7h10v10"></path>
+                                        <path d="M7 17 17 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="mb-4 mt-auto">
+                                <h3 class="display-font text-3xl md:text-4xl lg:text-5xl text-[#0C1720] mb-3">
+                                    The Master Suite
+                                </h3>
+                                <span class="text-[10px] body-caps text-[#0C1720]/50 block">
+                                    Intimidad & Confort
+                                </span>
+                            </div>
+                            <p class="text-sm md:text-base text-[#0C1720]/70 font-light leading-relaxed mb-10 max-w-md">
+                                Un diseño donde la luz natural, los materiales nobles y el silencio convergen para crear
+                                el descanso perfecto en medio de la ciudad.
+                            </p>
+                            <div class="pt-6 border-t border-[#0C1720]/10 flex gap-3">
+                                <span class="px-5 py-2.5 bg-[#EDE6E2] text-[9px] body-caps text-[#0C1720]/60">Luz
+                                    Natural</span>
+                                <span class="px-5 py-2.5 bg-[#EDE6E2] text-[9px] body-caps text-[#0C1720]/60">Tina de
+                                    Mármol</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card-item group">
+                    <div class="card-inner flex flex-col md:grid md:grid-cols-[1.2fr_1fr] border border-[#0C1720]/10">
+                        <div class="h-[350px] md:h-full w-full relative overflow-hidden order-1 md:order-2">
+                            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=2670&auto=format&fit=crop"
+                                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                alt="The Alest Suite">
+                        </div>
+                        <div class="flex flex-col p-8 md:p-12 lg:p-16 order-2 md:order-1 bg-[#E3DFD6] relative">
+                            <div class="flex justify-between items-start mb-6 md:mb-12">
+                                <span class="text-[10px] body-caps text-[#896C49] mt-2">
+                                    Eugenio Sue
+                                </span>
+                                <div
+                                    class="w-10 h-10 rounded-full border border-[#0C1720]/20 flex items-center justify-center text-[#0C1720] group-hover:bg-[#0C1720] group-hover:text-[#E3DFD6] transition-all duration-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-4 h-4">
+                                        <path d="M7 7h10v10"></path>
+                                        <path d="M7 17 17 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="mb-4 mt-auto">
+                                <h3 class="display-font text-3xl md:text-4xl lg:text-5xl text-[#0C1720] mb-3">
+                                    The Alest Suite
+                                </h3>
+                                <span class="text-[10px] body-caps text-[#0C1720]/50 block">
+                                    Lujo Silencioso
+                                </span>
+                            </div>
+                            <p class="text-sm md:text-base text-[#0C1720]/70 font-light leading-relaxed mb-10 max-w-md">
+                                Nuestra suite insignia. Madera cálida, detalles en lino suave y un espacio diseñado para
+                                el "slow living" europeo en México.
+                            </p>
+                            <div class="pt-6 border-t border-[#0C1720]/10 flex gap-3">
+                                <span class="px-5 py-2.5 bg-[#EDE6E2] text-[9px] body-caps text-[#0C1720]/60">Terraza
+                                    Privada</span>
+                                <span class="px-5 py-2.5 bg-[#EDE6E2] text-[9px] body-caps text-[#0C1720]/60">Diseño
+                                    Curado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horizontal Scroll Section (Pilares) -->
+        <section id="horiz-scroll"
+            class="relative h-screen overflow-hidden bg-[var(--c-card)] border-y border-[#0C1720]/10">
+            <div class="horiz-wrap flex h-full w-[300vw]">
+                <!-- Slide 1 -->
+                <div
+                    class="w-screen h-full flex flex-col justify-center px-6 md:px-20 border-r border-[#0C1720]/10 bg-[#EDE6E2]">
+                    <span class="text-[10px] body-caps text-[#896C49] mb-8">01 — PILARES</span>
+                    <h2 class="display-font text-5xl md:text-7xl lg:text-8xl text-[#0C1720]">EL ANFITRIÓN<br><span
+                            class="accent-italic text-[#DEB175] text-6xl md:text-8xl lg:text-9xl">perfecto</span></h2>
+                    <p class="mt-10 max-w-md text-[#0C1720]/70 text-lg font-light leading-relaxed">Hace sentir especial
+                        e importante a sus invitados. Buscamos recuperar la hospitalidad humana: esa sensación de ser
+                        valorado.</p>
+                </div>
+                <!-- Slide 2 -->
+                <div
+                    class="w-screen h-full flex flex-col justify-center px-6 md:px-20 border-r border-[#0C1720]/10 bg-[#E3DFD6]">
+                    <span class="text-[10px] body-caps text-[#896C49] mb-8">02 — PILARES</span>
+                    <h2 class="display-font text-5xl md:text-7xl lg:text-8xl text-[#0C1720]">DISEÑO<br><span
+                            class="accent-italic text-[#DEB175] text-6xl md:text-8xl lg:text-9xl">curado</span></h2>
+                    <p class="mt-10 max-w-md text-[#0C1720]/70 text-lg font-light leading-relaxed">Raíz europea y un
+                        perfil de buen gusto. Cada detalle está pensado para brindar tranquilidad y anticipar
+                        necesidades.</p>
+                </div>
+                <!-- Slide 3 -->
+                <div class="w-screen h-full flex flex-col justify-center px-6 md:px-20 bg-[#EDE6E2]">
+                    <span class="text-[10px] body-caps text-[#896C49] mb-8">03 — PILARES</span>
+                    <h2 class="display-font text-5xl md:text-7xl lg:text-8xl text-[#0C1720]">SENTIDO DE<br><span
+                            class="accent-italic text-[#DEB175] text-6xl md:text-8xl lg:text-9xl">pertenencia</span>
+                    </h2>
+                    <p class="mt-10 max-w-md text-[#0C1720]/70 text-lg font-light leading-relaxed">El sueño de un
+                        anfitrión se convierte en la casa favorita de quienes buscan algo más que un simple hotel.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Capabilities / Atmosfera -->
+        <section class="py-40 md:py-56 bg-[#0C1720] text-[#EDE6E2] relative z-20 overflow-hidden">
+            <div class="px-6 md:px-20 max-w-[1600px] mx-auto grid md:grid-cols-2 gap-20">
+                <div>
+                    <span class="text-[10px] body-caps text-[#DEB175] block mb-10">EXPERIENCIAS</span>
+                    <h2 class="display-font text-4xl md:text-6xl font-normal leading-tight uppercase">
+                        Atmósfera &
+                        <br>
+                        Detalles
+                    </h2>
+                    <p class="mt-8 text-[#EDE6E2]/60 font-light max-w-sm">
+                        Exploradores sofisticados que aprecian el arte, la gastronomía y la cultura. Prefieren
+                        experiencias boutique sobre el lujo estandarizado.
+                    </p>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <div
+                        class="flex justify-between items-center border-b border-[#EDE6E2]/10 py-10 group hover:pl-6 transition-all duration-500 cursor-pointer">
+                        <span
+                            class="text-xl md:text-2xl font-light text-[#EDE6E2]/80 group-hover:text-[#DEB175] transition-colors display-font">Gastronomía
+                            Local</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="w-6 h-6 text-[#EDE6E2]/20 group-hover:text-[#DEB175] transition-colors">
+                            <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
+                            <path d="M7 2v20"></path>
+                            <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
+                        </svg>
+                    </div>
+                    <div
+                        class="flex justify-between items-center border-b border-[#EDE6E2]/10 py-10 group hover:pl-6 transition-all duration-500 cursor-pointer">
+                        <span
+                            class="text-xl md:text-2xl font-light text-[#EDE6E2]/80 group-hover:text-[#DEB175] transition-colors display-font">Arte
+                            & Arquitectura</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="w-6 h-6 text-[#EDE6E2]/20 group-hover:text-[#DEB175] transition-colors">
+                            <path
+                                d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div
+                        class="flex justify-between items-center border-b border-[#EDE6E2]/10 py-10 group hover:pl-6 transition-all duration-500 cursor-pointer">
+                        <span
+                            class="text-xl md:text-2xl font-light text-[#EDE6E2]/80 group-hover:text-[#DEB175] transition-colors display-font">Slow
+                            Living</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="w-6 h-6 text-[#EDE6E2]/20 group-hover:text-[#DEB175] transition-colors">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer Pegajoso con revelado -->
+    <footer class="footer-sticky">
+        <div class="absolute inset-0 z-0 opacity-[0.15]">
+            <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2940&auto=format&fit=crop"
+                class="w-full h-full object-cover">
+        </div>
+
+        <div class="relative z-10 text-center w-full max-w-5xl px-6">
+
+            <div class="mb-8">
+                <span class="display-font text-5xl">A</span>
+            </div>
+
+            <a href="#" class="block group">
+                <h2
+                    class="display-font text-[10vw] md:text-[8vw] leading-[1] font-normal text-[#EDE6E2] group-hover:text-[#DEB175] transition-colors duration-700">
+                    UNTIL NEXT TIME
+                </h2>
+                <div class="h-[1px] w-0 group-hover:w-1/2 bg-[#DEB175] mx-auto transition-all duration-1000 mt-8"></div>
+            </a>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mt-32 text-left border-t border-[#EDE6E2]/10 pt-16">
+                <div class="flex flex-col gap-6">
+                    <span class="text-[10px] body-caps text-[#896C49]">Social</span>
+                    <div class="flex flex-col gap-3 text-[#EDE6E2]/60 text-sm font-light">
+                        <a href="#" class="hover:text-[#DEB175] transition-colors">Instagram</a>
+                        <a href="#" class="hover:text-[#DEB175] transition-colors">Facebook</a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-6">
+                    <span class="text-[10px] body-caps text-[#896C49]">Location</span>
+                    <p class="text-[#EDE6E2]/60 text-sm font-light leading-relaxed">Eugenio Sue 45<br>Polanco,
+                        CDMX<br>México, 11560</p>
+                </div>
+                <div class="flex flex-col gap-6">
+                    <span class="text-[10px] body-caps text-[#896C49]">Inquiries</span>
+                    <div class="flex flex-col gap-3 text-[#EDE6E2]/60 text-sm font-light">
+                        <a href="mailto:concierge@thealest.com"
+                            class="hover:text-[#DEB175] transition-colors">concierge@thealest.com</a>
+                        <a href="tel:+525512345678" class="hover:text-[#DEB175] transition-colors">+52 55 1234 5678</a>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-end">
+                    <span class="signature-font text-[#EDE6E2]/60 text-xl block mb-2">
+                        By The Alest
+                    </span>
+                    <span class="text-[9px] body-caps text-[#EDE6E2]/30">
+                        © 2026 THE ALEST
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Animaciones GSAP -->
+    <script>
+        // Smooth Scroll con Lenis
+        const lenis = new Lenis({
+            duration: 1.4,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smooth: true
+        });
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Entrada del Hero
+        gsap.to('.hero-title-l, .hero-title-r', { y: 0, duration: 1.8, ease: 'power4.out', stagger: 0.2, delay: 0.2 });
+
+        // Parallax de la imagen del Hero
+        gsap.to('.hero-img', {
+            scale: 1.15,
+            y: '10%',
+            scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true }
+        });
+
+        // Cambio de color del Navbar al hacer scroll
+        ScrollTrigger.create({
+            start: 'top -50',
+            end: 99999,
+            toggleClass: { className: 'bg-[#0C1720]/95 backdrop-blur-md shadow-lg', targets: '#main-nav' }
+        });
+
+        // Scroll Horizontal (Sección Pilares)
+        const horizWrap = document.querySelector('.horiz-wrap');
+        gsap.to(horizWrap, {
+            x: () => -(horizWrap.scrollWidth - window.innerWidth),
+            ease: "none",
+            scrollTrigger: {
+                trigger: '#horiz-scroll',
+                start: "top top",
+                end: () => `+=${horizWrap.scrollWidth}`,
+                pin: true,
+                scrub: 1
+            }
+        });
+
+        // Animación de las Cards apiladas
+        const cards = gsap.utils.toArray('.card-item');
+        cards.forEach((card, i) => {
+            if (i < cards.length - 1) {
+                gsap.to(card.querySelector('.card-inner'), {
+                    scale: 0.9,
+                    opacity: 0.7,
+                    y: -40,
+                    scrollTrigger: { trigger: cards[i + 1], start: "top bottom", end: "top 20%", scrub: true }
+                });
+            }
+        });
+
+        // Lógica del Menú Móvil
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconMenu = document.getElementById('icon-menu');
+        const iconClose = document.getElementById('icon-close');
+        let isMenuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+                document.body.classList.add('menu-open');
+                iconMenu.classList.add('opacity-0');
+                iconClose.classList.remove('opacity-0');
+                menuBtn.classList.replace('text-[#EDE6E2]', 'text-[#DEB175]'); // Cambio a dorado al abrir
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.classList.remove('translate-x-0');
+                document.body.classList.remove('menu-open');
+                iconMenu.classList.remove('opacity-0');
+                iconClose.classList.add('opacity-0');
+                menuBtn.classList.replace('text-[#DEB175]', 'text-[#EDE6E2]');
+            }
+        });
+    </script>
+</body>
+
+</html>

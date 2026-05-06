@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE ALEST | The Midnight Concept</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alest: {
+                            dark: '#0C1720',    /* Midnight Room */
+                            wood: '#896C49',    /* Warm Wood */
+                            gold: '#DEB175',    /* Golden Hour */
+                            linen: '#EDE6E2',   /* Soft Linen */
+                            white: '#E3DFD6',   /* Still White */
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        italic: ['"Playfair Display"', 'serif'],
+                        signature: ['"Alex Brush"', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0C1720; /* STRICT DARK MODE */
+            color: #EDE6E2;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: #DEB175;
+            color: #0C1720;
+        }
+
+        .text-title-caps {
+            font-family: '"Times New Roman"', Times, serif;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .text-body-caps {
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        .text-highlight-italic {
+            font-family: '"Playfair Display"', serif;
+            font-style: italic;
+        }
+
+        .text-signature {
+            font-family: '"Alex Brush"', cursive;
+            font-size: 1.5em;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .img-reveal {
+            clip-path: inset(100% 0 0 0);
+            transition: clip-path 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        .img-reveal.is-visible {
+            clip-path: inset(0 0 0 0);
+        }
+
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        
+        /* Thin gold lines for structure */
+        .border-gold-thin {
+            border-color: rgba(222, 177, 117, 0.2);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navbar Dynamic -->
+    <nav id="main-nav" class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-6 md:px-12 text-alest-linen border-b border-transparent transition-all duration-500 fade-in-up is-visible">
+        <a href="#" class="group">
+            <span id="nav-logo" class="text-title-caps text-2xl md:text-3xl text-alest-gold transition-colors duration-500">THE ALEST</span>
+        </a>
+
+        <div class="hidden md:flex gap-12">
+            <a href="subpages_option5/vision.html" class="text-body-caps text-[10px] hover:text-alest-gold transition-colors">THE VISION</a>
+            <a href="subpages_option5/collection.html" class="text-body-caps text-[10px] hover:text-alest-gold transition-colors">THE COLLECTION</a>
+            <a href="subpages_option5/location.html" class="text-body-caps text-[10px] hover:text-alest-gold transition-colors">LOCATION</a>
+            <a href="subpages_option5/contact.html" class="text-body-caps text-[10px] hover:text-alest-gold transition-colors">CONTACT</a>
+        </div>
+
+        <a href="#" class="text-body-caps text-[10px] border border-alest-gold/30 px-6 py-3 hover:bg-alest-gold hover:text-alest-dark transition-colors">
+            RESERVE
+        </a>
+    </nav>
+
+    <!-- Cinematic Hero -->
+    <header class="relative w-full h-screen flex flex-col justify-center items-center overflow-hidden border-b border-gold-thin">
+        <div class="absolute inset-0 w-full h-full z-0">
+            <!-- Full Parallax Dark Image -->
+            <div class="fixed inset-0 w-full h-screen z-[-1]">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipPJWSpoul5U5yQsLW_EW3dk9w6jAIiemq-MYD4h=s1360-w1360-h1020-rw"
+                    alt="The Alest Midnight" class="w-full h-full object-cover opacity-60">
+                <div class="absolute inset-0 bg-alest-dark/70 z-10"></div>
+                <!-- Radial gradient to center focus -->
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#0C1720_100%)] z-20"></div>
+            </div>
+        </div>
+
+        <div class="relative z-20 text-center px-4 fade-in-up is-visible delay-100">
+            <div class="flex flex-col items-center gap-6 mb-12">
+                <div class="w-[1px] h-20 bg-alest-gold/50"></div>
+                <span class="text-body-caps text-[10px] text-alest-gold tracking-[0.4em]">INTRODUCING</span>
+            </div>
+            
+            <h1 class="text-title-caps text-5xl md:text-8xl lg:text-[9rem] leading-none text-alest-white font-light tracking-widest">
+                MIDNIGHT
+            </h1>
+            <h2 class="text-highlight-italic text-5xl md:text-7xl lg:text-[8rem] text-alest-gold leading-none -mt-4 md:-mt-8 pr-12">
+                excellence
+            </h2>
+        </div>
+    </header>
+
+    <!-- The Vision (Dark Mode) -->
+    <section id="vision" class="py-32 md:py-48 px-6 md:px-12 bg-alest-dark relative z-10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <div class="lg:col-span-4 flex flex-col justify-between fade-in-up">
+                <span class="text-title-caps text-6xl text-alest-gold opacity-50">01</span>
+                <div class="mt-12 lg:mt-0">
+                    <span class="text-body-caps text-[10px] text-alest-linen/50">THE PHILOSOPHY</span>
+                    <h3 class="text-title-caps text-3xl mt-4 text-alest-white">AN INTIMATE<br>REFUGE.</h3>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-8 flex flex-col justify-center fade-in-up delay-100">
+                <p class="text-3xl md:text-5xl font-light leading-[1.3] text-alest-linen/90 font-serif uppercase tracking-widest">
+                    We believe in a luxury that <span class="text-highlight-italic text-alest-gold lowercase">whispers</span>. A sanctuary where the warmth of wood and the elegance of marble converge into absolute silence.
+                </p>
+                <div class="mt-16 flex items-center gap-6">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFWzc2BTOJUM8JOwzl6nEm2Q_fqkMHD-GCaxCH8tPCJ_A0rCg3WmvDcISPBRUhrCk7youDdniFmrDsvD2OnPNICP0Ln7Esn0n6bYvPQ2y-rgZlxkGjvMLDbTNomR3IqzLRSGGwYvA=s1360-w1360-h1020-rw" 
+                         class="w-24 h-24 rounded-full object-cover border border-alest-gold/30">
+                    <div>
+                        <span class="text-signature text-2xl text-alest-gold block">The Details</span>
+                        <span class="text-body-caps text-[9px] text-alest-linen/40">CURATED DESIGN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA to Subpages -->
+    <section class="py-24 bg-alest-dark text-center border-t border-gold-thin">
+        <a href="subpages_option5/collection.html" class="text-title-caps text-2xl text-alest-gold border-b border-alest-gold pb-2 hover:text-alest-white transition-colors">View The Full Collection</a>
+    </section>
+
+    <!-- Footer Dark Minimal -->
+    <footer class="bg-alest-dark relative z-10 pt-32 pb-12 px-6 md:px-12 border-t border-gold-thin text-center">
+        <div class="fade-in-up">
+            <span class="text-title-caps text-4xl md:text-6xl text-alest-gold block mb-8">THE ALEST</span>
+            <p class="text-signature text-3xl text-alest-linen/50 mb-16">Eugenio Sue 45, Polanco</p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 text-body-caps text-[10px] text-alest-linen/60 mb-24">
+                <a href="#" class="hover:text-alest-gold transition-colors">INSTAGRAM</a>
+                <a href="#" class="hover:text-alest-gold transition-colors">CONCIERGE@THEALEST.COM</a>
+                <a href="#" class="hover:text-alest-gold transition-colors">+52 55 1234 5678</a>
+            </div>
+
+            <div class="border-t border-gold-thin pt-8 flex justify-between items-center text-[9px] text-body-caps text-alest-linen/30">
+                <span>© 2026 THE ALEST</span>
+                <span>DESIGNED FOR SLOW LIVING</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Observer for fade-in animations
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up, .img-reveal').forEach((el) => observer.observe(el));
+
+            // Dynamic Nav Background on Scroll
+            window.addEventListener('scroll', function() {
+                const nav = document.getElementById('main-nav');
+                const logo = document.getElementById('nav-logo');
+                if (window.scrollY > 50) {
+                    nav.classList.add('bg-alest-dark/95', 'backdrop-blur-md');
+                    nav.classList.replace('border-transparent', 'border-alest-gold/20');
+                    logo.classList.replace('text-alest-gold', 'text-alest-linen');
+                } else {
+                    nav.classList.remove('bg-alest-dark/95', 'backdrop-blur-md');
+                    nav.classList.replace('border-alest-gold/20', 'border-transparent');
+                    logo.classList.replace('text-alest-linen', 'text-alest-gold');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

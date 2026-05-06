@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location | THE ALEST - Midnight Concept</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alest: {
+                            dark: '#0C1720',
+                            wood: '#896C49',
+                            gold: '#DEB175',
+                            linen: '#EDE6E2',
+                            white: '#E3DFD6',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        italic: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0C1720;
+            color: #EDE6E2;
+        }
+
+        .text-title-caps {
+            font-family: '"Times New Roman"', Times, serif;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .text-body-caps {
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        .text-highlight-italic {
+            font-family: '"Playfair Display"', serif;
+            font-style: italic;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .border-gold-thin {
+            border-color: rgba(222, 177, 117, 0.2);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <nav id="main-nav" class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-6 md:px-12 text-alest-linen border-b border-transparent transition-all duration-500 bg-alest-dark/95 backdrop-blur-md">
+        <a href="../option5.html">
+            <span id="nav-logo" class="text-title-caps text-2xl md:text-3xl text-alest-gold">THE ALEST</span>
+        </a>
+        <div class="hidden md:flex gap-12">
+            <a href="vision.html" class="text-body-caps text-[10px] hover:text-alest-gold transition-colors">Vision</a>
+            <a href="collection.html" class="text-body-caps text-[10px] hover:text-alest-gold transition-colors">Collection</a>
+            <a href="location.html" class="text-body-caps text-[10px] text-alest-gold">Location</a>
+        </div>
+        <a href="#" class="text-body-caps text-[10px] border border-alest-gold/30 px-6 py-3 hover:bg-alest-gold hover:text-alest-dark transition-colors">
+            Reserve
+        </a>
+    </nav>
+
+    <!-- Content -->
+    <main class="pt-40 pb-20">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="mb-20 fade-in-up is-visible">
+                <span class="text-body-caps text-[10px] text-alest-gold tracking-[0.4em] mb-4 block">DESTINATION</span>
+                <h1 class="text-title-caps text-5xl md:text-8xl text-alest-white">LOCATION</h1>
+            </div>
+
+            <!-- Grid Content -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 border-t border-gold-thin pt-20">
+                <div class="lg:col-span-5 space-y-12">
+                    <div class="fade-in-up is-visible delay-100">
+                        <h2 class="text-title-caps text-2xl text-alest-gold mb-6">Polanco</h2>
+                        <p class="text-lg font-light leading-relaxed text-alest-linen/70">
+                            The Alest Hotel is located in one of the most exclusive neighborhoods in Mexico City. Polanco houses high-end boutiques, desirable urban residences, and the most important museums in the capital.
+                        </p>
+                    </div>
+                    <div class="fade-in-up is-visible delay-200">
+                        <h2 class="text-title-caps text-2xl text-alest-gold mb-6">Address</h2>
+                        <p class="text-3xl font-serif text-alest-white">Eugenio Sue #45, Polanco, CDMX</p>
+                        <p class="text-alest-linen/40 mt-2">11540 Mexico City, Mexico</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="aspect-video w-full bg-alest-dark border border-gold-thin overflow-hidden fade-in-up is-visible delay-300">
+                        <img src="https://lh3.googleusercontent.com/p/AF1QipPJWSpoul5U5yQsLW_EW3dk9w6jAIiemq-MYD4h=s1360-w1360-h1020-rw" alt="Map" class="w-full h-full object-cover grayscale opacity-50">
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-8 mt-12 fade-in-up is-visible delay-400">
+                        <div>
+                            <span class="text-body-caps text-[9px] text-alest-gold">AICM AIRPORT</span>
+                            <p class="text-xl text-alest-white">20 MIN</p>
+                        </div>
+                        <div>
+                            <span class="text-body-caps text-[9px] text-alest-gold">HELIPAD</span>
+                            <p class="text-xl text-alest-white">6 MIN WALK</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-alest-dark pt-32 pb-12 px-6 md:px-12 border-t border-gold-thin text-center">
+        <span class="text-title-caps text-3xl text-alest-gold block mb-8">THE ALEST</span>
+        <p class="text-body-caps text-[9px] text-alest-linen/30">© 2026 THE ALEST — MIDNIGHT CONCEPT</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

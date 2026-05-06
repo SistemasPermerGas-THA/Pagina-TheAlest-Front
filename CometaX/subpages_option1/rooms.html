@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased overflow-x-hidden">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms | THE ALEST - Option 1</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --c-bg: #EDE6E2;
+            --c-dark: #0C1720;
+            --c-accent: #896C49;
+            --c-accent-light: #DEB175;
+            --c-card: #E3DFD6;
+            --font-display: 'Times New Roman', Times, serif;
+            --font-body: 'Inter', sans-serif;
+            --font-italic: 'Playfair Display', serif;
+        }
+
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-dark);
+            font-family: var(--font-body);
+            margin: 0;
+        }
+
+        .display-font {
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .accent-italic {
+            font-family: var(--font-italic);
+            font-style: italic;
+        }
+
+        .card-item {
+            position: sticky;
+            top: 10vh;
+            min-height: 80vh;
+            margin-bottom: 5vh;
+        }
+
+        .card-inner {
+            background: var(--c-card);
+            border: 1px solid rgba(12, 23, 32, 0.1);
+        }
+        
+        .nav-scrolled {
+            background-color: rgba(12, 23, 32, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(237, 230, 226, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="main-nav" class="fixed top-0 w-full px-6 py-8 md:px-12 flex justify-between items-center z-50 text-alest-dark transition-all duration-500">
+        <div class="flex items-center">
+            <a href="../option1.html" id="nav-logo" class="display-font text-2xl md:text-3xl tracking-[0.2em]">THE ALEST</a>
+        </div>
+        <div class="hidden md:flex gap-12 text-[10px] uppercase tracking-widest">
+            <a href="history.html" class="hover:text-alest-gold">History</a>
+            <a href="essence.html" class="hover:text-alest-gold">Essence</a>
+            <a href="rooms.html" class="text-alest-gold">Rooms</a>
+            <a href="location.html" class="hover:text-alest-gold">Location</a>
+            <a href="contact.html" class="hover:text-alest-gold">Contact</a>
+        </div>
+        <a href="#" class="border border-alest-dark/30 px-6 py-3 text-[10px] uppercase tracking-widest hover:bg-alest-dark hover:text-white transition-all">
+            Reserve
+        </a>
+    </nav>
+
+    <header class="pt-40 pb-20 px-6 md:px-12 text-center">
+        <h1 class="display-font text-5xl md:text-7xl lg:text-8xl mb-8">Rooms & Suites</h1>
+        <p class="accent-italic text-2xl md:text-3xl text-alest-accent">Private sanctuaries designed for rest.</p>
+    </header>
+
+    <main class="stack-container px-4 md:px-20 pb-40">
+        <!-- Card 1 -->
+        <div class="card-item group">
+            <div class="card-inner flex flex-col md:grid md:grid-cols-[1.2fr_1fr]">
+                <div class="h-[350px] md:h-full w-full relative overflow-hidden order-1 md:order-2">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipPSKR9Jrb-toaT_e_5WTmbvG5und1_n8P6PkFxS=s1360-w1360-h1020-rw"
+                        class="w-full h-full object-cover" alt="The Master Suite">
+                </div>
+                <div class="flex flex-col p-8 md:p-12 lg:p-16 order-2 md:order-1">
+                    <h3 class="display-font text-4xl mb-6">The Master Suite</h3>
+                    <p class="text-sm text-alest-dark/70 font-light leading-relaxed mb-10 max-w-md">
+                        A design where natural light, noble materials, and silence converge to create the perfect rest in the middle of the city.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-item group">
+            <div class="card-inner flex flex-col md:grid md:grid-cols-[1.2fr_1fr]">
+                <div class="h-[350px] md:h-full w-full relative overflow-hidden order-1 md:order-2">
+                    <img src="https://lh3.googleusercontent.com/proxy/LwAS086FDu7c0VhOP0j6lfwUGlP8yIdNRnZdKjJ6YHMDqfjMRWy-rNnaWr1_fZSOBw1KqfTFBPnzvUJxWnd1mHHjxu_bV8EfPmtJc9QiuAGO8kESPmxUg8u-VYbkwLXuGmxmKkH_k7t6BrpoDxI4iVsWbxSfdfM=s1360-w1360-h1020-rw"
+                        class="w-full h-full object-cover" alt="The Alest Suite">
+                </div>
+                <div class="flex flex-col p-8 md:p-12 lg:p-16 order-2 md:order-1">
+                    <h3 class="display-font text-4xl mb-6">The Alest Suite</h3>
+                    <p class="text-sm text-alest-dark/70 font-light leading-relaxed mb-10 max-w-md">
+                        Our flagship suite. Warm wood, soft linen details, and a space designed for European "slow living" in Mexico.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        const lenis = new Lenis();
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+
+        ScrollTrigger.create({
+            start: 'top -50',
+            onToggle: self => {
+                const nav = document.getElementById('main-nav');
+                if (self.isActive) nav.classList.add('nav-scrolled', 'text-white');
+                else nav.classList.remove('nav-scrolled', 'text-white');
+            }
+        });
+
+        const cards = gsap.utils.toArray('.card-item');
+        cards.forEach((card, i) => {
+            if (i < cards.length - 1) {
+                gsap.to(card.querySelector('.card-inner'), {
+                    scale: 0.9,
+                    opacity: 0.7,
+                    y: -40,
+                    scrollTrigger: { trigger: cards[i + 1], start: "top bottom", end: "top 20%", scrub: true }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

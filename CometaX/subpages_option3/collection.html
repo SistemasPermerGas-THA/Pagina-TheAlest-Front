@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection | THE ALEST - Option 3</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alest: {
+                            dark: '#0C1720',
+                            wood: '#896C49',
+                            gold: '#DEB175',
+                            linen: '#EDE6E2',
+                            white: '#E3DFD6',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        italic: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #EDE6E2; color: #0C1720; font-family: 'Inter', sans-serif; }
+        .text-title-caps { font-family: '"Times New Roman"', Times, serif; text-transform: uppercase; letter-spacing: 0.22em; }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+    <nav class="fixed top-0 w-full z-50 bg-white/30 backdrop-blur-md border-b border-black/5 px-6 py-8">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="../option3.html" class="text-3xl font-serif text-alest-gold uppercase tracking-widest">The Alest</a>
+            <div class="hidden md:flex gap-12 text-[10px] uppercase tracking-[0.2em]">
+                <a href="vision.html" class="hover:text-alest-gold transition-colors">Vision</a>
+                <a href="collection.html" class="text-alest-gold">Collection</a>
+                <a href="location.html" class="hover:text-alest-gold transition-colors">Location</a>
+                <a href="contact.html" class="hover:text-alest-gold transition-colors">Contact</a>
+            </div>
+            <a href="#" class="border border-black/10 px-8 py-3 text-[10px] uppercase tracking-widest hover:bg-black hover:text-white transition-all">Reserve</a>
+        </div>
+    </nav>
+
+    <main class="pt-60 pb-40 max-w-7xl mx-auto px-6">
+        <div class="text-center mb-32">
+            <span class="text-alest-gold text-[10px] tracking-[0.4em] uppercase mb-8 block">THE LOOKBOOK</span>
+            <h1 class="text-title-caps text-5xl md:text-8xl mb-8 uppercase tracking-widest">Collection</h1>
+        </div>
+
+        <div class="space-y-40">
+            <!-- Suite 1 -->
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-7">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipPSKR9Jrb-toaT_e_5WTmbvG5und1_n8P6PkFxS=s1360-w1360-h1020-rw" class="w-full aspect-[16/10] object-cover border border-black/5">
+                </div>
+                <div class="md:col-span-5 space-y-6">
+                    <h2 class="text-title-caps text-4xl">The Master Suite</h2>
+                    <p class="text-lg font-light text-alest-dark/60 leading-relaxed">Experience the essence of Polanco from the comfort of our most expansive suite. Natural light and noble materials.</p>
+                </div>
+            </div>
+
+            <!-- Suite 2 -->
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5 order-2 md:order-1 space-y-6">
+                    <h2 class="text-title-caps text-4xl">The Alest Suite</h2>
+                    <p class="text-lg font-light text-alest-dark/60 leading-relaxed">Our flagship signature. Intimate terraces and carefully curated European design for the modern traveler.</p>
+                </div>
+                <div class="md:col-span-7 order-1 md:order-2">
+                    <img src="https://lh3.googleusercontent.com/proxy/LwAS086FDu7c0VhOP0j6lfwUGlP8yIdNRnZdKjJ6YHMDqfjMRWy-rNnaWr1_fZSOBw1KqfTFBPnzvUJxWnd1mHHjxu_bV8EfPmtJc9QiuAGO8kESPmxUg8u-VYbkwLXuGmxmKkH_k7t6BrpoDxI4iVsWbxSfdfM=s1360-w1360-h1020-rw" class="w-full aspect-[16/10] object-cover border border-black/5">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

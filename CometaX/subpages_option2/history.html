@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History | THE ALEST - Option 2</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alest: {
+                            dark: '#0C1720',
+                            wood: '#896C49',
+                            gold: '#DEB175',
+                            linen: '#EDE6E2',
+                            white: '#E3DFD6',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        italic: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0C1720; color: #EDE6E2; font-family: 'Inter', sans-serif; }
+        .text-title-caps { font-family: '"Times New Roman"', Times, serif; text-transform: uppercase; letter-spacing: 0.22em; }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+    <nav class="fixed top-0 w-full z-50 bg-alest-dark/80 backdrop-blur-md border-b border-white/10 px-6 py-6">
+        <div class="max-w-[1920px] mx-auto flex justify-between items-center">
+            <a href="../option2.html" class="flex flex-col">
+                <span class="text-2xl font-serif text-alest-gold uppercase tracking-widest">The Alest</span>
+            </a>
+            <div class="hidden md:flex gap-12 text-[10px] uppercase tracking-[0.2em]">
+                <a href="history.html" class="text-alest-gold">History</a>
+                <a href="essence.html" class="hover:text-alest-gold transition-colors">Essence</a>
+                <a href="rooms.html" class="hover:text-alest-gold transition-colors">Rooms</a>
+                <a href="location.html" class="hover:text-alest-gold transition-colors">Location</a>
+            </div>
+            <a href="#" class="border border-white/30 px-6 py-2 rounded-full text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all">Reserve</a>
+        </div>
+    </nav>
+
+    <main class="pt-40 pb-20 px-6 max-w-5xl mx-auto">
+        <h1 class="text-title-caps text-5xl md:text-7xl text-white mb-12">The History</h1>
+        <div class="space-y-12 text-lg font-light text-alest-linen/70 leading-relaxed">
+            <p>
+                The Alest was born from the dream of a young visionary passionate about decoration, architecture, and the art of hosting. Designed to offer authentic hospitality and intimate luxury.
+            </p>
+            <p>
+                Here, comfort flows with the naturalness of a home, uniting European elegance with contemporary Mexican culture. It is the favorite home for those looking for something deeper than a simple hotel.
+            </p>
+            <div class="aspect-video bg-alest-white/5 border border-white/10 overflow-hidden">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipPJWSpoul5U5yQsLW_EW3dk9w6jAIiemq-MYD4h=s1360-w1360-h1020-rw" class="w-full h-full object-cover opacity-50">
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essence | THE ALEST - Option 2</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alest: {
+                            dark: '#0C1720',
+                            wood: '#896C49',
+                            gold: '#DEB175',
+                            linen: '#EDE6E2',
+                            white: '#E3DFD6',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        italic: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0C1720; color: #EDE6E2; font-family: 'Inter', sans-serif; }
+        .text-title-caps { font-family: '"Times New Roman"', Times, serif; text-transform: uppercase; letter-spacing: 0.22em; }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+    <nav class="fixed top-0 w-full z-50 bg-alest-dark/80 backdrop-blur-md border-b border-white/10 px-6 py-6">
+        <div class="max-w-[1920px] mx-auto flex justify-between items-center">
+            <a href="../option2.html" class="flex flex-col">
+                <span class="text-2xl font-serif text-alest-gold uppercase tracking-widest">The Alest</span>
+            </a>
+            <div class="hidden md:flex gap-12 text-[10px] uppercase tracking-[0.2em]">
+                <a href="history.html" class="hover:text-alest-gold transition-colors">History</a>
+                <a href="essence.html" class="text-alest-gold">Essence</a>
+                <a href="rooms.html" class="hover:text-alest-gold transition-colors">Rooms</a>
+                <a href="location.html" class="hover:text-alest-gold transition-colors">Location</a>
+            </div>
+            <a href="#" class="border border-white/30 px-6 py-2 rounded-full text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all">Reserve</a>
+        </div>
+    </nav>
+
+    <main class="pt-40 pb-20 px-6 max-w-[1920px] mx-auto">
+        <h1 class="text-title-caps text-5xl md:text-7xl text-white mb-20 text-center">The Essence</h1>
+        
+        <div class="grid md:grid-cols-3 gap-0 border border-white/10 divide-y md:divide-y-0 md:divide-x divide-white/10">
+            <div class="p-12 space-y-6">
+                <iconify-icon icon="solar:wineglass-linear" class="text-4xl text-alest-gold"></iconify-icon>
+                <h3 class="text-title-caps text-2xl">Gastronomy</h3>
+                <p class="text-sm font-light text-alest-linen/50 leading-relaxed">Curated flavors reflecting the vibrant culinary scene of Mexico with European sophistication.</p>
+            </div>
+            <div class="p-12 space-y-6">
+                <iconify-icon icon="solar:gallery-minimalistic-linear" class="text-4xl text-alest-gold"></iconify-icon>
+                <h3 class="text-title-caps text-2xl">Art & Design</h3>
+                <p class="text-sm font-light text-alest-linen/50 leading-relaxed">Noble materials, cinematic lighting, and pieces that tell a story in every rincón.</p>
+            </div>
+            <div class="p-12 space-y-6">
+                <iconify-icon icon="solar:cup-hot-linear" class="text-4xl text-alest-gold"></iconify-icon>
+                <h3 class="text-title-caps text-2xl">Slow Living</h3>
+                <p class="text-sm font-light text-alest-linen/50 leading-relaxed">The luxury of the pause. Spaces designed to disconnect and enjoy the simple things.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

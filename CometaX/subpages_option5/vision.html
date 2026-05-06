@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision | THE ALEST - Midnight Concept</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alest: {
+                            dark: '#0C1720',
+                            wood: '#896C49',
+                            gold: '#DEB175',
+                            linen: '#EDE6E2',
+                            white: '#E3DFD6',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        italic: ['"Playfair Display"', 'serif'],
+                        signature: ['"Alex Brush"', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0C1720; color: #EDE6E2; }
+        .text-title-caps { font-family: '"Times New Roman"', Times, serif; text-transform: uppercase; letter-spacing: 0.15em; }
+        .text-body-caps { font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.2em; }
+        .text-highlight-italic { font-family: '"Playfair Display"', serif; font-style: italic; }
+        .text-signature { font-family: '"Alex Brush"', cursive; font-size: 1.5em; }
+        .border-gold-thin { border-color: rgba(222, 177, 117, 0.2); }
+        .fade-in-up { opacity: 0; transform: translateY(30px); transition: all 1s ease; }
+        .fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+
+<body class="antialiased">
+    <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-6 md:px-12 bg-alest-dark/95 backdrop-blur-md border-b border-gold-thin">
+        <a href="../option5.html" class="text-title-caps text-2xl text-alest-gold">THE ALEST</a>
+        <div class="hidden md:flex gap-12">
+            <a href="vision.html" class="text-body-caps text-[10px] text-alest-gold">Vision</a>
+            <a href="collection.html" class="text-body-caps text-[10px] hover:text-alest-gold transition-colors">Collection</a>
+            <a href="location.html" class="text-body-caps text-[10px] hover:text-alest-gold transition-colors">Location</a>
+        </div>
+        <a href="#" class="text-body-caps text-[10px] border border-alest-gold/30 px-6 py-3 hover:bg-alest-gold hover:text-alest-dark transition-colors">Reserve</a>
+    </nav>
+
+    <main class="pt-40 pb-40">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid lg:grid-cols-12 gap-16 mb-32">
+                <div class="lg:col-span-4 fade-in-up is-visible">
+                    <span class="text-title-caps text-8xl text-alest-gold opacity-20 block mb-8">01</span>
+                    <h1 class="text-title-caps text-5xl text-alest-white">The Vision</h1>
+                </div>
+                <div class="lg:col-span-8 fade-in-up is-visible delay-200">
+                    <p class="text-4xl md:text-5xl font-serif text-alest-linen leading-tight mb-12">
+                        WE BELIEVE IN <span class="text-highlight-italic text-alest-gold lowercase">quiet excellence.</span> A PLACE THAT DOESN'T TRY TO IMPRESS YOU—IT SIMPLY UNDERSTANDS YOU.
+                    </p>
+                    <p class="text-lg font-light text-alest-linen/60 leading-relaxed max-w-2xl">
+                        Designed to offer authentic hospitality and intimate luxury. Here, comfort flows with the naturalness of a home, uniting European elegance with contemporary Mexican culture.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="w-full aspect-video bg-alest-dark border border-gold-thin overflow-hidden fade-in-up is-visible delay-300">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipPJWSpoul5U5yQsLW_EW3dk9w6jAIiemq-MYD4h=s1360-w1360-h1020-rw" class="w-full h-full object-cover opacity-60">
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-alest-dark py-12 px-6 md:px-12 border-t border-gold-thin text-center">
+        <span class="text-signature text-3xl text-alest-gold block mb-4">By The Alest</span>
+        <span class="text-title-caps text-xl text-alest-white tracking-widest">Polanco</span>
+    </footer>
+</body>
+</html>

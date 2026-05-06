@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE ALEST | Heritage Concept</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@1,400;1,600&family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alest: {
+                            dark: '#0C1720',
+                            wood: '#896C49',
+                            gold: '#DEB175',
+                            linen: '#EDE6E2',
+                            white: '#E3DFD6',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        italic: ['"Playfair Display"', 'serif'],
+                        signature: ['"Alex Brush"', 'cursive'],
+                    },
+                    letterSpacing: {
+                        'brand-wide': '0.15em',
+                        'brand-wider': '0.22em',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            background-color: #E3DFD6; /* Still White */
+            color: #0C1720; /* Midnight Room */
+        }
+        body::-webkit-scrollbar { display: none; }
+        ::selection { background: #DEB175; color: #0C1720; }
+
+        .text-body-caps {
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 400;
+        }
+        .text-title-caps {
+            font-family: '"Times New Roman"', Times, serif;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            font-weight: 400;
+        }
+        .text-highlight-italic {
+            font-family: '"Playfair Display"', serif;
+            font-style: italic;
+            text-transform: none;
+            letter-spacing: 0;
+            font-weight: 400;
+        }
+
+        /* Reveal animations */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Nav -->
+    <nav id="main-nav" class="fixed w-full z-50 p-6 md:p-12 text-white flex justify-between items-center reveal-up is-visible transition-colors duration-500 border-b border-transparent">
+        <span id="nav-logo" class="text-title-caps text-2xl text-alest-gold transition-colors duration-500">THE ALEST</span>
+        
+        <div class="hidden md:flex gap-8">
+            <a href="subpages_option4/vision.html" class="text-body-caps text-[9px] hover:opacity-60 transition-opacity">VISION</a>
+            <a href="subpages_option4/collection.html" class="text-body-caps text-[9px] hover:opacity-60 transition-opacity">COLLECTION</a>
+            <a href="subpages_option4/pillars.html" class="text-body-caps text-[9px] hover:opacity-60 transition-opacity">PILLARS</a>
+            <a href="subpages_option4/location.html" class="text-body-caps text-[9px] hover:opacity-60 transition-opacity">LOCATION</a>
+        </div>
+        
+        <a href="#reserve" class="text-body-caps text-[9px] border border-white/50 px-6 py-3 hover:bg-white hover:text-black transition-colors">
+            RESERVE
+        </a>
+    </nav>
+
+    <!-- Fixed Background for True Parallax -->
+    <div class="fixed inset-0 w-full h-screen z-[-1] overflow-hidden bg-alest-dark">
+        <!-- Dark Gradient Overlay for Maximum Contrast -->
+        <div class="absolute inset-0 bg-gradient-to-b from-alest-dark/90 via-alest-dark/50 to-alest-dark/90 z-10"></div>
+        <img src="https://lh3.googleusercontent.com/p/AF1QipPJWSpoul5U5yQsLW_EW3dk9w6jAIiemq-MYD4h=s1360-w1360-h1020-rw"
+            alt="The Alest Facade" class="w-full h-full object-cover"
+            style="transform: scale(1.05); transition: transform 15s ease-out;">
+    </div>
+
+    <!-- Full Screen Hero -->
+    <header class="relative w-full h-screen flex items-center justify-center">
+        <div class="relative z-20 text-center text-white px-4 max-w-5xl mx-auto reveal-up">
+            <p class="text-body-caps text-[10px] md:text-xs text-alest-gold mb-6">
+                DESIGNED FOR SLOW LIVING
+            </p>
+            <h1 class="text-title-caps text-5xl md:text-7xl lg:text-8xl leading-none mb-8">
+                INTIMATE <br>
+                <span class="text-highlight-italic opacity-90 text-white/90">luxury</span>
+            </h1>
+            <p class="text-body-caps text-[10px] md:text-xs text-white/70">
+                EUGENIO SUE 45 — POLANCO, CDMX
+            </p>
+
+            <div class="absolute bottom-[-20vh] left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 reveal-up delay-300">
+                <div class="h-16 w-[1px] bg-white/40"></div>
+                <span class="text-body-caps text-[9px] text-white/60">DISCOVER</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- The Vision -->
+    <section id="vision" class="py-32 md:py-48 px-6 md:px-12 text-center max-w-screen-xl mx-auto bg-alest-linen border-b border-alest-dark/10">
+        <div class="max-w-4xl mx-auto space-y-10 reveal-up">
+            <span class="text-body-caps text-[10px] text-alest-wood block">OUR PHILOSOPHY</span>
+            <p class="text-title-caps text-3xl md:text-5xl leading-[1.4] text-alest-dark">
+                A PLACE THAT DOESN'T TRY TO <span class="text-highlight-italic text-alest-wood px-2">impress you</span> — IT SIMPLY UNDERSTANDS YOU.
+            </p>
+            <p class="text-body-caps text-[10px] text-alest-dark/60 leading-loose max-w-2xl mx-auto mt-8">
+                COMFORT FLOWS WITH THE NATURALNESS OF A HOME, UNITING EUROPEAN ELEGANCE WITH CONTEMPORARY MEXICAN CULTURE. A SANCTUARY OF QUIET EXCELLENCE.
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA to Subpages -->
+    <section class="py-24 bg-alest-white text-center">
+        <a href="subpages_option4/collection.html" class="text-title-caps text-2xl border-b border-alest-gold pb-2 hover:text-alest-dark transition-colors">Explore the Full Collection</a>
+    </section>
+
+    <!-- Pillars Section -->
+    <section id="pillars" class="py-32 px-6 md:px-12 max-w-[1920px] mx-auto border-y border-alest-dark/10 bg-alest-linen">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-8">
+            <div class="md:col-span-3 reveal-up">
+                <span class="text-body-caps text-[10px] text-alest-wood block mb-6">IDENTITY</span>
+                <h2 class="text-title-caps text-4xl leading-tight text-alest-dark">
+                    OUR <br><span class="text-highlight-italic text-alest-wood">pillars</span>
+                </h2>
+            </div>
+
+            <div class="md:col-span-9 grid grid-cols-1 md:grid-cols-4 gap-12 relative">
+                <div class="hidden md:block absolute top-4 left-0 w-full h-[1px] bg-alest-dark/10"></div>
+
+                <!-- Pillar 1 -->
+                <div class="relative pt-8 reveal-up delay-100">
+                    <span class="absolute top-0 left-0 -translate-y-1/2 bg-alest-linen pr-6 text-title-caps text-2xl text-alest-dark/20">01</span>
+                    <h3 class="text-body-caps text-[10px] mb-4 text-alest-dark font-bold">HOSPITALITY</h3>
+                    <p class="text-body-caps text-[9px] text-alest-dark/60 leading-loose">
+                        WE BRING BACK THE HUMAN TOUCH: THE FEELING OF BEING SEEN, VALUED, AND WELCOMED WITH GENUINE INTENTION.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="relative pt-8 reveal-up delay-200">
+                    <span class="absolute top-0 left-0 -translate-y-1/2 bg-alest-linen pr-6 text-title-caps text-2xl text-alest-dark/20">02</span>
+                    <h3 class="text-body-caps text-[10px] mb-4 text-alest-dark font-bold">CURATED DESIGN</h3>
+                    <p class="text-body-caps text-[9px] text-alest-dark/60 leading-loose">
+                        EUROPEAN ROOTS AND A TASTEFUL PROFILE. EVERY DETAIL IS THOUGHT OUT TO PROVIDE VISUAL TRANQUILITY.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="relative pt-8 reveal-up delay-300">
+                    <span class="absolute top-0 left-0 -translate-y-1/2 bg-alest-linen pr-6 text-title-caps text-2xl text-alest-dark/20">03</span>
+                    <h3 class="text-body-caps text-[10px] mb-4 text-alest-dark font-bold">BELONGING</h3>
+                    <p class="text-body-caps text-[9px] text-alest-dark/60 leading-loose">
+                        A SPACE THAT TRANSCENDS THE HOTEL CONCEPT TO BECOME A PRIVATE AND FAMILIAR SANCTUARY.
+                    </p>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="relative pt-8 reveal-up delay-400">
+                    <span class="absolute top-0 left-0 -translate-y-1/2 bg-alest-linen pr-6 text-title-caps text-2xl text-alest-dark/20">04</span>
+                    <h3 class="text-body-caps text-[10px] mb-4 text-alest-dark font-bold">GASTRONOMY</h3>
+                    <p class="text-body-caps text-[9px] text-alest-dark/60 leading-loose">
+                        FLAVORS THAT DELIGHT AND COMPLEMENT THE EXPERIENCE OF LIVING IN THE HEART OF POLANCO.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations Form -->
+    <section id="reserve" class="py-32 md:py-48 px-6 bg-alest-dark text-alest-linen relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
+            <div class="reveal-up">
+                <h2 class="text-title-caps text-4xl md:text-6xl mb-6 leading-none">
+                    YOUR SANCTUARY <br><span class="text-highlight-italic text-alest-gold">awaits</span>
+                </h2>
+                <p class="text-body-caps text-[9px] text-alest-linen/60 max-w-md mx-auto mb-16 leading-loose">
+                    ALLOW US TO PREPARE EVERYTHING FOR YOUR ARRIVAL. FILL OUT THE FORM BELOW TO REQUEST INFORMATION ON AVAILABILITY.
+                </p>
+            </div>
+
+            <!-- Contact Form -->
+            <form class="w-full max-w-md mx-auto text-left space-y-8 reveal-up delay-200">
+                <div class="space-y-3">
+                    <label class="text-body-caps text-[9px] text-alest-linen/50 block">FULL NAME</label>
+                    <input type="text"
+                        class="w-full bg-transparent border border-alest-linen/20 px-4 py-3 text-sm text-alest-linen font-light focus:outline-none focus:border-alest-gold transition-colors placeholder-alest-linen/20 text-body-caps"
+                        placeholder="ENTER YOUR NAME">
+                </div>
+
+                <div class="space-y-3">
+                    <label class="text-body-caps text-[9px] text-alest-linen/50 block">EMAIL ADDRESS</label>
+                    <input type="email"
+                        class="w-full bg-transparent border border-alest-linen/20 px-4 py-3 text-sm text-alest-linen font-light focus:outline-none focus:border-alest-gold transition-colors placeholder-alest-linen/20 text-body-caps"
+                        placeholder="ENTER YOUR EMAIL">
+                </div>
+
+                <div class="space-y-3">
+                    <label class="text-body-caps text-[9px] text-alest-linen/50 block">DATES & DETAILS</label>
+                    <textarea rows="4"
+                        class="w-full bg-transparent border border-alest-linen/20 px-4 py-3 text-sm text-alest-linen font-light focus:outline-none focus:border-alest-gold transition-colors placeholder-alest-linen/20 resize-none text-body-caps"
+                        placeholder="TELL US ABOUT YOUR TRIP..."></textarea>
+                </div>
+
+                <button type="button"
+                    class="w-full px-8 py-4 bg-alest-gold text-alest-dark text-body-caps text-[10px] font-bold hover:bg-alest-white transition-colors duration-300 mt-4">
+                    SEND REQUEST
+                </button>
+            </form>
+
+            <div class="mt-24 text-body-caps text-[9px] text-alest-linen/40 flex items-center gap-4 reveal-up delay-300">
+                <span>EUGENIO SUE 45</span>
+                <span class="w-1 h-1 rounded-full bg-alest-linen/20"></span>
+                <span>POLANCO, CDMX</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-alest-dark text-alest-linen pt-24 pb-12 px-6 md:px-12 border-t border-alest-linen/10">
+        <div class="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-16 md:gap-24 mb-24 reveal-up">
+            <!-- Brand -->
+            <div class="space-y-6">
+                <span class="text-title-caps text-3xl">THE ALEST</span>
+                <p class="text-body-caps text-[9px] text-alest-gold">BOUTIQUE HOTEL — CDMX</p>
+                <p class="text-body-caps text-[9px] text-alest-linen/50 leading-loose max-w-xs">
+                    REDEFINING INTIMATE LUXURY THROUGH THE ART OF HUMAN HOSPITALITY, CURATED DESIGN, AND SLOW LIVING.
+                </p>
+            </div>
+
+            <!-- Explore -->
+            <div class="space-y-6">
+                <h4 class="text-body-caps text-[9px] text-alest-linen">EXPLORE</h4>
+                <ul class="space-y-4 text-body-caps text-[9px] text-alest-linen/50">
+                    <li><a href="#vision" class="hover:text-alest-gold transition-colors">OUR PHILOSOPHY</a></li>
+                    <li><a href="#collection" class="hover:text-alest-gold transition-colors">THE COLLECTION</a></li>
+                    <li><a href="#pillars" class="hover:text-alest-gold transition-colors">PILLARS</a></li>
+                    <li><a href="#reserve" class="hover:text-alest-gold transition-colors">AVAILABILITY</a></li>
+                </ul>
+            </div>
+
+            <!-- Connect -->
+            <div class="space-y-6">
+                <h4 class="text-body-caps text-[9px] text-alest-linen">CONTACT</h4>
+                <ul class="space-y-4 text-body-caps text-[9px] text-alest-linen/50">
+                    <li><a href="mailto:concierge@thealest.com" class="hover:text-alest-gold transition-colors">CONCIERGE@THEALEST.COM</a></li>
+                    <li><a href="tel:+525512345678" class="hover:text-alest-gold transition-colors">+52 55 1234 5678</a></li>
+                    <li><a href="#" class="hover:text-alest-gold transition-colors">PRESS & MEDIA</a></li>
+                </ul>
+            </div>
+
+            <!-- Visit -->
+            <div class="space-y-6">
+                <h4 class="text-body-caps text-[9px] text-alest-linen">LOCATION</h4>
+                <address class="not-italic text-signature text-2xl text-alest-linen/80 space-y-2">
+                    <p>Eugenio Sue 45</p>
+                    <p>Polanco, CDMX 11560</p>
+                    <p>Mexico</p>
+                </address>
+                <p class="text-body-caps text-[9px] pt-4 text-alest-gold">A PLACE THAT UNDERSTANDS YOU</p>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-alest-linen/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 reveal-up delay-200">
+            <p class="text-body-caps text-[9px] text-alest-linen/30">© 2026 THE ALEST. ALL RIGHTS RESERVED.</p>
+            <div class="flex gap-8 text-body-caps text-[9px] text-alest-linen/30">
+                <a href="#" class="hover:text-alest-linen transition-colors">PRIVACY POLICY</a>
+                <a href="#" class="hover:text-alest-linen transition-colors">TERMS OF SERVICE</a>
+            </div>
+            <span class="font-signature text-alest-linen text-xl opacity-80">By The Alest</span>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal-up').forEach((el) => observer.observe(el));
+
+            // Dynamic Nav Background on Scroll
+            window.addEventListener('scroll', function() {
+                const nav = document.getElementById('main-nav');
+                const logo = document.getElementById('nav-logo');
+                if (window.scrollY > 50) {
+                    nav.classList.add('bg-alest-dark/95', 'backdrop-blur-md');
+                    nav.classList.replace('border-transparent', 'border-white/10');
+                    logo.classList.replace('text-alest-gold', 'text-white');
+                } else {
+                    nav.classList.remove('bg-alest-dark/95', 'backdrop-blur-md');
+                    nav.classList.replace('border-white/10', 'border-transparent');
+                    logo.classList.replace('text-white', 'text-alest-gold');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

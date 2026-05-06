@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location | THE ALEST - Option 3</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alest: {
+                            dark: '#0C1720',
+                            wood: '#896C49',
+                            gold: '#DEB175',
+                            linen: '#EDE6E2',
+                            white: '#E3DFD6',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        italic: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #EDE6E2; color: #0C1720; font-family: 'Inter', sans-serif; }
+        .text-title-caps { font-family: '"Times New Roman"', Times, serif; text-transform: uppercase; letter-spacing: 0.22em; }
+        .ethereal-bg { background: linear-gradient(to bottom, #EDE6E2, #E3DFD6); }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+    <nav class="fixed top-0 w-full z-50 bg-white/30 backdrop-blur-md border-b border-black/5 px-6 py-8">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="../option3.html" class="text-3xl font-serif text-alest-gold uppercase tracking-widest">The Alest</a>
+            <div class="hidden md:flex gap-12 text-[10px] uppercase tracking-[0.2em]">
+                <a href="vision.html" class="hover:text-alest-gold transition-colors">Vision</a>
+                <a href="collection.html" class="hover:text-alest-gold transition-colors">Collection</a>
+                <a href="location.html" class="text-alest-gold">Location</a>
+            </div>
+            <a href="#" class="border border-black/10 px-8 py-3 text-[10px] uppercase tracking-widest hover:bg-black hover:text-white transition-all">Reserve</a>
+        </div>
+    </nav>
+
+    <main class="pt-60 pb-40 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <span class="text-alest-gold text-[10px] tracking-[0.4em] uppercase mb-8 block">THE DESTINATION</span>
+            <h1 class="text-6xl md:text-8xl font-serif mb-12 uppercase tracking-widest">POLANCO</h1>
+            <p class="text-2xl md:text-3xl font-serif italic text-alest-wood mb-20 leading-relaxed">
+                "A sanctuary of quiet excellence in the heart of the city."
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-16 text-left border-t border-black/5 pt-20">
+                <div class="space-y-8">
+                    <h2 class="text-title-caps text-xl tracking-widest">ADDRESS</h2>
+                    <p class="text-lg font-light leading-relaxed text-alest-dark/70">
+                        Eugenio Sue 45, Polanco,<br>
+                        11540 Mexico City, Mexico.
+                    </p>
+                </div>
+                <div class="space-y-8">
+                    <h2 class="text-title-caps text-xl tracking-widest">ACCESSIBILITY</h2>
+                    <p class="text-lg font-light leading-relaxed text-alest-dark/70">
+                        AICM Airport: 20 minutes.<br>
+                        Helipad: 6 minutes walking.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-20 text-center">
+        <span class="text-3xl font-serif text-alest-gold uppercase tracking-widest">The Alest</span>
+    </footer>
+</body>
+
+</html>

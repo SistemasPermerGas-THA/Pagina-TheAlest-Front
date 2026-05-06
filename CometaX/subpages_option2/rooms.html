@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms | THE ALEST - Option 2</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alest: {
+                            dark: '#0C1720',
+                            wood: '#896C49',
+                            gold: '#DEB175',
+                            linen: '#EDE6E2',
+                            white: '#E3DFD6',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        italic: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0C1720; color: #EDE6E2; font-family: 'Inter', sans-serif; }
+        .text-title-caps { font-family: '"Times New Roman"', Times, serif; text-transform: uppercase; letter-spacing: 0.22em; }
+        .img-card { position: relative; overflow: hidden; border: 1px solid rgba(222, 177, 117, 0.2); }
+        .img-card img { transition: transform 2s cubic-bezier(0.19, 1, 0.22, 1); }
+        .img-card:hover img { transform: scale(1.05); }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+    <nav class="fixed top-0 w-full z-50 bg-alest-dark/80 backdrop-blur-md border-b border-white/10 px-6 py-6">
+        <div class="max-w-[1920px] mx-auto flex justify-between items-center">
+            <a href="../option2.html" class="flex flex-col">
+                <span class="text-2xl font-serif text-alest-gold uppercase tracking-widest">The Alest</span>
+            </a>
+            <div class="hidden md:flex gap-12 text-[10px] uppercase tracking-[0.2em]">
+                <a href="history.html" class="hover:text-alest-gold transition-colors">History</a>
+                <a href="essence.html" class="hover:text-alest-gold transition-colors">Essence</a>
+                <a href="rooms.html" class="text-alest-gold">Rooms</a>
+                <a href="location.html" class="hover:text-alest-gold transition-colors">Location</a>
+                <a href="contact.html" class="hover:text-alest-gold transition-colors">Contact</a>
+            </div>
+            <a href="#" class="border border-white/30 px-6 py-2 rounded-full text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all">Reserve</a>
+        </div>
+    </nav>
+
+    <main class="pt-40 pb-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-24">
+            <span class="text-alest-gold text-xs font-bold tracking-[0.3em] uppercase mb-4 block">Private Sanctuaries</span>
+            <h1 class="text-title-caps text-5xl md:text-8xl text-white">The Collection</h1>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Suite 1 -->
+            <div class="img-card group">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipPSKR9Jrb-toaT_e_5WTmbvG5und1_n8P6PkFxS=s1360-w1360-h1020-rw" class="w-full h-full object-cover">
+                </div>
+                <div class="p-8 bg-alest-dark/60 backdrop-blur-md border-t border-gold-thin">
+                    <h3 class="text-title-caps text-3xl mb-4">The Master Suite</h3>
+                    <p class="text-sm font-light text-alest-linen/50 leading-relaxed mb-6">Designed where natural light, noble materials, and silence converge.</p>
+                    <a href="#" class="text-alest-gold text-[10px] tracking-widest uppercase border-b border-alest-gold/30 pb-1 hover:border-alest-gold transition-all">Discover Details</a>
+                </div>
+            </div>
+
+            <!-- Suite 2 -->
+            <div class="img-card group">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/proxy/LwAS086FDu7c0VhOP0j6lfwUGlP8yIdNRnZdKjJ6YHMDqfjMRWy-rNnaWr1_fZSOBw1KqfTFBPnzvUJxWnd1mHHjxu_bV8EfPmtJc9QiuAGO8kESPmxUg8u-VYbkwLXuGmxmKkH_k7t6BrpoDxI4iVsWbxSfdfM=s1360-w1360-h1020-rw" class="w-full h-full object-cover">
+                </div>
+                <div class="p-8 bg-alest-dark/60 backdrop-blur-md border-t border-gold-thin">
+                    <h3 class="text-title-caps text-3xl mb-4">The Alest Suite</h3>
+                    <p class="text-sm font-light text-alest-linen/50 leading-relaxed mb-6">Our signature suite featuring curated European design and intimate terraces.</p>
+                    <a href="#" class="text-alest-gold text-[10px] tracking-widest uppercase border-b border-alest-gold/30 pb-1 hover:border-alest-gold transition-all">Discover Details</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

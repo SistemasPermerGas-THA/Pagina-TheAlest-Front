@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pillars | THE ALEST - Quiet Excellence</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alest: {
+                            dark: '#0C1720',
+                            wood: '#896C49',
+                            gold: '#DEB175',
+                            linen: '#EDE6E2',
+                            white: '#E3DFD6',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        italic: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #EDE6E2; color: #0C1720; font-family: 'Inter', sans-serif; }
+        .text-title-caps { font-family: '"Times New Roman"', Times, serif; text-transform: uppercase; letter-spacing: 0.22em; }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+    <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-6 md:px-12 bg-white/80 backdrop-blur-md border-b border-alest-dark/10">
+        <a href="../opction4.html" class="text-title-caps text-2xl text-alest-gold">THE ALEST</a>
+        <div class="hidden md:flex gap-12 text-[9px] uppercase tracking-widest">
+            <a href="vision.html" class="hover:opacity-60 transition-opacity">Vision</a>
+            <a href="collection.html" class="hover:opacity-60 transition-opacity">Collection</a>
+            <a href="pillars.html" class="text-alest-gold">Pillars</a>
+            <a href="location.html" class="hover:opacity-60 transition-opacity">Location</a>
+        </div>
+        <a href="#" class="text-body-caps text-[9px] border border-alest-dark/30 px-6 py-3 hover:bg-alest-dark hover:text-white transition-all uppercase tracking-widest">Reserve</a>
+    </nav>
+
+    <main class="pt-40 pb-20 max-w-[1920px] mx-auto px-6 md:px-12">
+        <h1 class="text-title-caps text-5xl md:text-8xl mb-20 text-center">Our Pillars</h1>
+        
+        <div class="grid md:grid-cols-3 gap-16">
+            <div class="space-y-6">
+                <span class="text-title-caps text-4xl text-alest-dark/10">01</span>
+                <h3 class="text-title-caps text-xl">Hospitality</h3>
+                <p class="text-[11px] uppercase tracking-[0.15em] text-alest-dark/60 leading-loose">WE BRING BACK THE HUMAN TOUCH: THE FEELING OF BEING SEEN, VALUED, AND WELCOMED WITH GENUINE INTENTION.</p>
+            </div>
+            <div class="space-y-6">
+                <span class="text-title-caps text-4xl text-alest-dark/10">02</span>
+                <h3 class="text-title-caps text-xl">Curated Design</h3>
+                <p class="text-[11px] uppercase tracking-[0.15em] text-alest-dark/60 leading-loose">EUROPEAN ROOTS AND A TASTEFUL PROFILE. EVERY DETAIL IS THOUGHT OUT TO PROVIDE VISUAL TRANQUILITY.</p>
+            </div>
+            <div class="space-y-6">
+                <span class="text-title-caps text-4xl text-alest-dark/10">03</span>
+                <h3 class="text-title-caps text-xl">Belonging</h3>
+                <p class="text-[11px] uppercase tracking-[0.15em] text-alest-dark/60 leading-loose">A SPACE THAT TRANSCENDS THE HOTEL CONCEPT TO BECOME A PRIVATE AND FAMILIAR SANCTUARY.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
