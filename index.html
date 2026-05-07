@@ -1,1008 +1,341 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>The Alest | Luxury Boutique Hotel</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-    --bg:#071018;
-    --gold:#C9A46A;
-    --cream:#F5F1EC;
-    --soft:#D9D2CA;
-    --glass:rgba(255,255,255,.06);
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:var(--cream);
-    color:white;
-    font-family:'Inter',sans-serif;
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
-}
-
-img{
-    width:100%;
-    display:block;
-}
-
-a{
-    text-decoration:none;
-}
-
-section{
-    position:relative;
-}
-
-h1,h2,h3,h4{
-    font-family:'Cormorant Garamond',serif;
-    font-weight:400;
-}
-
-.body-caps{
-    text-transform:uppercase;
-    letter-spacing:.25em;
-    font-size:.72rem;
-}
-
-/* SCROLLBAR */
-
-::-webkit-scrollbar{
-    width:10px;
-}
-
-::-webkit-scrollbar-track{
-    background:#111;
-}
-
-::-webkit-scrollbar-thumb{
-    background:var(--gold);
-}
-
-/* HEADER */
-
-header{
-    position:fixed;
-    width:100%;
-    top:0;
-    left:0;
-    z-index:999;
-    padding:35px 7%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    transition:.5s ease;
-}
-
-header.scrolled{
-    background:rgba(7,16,24,.85);
-    backdrop-filter:blur(20px);
-    padding:25px 7%;
-    border-bottom:1px solid rgba(255,255,255,.05);
-}
-
-.logo{
-    color:white;
-    font-size:1.2rem;
-    letter-spacing:.35em;
-    font-weight:600;
-}
-
-nav{
-    display:flex;
-    gap:40px;
-}
-
-nav a{
-    color:white;
-    text-transform:uppercase;
-    font-size:.68rem;
-    letter-spacing:.2em;
-    opacity:.85;
-}
-
-/* HERO */
-
-.hero{
-    height:100vh;
-    display:flex;
-    align-items:center;
-    padding:0 8%;
-    overflow:hidden;
-}
-
-.hero-video{
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    inset:0;
-    z-index:-2;
-}
-
-.hero::after{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:
-    linear-gradient(
-        rgba(0,0,0,.45),
-        rgba(0,0,0,.55)
-    );
-    z-index:-1;
-}
-
-.hero-card{
-    max-width:700px;
-    background:rgba(255,255,255,.06);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,.08);
-    padding:80px;
-}
-
-.hero-card span{
-    color:var(--gold);
-    letter-spacing:.35em;
-    text-transform:uppercase;
-    font-size:.7rem;
-}
-
-.hero-card h1{
-    font-size:6rem;
-    line-height:.95;
-    margin:30px 0;
-}
-
-.hero-card p{
-    max-width:500px;
-    opacity:.8;
-    line-height:2;
-}
-
-.script{
-    font-style:italic;
-    color:var(--gold);
-    font-size:1.5rem;
-    margin-bottom:25px;
-}
-
-/* BUTTONS */
-
-.cta{
-    display:inline-block;
-    margin-top:45px;
-    border:1px solid rgba(255,255,255,.25);
-    padding:18px 42px;
-    color:white;
-    letter-spacing:.25em;
-    text-transform:uppercase;
-    font-size:.7rem;
-    transition:.5s ease;
-}
-
-.cta:hover{
-    background:white;
-    color:black;
-}
-
-/* FLOAT */
-
-.book-btn{
-    position:fixed;
-    right:40px;
-    bottom:40px;
-    z-index:999;
-    background:white;
-    color:black;
-    padding:18px 34px;
-    text-transform:uppercase;
-    font-size:.7rem;
-    letter-spacing:.25em;
-    transition:.5s ease;
-}
-
-.book-btn:hover{
-    transform:translateY(-5px);
-}
-
-/* MANIFESTO */
-
-.manifesto{
-    background:var(--bg);
-    padding:180px 10%;
-    text-align:center;
-}
-
-.manifesto h2{
-    font-size:4rem;
-    margin-bottom:50px;
-    font-style:italic;
-}
-
-.manifesto p{
-    max-width:900px;
-    margin:auto;
-    line-height:2.4;
-    letter-spacing:.2em;
-    text-transform:uppercase;
-    font-size:.75rem;
-    opacity:.75;
-}
-
-/* DIVIDER */
-
-.lux-divider{
-    display:flex;
-    justify-content:center;
-    margin-top:90px;
-}
-
-.lux-divider span{
-    width:200px;
-    height:1px;
-    background:linear-gradient(to right,transparent,var(--gold),transparent);
-    position:relative;
-}
-
-.lux-divider span::before{
-    content:'';
-    width:10px;
-    height:10px;
-    border:1px solid var(--gold);
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%) rotate(45deg);
-    background:var(--bg);
-}
-
-/* EXPERIENCE */
-
-.experience{
-    background:var(--bg);
-    padding:0 8% 180px;
-}
-
-.section-label{
-    color:var(--gold);
-    text-transform:uppercase;
-    letter-spacing:.35em;
-    font-size:.7rem;
-    margin-bottom:20px;
-}
-
-.section-title{
-    font-size:5rem;
-    line-height:1;
-    margin-bottom:35px;
-}
-
-.section-copy{
-    max-width:800px;
-    opacity:.7;
-    line-height:2;
-}
-
-.center{
-    text-align:center;
-}
-
-.experience-grid{
-    margin-top:90px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:35px;
-}
-
-.card{
-    background:var(--glass);
-    backdrop-filter:blur(14px);
-    border:1px solid rgba(255,255,255,.06);
-    overflow:hidden;
-    transition:.7s cubic-bezier(.16,1,.3,1);
-}
-
-.card:hover{
-    transform:translateY(-12px);
-}
-
-.card-image{
-    height:360px;
-    overflow:hidden;
-}
-
-.card-image img{
-    height:100%;
-    object-fit:cover;
-    transition:1s ease;
-}
-
-.card:hover img{
-    transform:scale(1.08);
-}
-
-.card-content{
-    padding:40px;
-}
-
-.card-content h3{
-    font-size:2.2rem;
-    margin-bottom:20px;
-}
-
-.card-content p{
-    opacity:.75;
-    line-height:2;
-}
-
-/* SUITE */
-
-.suite{
-    display:grid;
-    grid-template-columns:1.2fr 1fr;
-    min-height:950px;
-}
-
-.suite-image{
-    overflow:hidden;
-}
-
-.suite-image img{
-    height:100%;
-    object-fit:cover;
-    transition:1.5s ease;
-}
-
-.suite:hover img{
-    transform:scale(1.05);
-}
-
-.suite-content{
-    background:#F5F1EC;
-    color:#111;
-    padding:140px 90px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
-
-.suite-content h2{
-    font-size:5rem;
-    line-height:1;
-    margin:25px 0 40px;
-}
-
-.suite-content p{
-    opacity:.7;
-    line-height:2;
-}
-
-.stats{
-    display:flex;
-    gap:50px;
-    margin:50px 0;
-}
-
-.stats h4{
-    font-size:2.5rem;
-}
-
-.stats span{
-    text-transform:uppercase;
-    letter-spacing:.2em;
-    font-size:.7rem;
-    opacity:.6;
-}
-
-/* PARALLAX */
-
-.parallax{
-    height:80vh;
-    background:
-    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80');
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:0 10%;
-}
-
-.parallax h2{
-    font-size:6rem;
-    line-height:1;
-}
-
-/* GALLERY */
-
-.gallery{
-    background:white;
-    padding:180px 8%;
-    color:black;
-}
-
-.gallery-grid{
-    margin-top:90px;
-    display:grid;
-    grid-template-columns:1fr 1.3fr;
-    gap:25px;
-}
-
-.gallery-grid img{
-    height:650px;
-    object-fit:cover;
-    transition:1s ease;
-}
-
-.gallery-grid img:nth-child(2){
-    transform:translateY(80px);
-}
-
-.gallery-grid img:hover{
-    transform:scale(.98);
-}
-
-/* EXPERIENCES */
-
-.experiences{
-    background:var(--bg);
-    padding:180px 8%;
-}
-
-.experience-list{
-    margin-top:80px;
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:30px;
-}
-
-.exp-item{
-    padding:50px;
-    border:1px solid rgba(255,255,255,.08);
-    background:rgba(255,255,255,.03);
-    backdrop-filter:blur(10px);
-}
-
-.exp-item h3{
-    font-size:2rem;
-    margin-bottom:20px;
-}
-
-.exp-item p{
-    opacity:.7;
-    line-height:2;
-}
-
-/* FINAL */
-
-.final{
-    background:var(--bg);
-    text-align:center;
-    padding:220px 8%;
-}
-
-.final h2{
-    font-size:6rem;
-    line-height:1;
-    margin:30px 0 50px;
-}
-
-/* FOOTER */
-
-footer{
-    background:#050B10;
-    padding:120px 8%;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:50px;
-}
-
-footer h4{
-    color:var(--gold);
-    text-transform:uppercase;
-    letter-spacing:.25em;
-    margin-bottom:25px;
-    font-size:.7rem;
-}
-
-footer p{
-    opacity:.7;
-    line-height:2;
-}
-
-.footer-bottom{
-    grid-column:1/-1;
-    margin-top:60px;
-    padding-top:30px;
-    border-top:1px solid rgba(255,255,255,.05);
-    display:flex;
-    justify-content:space-between;
-    opacity:.5;
-    text-transform:uppercase;
-    letter-spacing:.15em;
-    font-size:.65rem;
-}
-
-/* BIG WORD */
-
-.bg-word{
-    position:absolute;
-    font-size:14rem;
-    opacity:.03;
-    top:40px;
-    left:50%;
-    transform:translateX(-50%);
-    pointer-events:none;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:1100px){
-
-    nav{
-        display:none;
-    }
-
-    .hero-card h1,
-    .section-title,
-    .suite-content h2,
-    .parallax h2,
-    .final h2{
-        font-size:3.5rem;
-    }
-
-    .experience-grid,
-    .experience-list,
-    footer,
-    .gallery-grid,
-    .suite{
-        grid-template-columns:1fr;
-    }
-
-    .suite-content{
-        padding:90px 40px;
-    }
-
-    .gallery-grid img:nth-child(2){
-        transform:none;
-    }
-
-    .hero-card{
-        padding:50px 35px;
-    }
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Alest | Brand Gateway</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Outfit:wght@200;400;600&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <style>
+        :root {
+            --bg: #050505;
+            --text: #ffffff;
+            --accent: #896C49;
+            /* The Alest Gold */
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+
+        .noise {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .logo-container {
+            position: relative;
+            z-index: 10;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .main-logo {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .sub-logo {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            width: 95%;
+            max-width: 1200px;
+            z-index: 10;
+        }
+
+        .option-card {
+            position: relative;
+            height: clamp(300px, 45vh, 500px);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2.5rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 1;
+            /* Ensure visible by default */
+        }
+
+        .option-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 20%, rgba(0, 0, 0, 0.9) 100%);
+            z-index: 1;
+        }
+
+        /* Hover Effects */
+        .option-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--accent-color);
+            box-shadow: 0 30px 60px -12px var(--accent-glow);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .card-1 {
+            --accent-color: #00f2ff;
+            --accent-glow: rgba(0, 242, 255, 0.3);
+        }
+
+        .card-2 {
+            --accent-color: #7000ff;
+            --accent-glow: rgba(112, 0, 255, 0.3);
+        }
+
+        .card-3 {
+            --accent-color: #ffaa00;
+            --accent-glow: rgba(255, 170, 0, 0.3);
+        }
+
+        .card-4 {
+            --accent-color: #896C49;
+            --accent-glow: rgba(137, 108, 73, 0.3);
+        }
+
+        .card-5 {
+            --accent-color: #DEB175;
+            --accent-glow: rgba(222, 177, 117, 0.3);
+        }
+
+        .card-6 {
+            --accent-color: #C5A065;
+            --accent-glow: rgba(197, 160, 101, 0.3);
+        }
+
+        .card-7 {
+            --accent-color: #C5A065;
+            --accent-glow: rgba(197, 160, 101, 0.3);
+        }
+
+        .card-8 {
+            --accent-color: #C9A46A;
+            --accent-glow: rgba(201, 164, 106, 0.3);
+        }
+
+        .card-9 {
+            --accent-color: #ff0055;
+            --accent-glow: rgba(255, 0, 85, 0.3);
+        }
+
+        .card-title {
+            position: relative;
+            z-index: 2;
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .card-subtitle {
+            position: relative;
+            z-index: 2;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            font-size: 0.75rem;
+        }
+
+        .card-num {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 700;
+            opacity: 0.1;
+            transition: all 0.6s ease;
+        }
+
+        .option-card:hover .card-num {
+            opacity: 0.3;
+            transform: scale(1.1);
+            color: var(--accent-color);
+        }
+
+        /* Background Glows */
+        .glow {
+            position: fixed;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            filter: blur(120px);
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @media (max-width: 1024px) {
+            .menu-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-container {
+                grid-template-columns: 1fr;
+            }
+
+            .option-card {
+                height: 350px;
+            }
+
+            body {
+                padding: 4rem 1.5rem;
+            }
+
+            .logo-container {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<a href="#" class="book-btn">
-Book Now
-</a>
-
-<header>
-
-<div class="logo">
-THE ALEST
-</div>
-
-<nav>
-    <a href="zuli/index.html" style="color: #d4af37;">Hotel</a>
-    <a href="zuli/rooms.html" style="color: #d4af37;">Rooms & Suites</a>
-    <a href="zuli/dining.html" style="color: #d4af37;">Dining</a>
-    <a href="zuli/amenidades.html" style="color: #d4af37;">Amenities & Services</a>
-
-<a href="#">Neighborhood</a>
-<a href="#">Experiences</a>
-
-</nav>
-
-</header>
-
-<section class="hero">
-
-
-<<video autoplay muted loop playsinline class="hero-video">
-    <source src="file:///Users/zulivniruizlopez/Downloads/The Alest (1).mp4" type="video/mp4">
-</video>
-
-<div class="hero-card">
-
-<span>
-Polanco · Mexico City
-</span>
-
-<h1>
-Designed <br>
-For Slow Living
-</h1>
-
-<div class="script">
-A place that remembers you
-</div>
-
-<p>
-Un refugio sofisticado donde la hospitalidad,
-la arquitectura y la calma se encuentran
-para crear una experiencia íntima y memorable.
-</p>
-
-<a href="#" class="cta">
-Discover More
-</a>
-
-</div>
-
-</section>
-
-<section class="manifesto">
-
-<div class="bg-word">
-POLANCO
-</div>
-
-<h2>
-“Quiet Excellence”
-</h2>
-
-<p>
-Creemos que las personas regresan a los lugares
-donde se sienten reconocidas.
-Buscamos recuperar la hospitalidad humana:
-esa sensación de ser visto y valorado.
-</p>
-
-<div class="lux-divider">
-<span></span>
-</div>
-
-</section>
-
-<section class="experience">
-
-<div class="center">
-
-<div class="section-label">
-Luxury Hospitality Experience
-</div>
-
-<h2 class="section-title">
-Elevated Experiences <br>
-& Timeless Comfort
-</h2>
-
-<p class="section-copy">
-Diseñado para viajeros contemporáneos
-que buscan elegancia discreta,
-hospitalidad auténtica y experiencias cuidadosamente curadas.
-</p>
-
-</div>
-
-<div class="experience-grid">
-
-<div class="card">
-
-<div class="card-image">
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80">
-</div>
-
-<div class="card-content">
-
-<h3>Luxury Suites</h3>
-
-<p>
-Espacios sofisticados con iluminación cálida,
-texturas naturales y diseño editorial.
-</p>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="card-image">
-<img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1200&q=80">
-</div>
-
-<div class="card-content">
-
-<h3>Fine Dining</h3>
-
-<p>
-Una experiencia gastronómica íntima
-inspirada en ingredientes locales y cocina contemporánea.
-</p>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="card-image">
-<img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80">
-</div>
-
-<div class="card-content">
-
-<h3>Wellness Rituals</h3>
-
-<p>
-Rituales de descanso y bienestar
-pensados para reconectar cuerpo y mente.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="suite">
-
-<div class="suite-image">
-
-<img src="https://images.unsplash.com/photo-1522798514-97ceb8c4f1c8?auto=format&fit=crop&w=1600&q=80">
-
-</div>
-
-<div class="suite-content">
-
-<div class="section-label">
-Signature Suites
-</div>
-
-<h2>
-Spaces Designed <br>
-To Slow Time
-</h2>
-
-<p>
-Cada suite combina materiales cálidos,
-arquitectura contemporánea y una atmósfera silenciosa
-para crear una experiencia profundamente personal.
-</p>
-
-<div class="stats">
-
-<div>
-<h4>65m²</h4>
-<span>Luxury Space</span>
-</div>
-
-<div>
-<h4>24/7</h4>
-<span>Concierge</span>
-</div>
-
-<div>
-<h4>Private</h4>
-<span>Wellness</span>
-</div>
-
-</div>
-
-<a href="#" class="cta" style="color:black;border-color:black;">
-Explore Suites
-</a>
-
-</div>
-
-</section>
-
-<section class="parallax">
-
-<h2>
-The Art <br>
-Of Staying
-</h2>
-
-</section>
-
-<section class="gallery">
-
-<div class="center">
-
-<div class="section-label" style="color:#C9A46A;">
-Editorial Moments
-</div>
-
-<h2 class="section-title" style="color:black;">
-Luxury In Every Detail
-</h2>
-
-</div>
-
-<div class="gallery-grid">
-
-<img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80">
-
-<img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80">
-
-</div>
-
-</section>
-
-<section class="experiences">
-
-<div class="center">
-
-<div class="section-label">
-Curated Experiences
-</div>
-
-<h2 class="section-title">
-Beyond The Stay
-</h2>
-
-</div>
-
-<div class="experience-list">
-
-<div class="exp-item">
-
-<h3>Private Dining</h3>
-
-<p>
-Experiencias gastronómicas íntimas
-con menú degustación y maridaje exclusivo.
-</p>
-
-</div>
-
-<div class="exp-item">
-
-<h3>Spa Rituals</h3>
-
-<p>
-Tratamientos de relajación inspirados
-en bienestar holístico y calma profunda.
-</p>
-
-</div>
-
-<div class="exp-item">
-
-<h3>Wine Tastings</h3>
-
-<p>
-Selección curada de vinos internacionales
-y experiencias privadas de degustación.
-</p>
-
-</div>
-
-<div class="exp-item">
-
-<h3>City Experiences</h3>
-
-<p>
-Recorridos personalizados por Polanco,
-arte contemporáneo y gastronomía local.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="final">
-
-<div class="section-label">
-The Alest · Mexico City
-</div>
-
-<h2>
-A Place That <br>
-Remembers You
-</h2>
-
-<a href="#" class="cta">
-Reserve Your Stay
-</a>
-
-</section>
-
-<footer>
-
-<div>
-
-<h4>Location</h4>
-
-<p>
-Eugenio Sue 45 <br>
-Polanco IV Sección <br>
-Ciudad de México
-</p>
-
-</div>
-
-<div>
-
-        <h4>Explore</h4>
-        <p><a href="zuli/rooms.html" style="color: inherit; text-decoration: none;">Suites</a></p>
-        <p><a href="zuli/dining.html" style="color: inherit; text-decoration: none;">Dining</a></p>
-        <p><a href="zuli/amenidades.html" style="color: inherit; text-decoration: none;">Amenities</a></p>
-        <p><a href="#" style="color: inherit; text-decoration: none;">Experiences</a></p>
-
-</div>
-
-<div>
-
-<h4>Contact</h4>
-
-<p>
-+52 55 9027 7343 <br>
-hello@thealest.com
-</p>
-
-</div>
-
-<div>
-
-<h4>Newsletter</h4>
-
-<p>
-Únete a nuestra lista de invitados
-para recibir novedades exclusivas.
-</p>
-
-</div>
-
-<div class="footer-bottom">
-
-<span>
-© 2026 The Alest Hotel
-</span>
-
-<span>
-Quiet Excellence
-</span>
-
-</div>
-
-</footer>
-
-<script>
-
-window.addEventListener('scroll', () => {
-
-const header = document.querySelector('header');
-
-if(window.scrollY > 50){
-header.classList.add('scrolled');
-}else{
-header.classList.remove('scrolled');
-}
-
-});
-
-</script>
-
+    <div class="noise"></div>
+    <div class="glow" style="top: -20%; left: -20%;"></div>
+    <div class="glow" style="bottom: -20%; right: -20%;"></div>
+
+    <div class="logo-container">
+        <div class="main-logo">THE ALEST</div>
+        <h1 class="sub-logo">Design Concepts</h1>
+    </div>
+
+    <div class="menu-container">
+        <!-- Option 1 -->
+        <a href="CometaX/option1.html" class="option-card card-1">
+            <div class="card-num">01</div>
+            <div class="card-subtitle">Alpha Concept</div>
+            <h2 class="card-title">Digital Minimalism</h2>
+        </a>
+
+        <!-- Option 2 -->
+        <a href="CometaX/option2.html" class="option-card card-2">
+            <div class="card-num">02</div>
+            <div class="card-subtitle">Beta Concept</div>
+            <h2 class="card-title">Vibrant Energy</h2>
+        </a>
+
+        <!-- Option 3 -->
+        <a href="CometaX/option3.html" class="option-card card-3">
+            <div class="card-num">03</div>
+            <div class="card-subtitle">Gamma Concept</div>
+            <h2 class="card-title">Ethereal Focus</h2>
+        </a>
+
+        <!-- Option 4 -->
+        <a href="CometaX/opction4.html" class="option-card card-4">
+            <div class="card-num">04</div>
+            <div class="card-subtitle">Intimate Luxury</div>
+            <h2 class="card-title">Quiet Excellence</h2>
+        </a>
+
+        <!-- Option 5 -->
+        <a href="CometaX/option5.html" class="option-card card-5">
+            <div class="card-num">05</div>
+            <div class="card-subtitle">Midnight Concept</div>
+            <h2 class="card-title">Deep Luxury</h2>
+        </a>
+
+        <!-- Option 6 -->
+        <a href="CometaX/option6.html" class="option-card card-6">
+            <div class="card-num">06</div>
+            <div class="card-subtitle">Architecture Concept</div>
+            <h2 class="card-title">Design Excellence</h2>
+        </a>
+
+        <!-- Option 7: Zuli Concept -->
+        <a href="zuli/index.html" class="option-card card-7">
+            <div class="card-num">07</div>
+            <div class="card-subtitle">Zuli Concept</div>
+            <h2 class="card-title">Zuli Design</h2>
+        </a>
+
+        <!-- Option 8: Luis Template -->
+        <a href="luis.html" class="option-card card-8">
+            <div class="card-num">08</div>
+            <div class="card-subtitle">Luis Template</div>
+            <h2 class="card-title">Plantilla Luis</h2>
+        </a>
+
+        <!-- Option 9: Alternative Templates -->
+        <a href="https://preview.themeforest.net/item/cozystay-hotel-booking-wordpress-theme/full_screen_preview/47383367"
+            class="option-card card-9" target="_blank">
+            <div class="card-num">09</div>
+            <div class="card-subtitle">External Inspiration</div>
+            <h2 class="card-title">Plantillas Alternativas 1</h2>
+        </a>
+
+    </div>
+
+    <script>
+        // Use fromTo for more reliability
+        gsap.fromTo(".logo-container",
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+        );
+
+        gsap.fromTo(".option-card",
+            { y: 50, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                stagger: 0.15,
+                delay: 0.2,
+                ease: "power3.out"
+            }
+        );
+    </script>
 </body>
+
 </html>
