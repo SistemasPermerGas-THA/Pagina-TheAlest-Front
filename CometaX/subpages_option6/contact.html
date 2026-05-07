@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | THE ALEST - Design Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --color-charcoal: #0d0f0b;
+            --color-gold: #C5A065;
+        }
+        body { font-family: var(--font-sans); color: var(--color-charcoal); background-color: #fdfbf9; }
+        h1, h2, h3 { font-family: var(--font-serif); }
+        .custom-input:focus ~ label, .custom-input:not(:placeholder-shown) ~ label {
+            transform: translateY(-150%) scale(0.8);
+            color: var(--color-gold);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+    <nav class="fixed w-full z-50 bg-[#fdfbf9]/90 backdrop-blur-md border-b border-[#e8d9cb]/30">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="../option6.html" class="md:text-2xl uppercase text-xl text-[#0d0f0b] tracking-tighter font-serif">The Alest</a>
+            <div class="hidden md:flex items-center space-x-10 text-xs tracking-widest uppercase font-medium text-[#0d0f0b]/80">
+                <a href="philosophy.html" class="hover:text-[#C5A065] transition-colors">Philosophy</a>
+                <a href="essence.html" class="hover:text-[#C5A065] transition-colors">Essence</a>
+                <a href="collection.html" class="hover:text-[#C5A065] transition-colors">Collection</a>
+                <a href="contact.html" class="text-[#C5A065]">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-40 pb-20 max-w-4xl mx-auto px-6">
+        <div class="text-center mb-20">
+            <h1 class="text-5xl md:text-8xl font-serif mb-4">Contact</h1>
+            <p class="text-xs tracking-[0.4em] uppercase text-[#C5A065]">Connect with Us</p>
+        </div>
+
+        <form class="space-y-12">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="relative">
+                    <input type="text" id="name" placeholder=" " class="custom-input block w-full bg-transparent border-b border-gray-400 py-3 focus:outline-none focus:border-[#0d0f0b] transition-colors">
+                    <label for="name" class="absolute left-0 top-3 text-gray-400 text-[10px] uppercase tracking-widest transition-all duration-300 pointer-events-none">Full Name</label>
+                </div>
+                <div class="relative">
+                    <input type="email" id="email" placeholder=" " class="custom-input block w-full bg-transparent border-b border-gray-400 py-3 focus:outline-none focus:border-[#0d0f0b] transition-colors">
+                    <label for="email" class="absolute left-0 top-3 text-gray-400 text-[10px] uppercase tracking-widest transition-all duration-300 pointer-events-none">Email Address</label>
+                </div>
+            </div>
+            <div class="relative">
+                <textarea id="message" rows="4" placeholder=" " class="custom-input block w-full bg-transparent border-b border-gray-400 py-3 focus:outline-none focus:border-[#0d0f0b] transition-colors resize-none"></textarea>
+                <label for="message" class="absolute left-0 top-3 text-gray-400 text-[10px] uppercase tracking-widest transition-all duration-300 pointer-events-none">Your Inquiry</label>
+            </div>
+            <button type="button" class="w-full py-5 bg-[#0d0f0b] text-white uppercase tracking-[0.3em] text-[10px] hover:bg-[#C5A065] transition-colors duration-500">Send Message</button>
+        </form>
+
+        <div class="mt-32 grid md:grid-cols-2 gap-12 border-t border-[#e8d9cb] pt-12">
+            <div>
+                <h4 class="text-xs uppercase tracking-widest text-[#C5A065] mb-4">Location</h4>
+                <p class="font-serif text-xl">Eugenio Sue 45, Polanco<br>CDMX, Mexico</p>
+            </div>
+            <div>
+                <h4 class="text-xs uppercase tracking-widest text-[#C5A065] mb-4">Concierge</h4>
+                <p class="font-serif text-xl">+52 55 9027 7343<br>concierge@thealest.com</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#0d0f0b] text-white py-12 px-6 text-center">
+        <h3 class="text-2xl font-serif mb-2 tracking-widest">THE ALEST</h3>
+        <p class="text-[10px] text-gray-500 tracking-[0.4em] uppercase">Quiet Excellence</p>
+    </footer>
+</body>
+</html>

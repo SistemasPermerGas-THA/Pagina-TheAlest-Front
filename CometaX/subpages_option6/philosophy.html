@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophy – THE ALEST – Design Excellence</title>
+    <meta name="description" content="Explore The Alest's design philosophy: contemporary classics, noble materials, and cinematic light that define quiet excellence.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --color-charcoal: #0d0f0b;
+            --color-gold: #C5A065;
+        }
+        body { font-family: var(--font-sans); color: var(--color-charcoal); background-color: #fdfbf9; }
+        h1, h2, h3 { font-family: var(--font-serif); }
+        .reveal-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.9s ease-out; }
+        .reveal-visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="antialiased selection:bg-[#e8d9cb]">
+    <nav class="fixed w-full z-50 bg-[#fdfbf9]/90 backdrop-blur-md border-b border-[#e8d9cb]/30">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="../option6.html" class="md:text-2xl uppercase text-xl text-[#0d0f0b] tracking-tighter font-serif">The Alest</a>
+            <div class="hidden md:flex items-center space-x-10 text-xs tracking-widest uppercase font-medium text-[#0d0f0b]/80">
+                <a href="philosophy.html" class="text-[#C5A065]">Philosophy</a>
+                <a href="essence.html" class="hover:text-[#C5A065] transition-colors">Essence</a>
+                <a href="collection.html" class="hover:text-[#C5A065] transition-colors">Collection</a>
+                <a href="contact.html" class="px-6 py-3 border border-[#0d0f0b] hover:bg-[#0d0f0b] hover:text-white transition-all">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1529612700005-9bc9c1be70bd?q=80&w=2000&auto=format&fit=crop" alt="Luxury interior" class="absolute inset-0 w-full h-full object-cover brightness-75" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-[#0d0f0b]/30"></div>
+        <div class="relative z-10 text-center text-white px-6 reveal-on-scroll">
+            <h1 class="text-5xl md:text-7xl font-serif mb-4">Design Philosophy</h1>
+            <p class="text-sm md:text-base uppercase tracking-widest text-[#C5A065] mb-6">Contemporary Classics</p>
+            <p class="max-w-2xl mx-auto text-gray-200 leading-relaxed">Where European heritage meets Mexican warmth, creating spaces that breathe quiet excellence.</p>
+        </div>
+    </header>
+
+    <section class="py-20 bg-[#fdfbf9]">
+        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="reveal-on-scroll">
+                <h2 class="text-4xl font-serif text-[#0d0f0b] mb-4">Noble Materials</h2>
+                <p class="text-gray-600 leading-relaxed">Wood, marble, and fine linen ground every experience in natural elegance. Each texture is selected for durability and tactile richness.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1578898886327-6c7cfd1cc4e5?q=80&w=1200&auto=format&fit=crop" alt="Materials" class="rounded-lg shadow-lg object-cover grayscale hover:grayscale-0 transition-all duration-700 reveal-on-scroll" />
+        </div>
+    </section>
+
+    <section class="py-20 bg-[#f3e5d5]/30">
+        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <img src="https://images.unsplash.com/photo-1616628183788-c6e6ab8fb3c1?q=80&w=1200&auto=format&fit=crop" alt="Cinematic Light" class="rounded-lg shadow-lg object-cover grayscale hover:grayscale-0 transition-all duration-700 reveal-on-scroll" />
+            <div class="reveal-on-scroll">
+                <h2 class="text-4xl font-serif text-[#0d0f0b] mb-4">Cinematic Light</h2>
+                <p class="text-gray-600 leading-relaxed">Strategic lighting sculpts each space, creating depth and drama that frames the guest’s journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-[#fdfbf9]">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-serif text-[#0d0f0b] mb-8">The Quiet Excellence Manifesto</h2>
+            <p class="text-gray-600 leading-relaxed max-w-3xl mx-auto">We believe hospitality should be an invisible hand that guides the traveler. From the subtle grain of a wooden panel to the hush of a marble hallway, every detail whispers the promise of calm and refinement.</p>
+        </div>
+    </section>
+
+    <footer class="bg-[#0d0f0b] text-white py-12 px-6 text-center border-t border-gray-800">
+        <h3 class="text-2xl font-serif mb-2 tracking-widest">THE ALEST</h3>
+        <p class="text-[10px] text-gray-500 tracking-[0.4em] uppercase">Quiet Excellence</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('reveal-visible');
+                });
+            }, { threshold: 0.15 });
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

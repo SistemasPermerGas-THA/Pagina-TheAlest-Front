@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Alest | Architecture & Design Concept</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        /* Custom Font Settings */
+        :root {
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --color-charcoal: #0d0f0b;
+            --color-cream: #f3e5d5;
+            --color-beige: #e8d9cb;
+            --color-gold: #C5A065;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-charcoal);
+            background-color: #fdfbf9;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-serif);
+        }
+
+        /* Hide Scrollbar but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Custom Checkbox Logic for Mobile Menu */
+        #mobile-menu-toggle:checked~#mobile-menu {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* Custom Input Styles */
+        .custom-input:focus~label,
+        .custom-input:not(:placeholder-shown)~label {
+            transform: translateY(-150%) scale(0.85);
+            color: var(--color-gold);
+        }
+
+        /* Image Parallax Effect (Simple CSS Implementation) */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Smooth Reveal Animation Utilities */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <script>
+        // Simple Intersection Observer for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal-on-scroll').forEach((el) => observer.observe(el));
+        });
+    </script>
+</head>
+
+<body class="antialiased overflow-x-hidden selection:bg-[#e8d9cb] selection:text-[#0d0f0b]">
+
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 transition-all duration-300 bg-[#fdfbf9]/90 backdrop-blur-md border-b border-[#e8d9cb]/30">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="../index.html" class="md:text-2xl uppercase text-xl text-[#0d0f0b] tracking-tighter font-serif">The Alest</a>
+
+            <!-- Desktop Menu -->
+            <div
+                class="hidden md:flex items-center space-x-10 text-xs tracking-widest uppercase font-medium text-[#0d0f0b]/80">
+                <a href="subpages_option6/philosophy.html" class="hover:text-[#C5A065] transition-colors duration-300">Philosophy</a>
+                <a href="subpages_option6/essence.html" class="hover:text-[#C5A065] transition-colors duration-300">Essence</a>
+                <a href="subpages_option6/collection.html" class="hover:text-[#C5A065] transition-colors duration-300">Collection</a>
+                <a href="subpages_option6/contact.html"
+                    class="px-6 py-3 border border-[#0d0f0b] hover:bg-[#0d0f0b] hover:text-white transition-all duration-300">Reserve</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <label for="mobile-menu-toggle" class="md:hidden cursor-pointer z-50">
+                <iconify-icon icon="solar:hamburger-menu-linear" width="28" stroke-width="1.5"></iconify-icon>
+            </label>
+            <input type="checkbox" id="mobile-menu-toggle" class="hidden">
+
+            <!-- Mobile Menu Overlay -->
+            <div id="mobile-menu"
+                class="fixed inset-0 bg-[#fdfbf9] z-40 transform translate-x-full transition-transform duration-500 flex flex-col justify-center items-center space-y-8 opacity-0">
+                <a href="subpages_option6/philosophy.html" class="text-2xl font-serif text-[#0d0f0b]">Philosophy</a>
+                <a href="subpages_option6/essence.html" class="text-2xl font-serif text-[#0d0f0b]">Essence</a>
+                <a href="subpages_option6/collection.html" class="text-2xl font-serif text-[#0d0f0b]">Collection</a>
+                <a href="subpages_option6/contact.html" class="text-lg uppercase tracking-widest border-b border-[#0d0f0b] pb-2">Reserve</a>
+
+                <label for="mobile-menu-toggle" class="absolute top-6 right-6 cursor-pointer">
+                    <iconify-icon icon="solar:close-circle-linear" width="32" stroke-width="1.5"></iconify-icon>
+                </label>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Parallax Feel -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipPJWSpoul5U5yQsLW_EW3dk9w6jAIiemq-MYD4h=s1360-w1360-h1020-rw"
+                alt="Luxury Interior"
+                class="w-full h-full object-cover object-center brightness-75 scale-105 animate-[pulse_10s_ease-in-out_infinite]">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-[#0d0f0b]/30 z-10"></div>
+
+        <div class="relative z-20 text-center text-white px-6 reveal-on-scroll">
+            <p class="text-xs md:text-sm tracking-[0.3em] uppercase mb-6 text-[#f3e5d5]/90 font-light">Eugenio Sue 45, Polanco</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-normal tracking-tight mb-4 leading-tight">
+                Design<br><span class="italic font-light">Excellence</span>
+            </h1>
+            <p class="text-sm md:text-lg font-light tracking-wide max-w-lg mx-auto mb-10 text-white/90">
+                A sanctuary of quietude in the heart of Mexico City. European elegance meets contemporary Mexican culture.
+            </p>
+            <a href="#portfolio"
+                class="group inline-flex items-center gap-3 text-sm tracking-widest uppercase border-b border-white pb-2 hover:text-[#f3e5d5] hover:border-[#f3e5d5] transition-all duration-300">
+                Explore The Suites
+                <iconify-icon icon="solar:arrow-right-linear" width="18" stroke-width="1.5"
+                    class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+            </a>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white animate-bounce z-20">
+            <iconify-icon icon="solar:mouse-minimalistic-linear" width="24" stroke-width="1.5"></iconify-icon>
+        </div>
+    </header>
+
+    <!-- Philosophy / Introduction -->
+    <section id="philosophy" class="py-24 md:py-32 bg-[#fdfbf9] overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative reveal-on-scroll">
+                    <div class="absolute -top-10 -left-10 w-2/3 h-full border border-[#e8d9cb] z-0 hidden md:block">
+                    </div>
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipPJWSpoul5U5yQsLW_EW3dk9w6jAIiemq-MYD4h=s1360-w1360-h1020-rw"
+                        alt="The Alest"
+                        class="relative z-10 w-full h-[600px] object-cover shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 ease-out">
+                </div>
+                <div class="lg:pl-12 reveal-on-scroll">
+                    <h2 class="text-4xl md:text-5xl font-serif text-[#0d0f0b] mb-8 leading-tight tracking-tight">
+                        Quiet excellence with <span class="italic text-[#C5A065]">European</span> roots.
+                    </h2>
+                    <div class="w-16 h-[1px] bg-[#0d0f0b] mb-8"></div>
+                    <p class="text-gray-600 mb-6 font-light leading-relaxed text-sm md:text-base">
+                        The Alest was born from the dream of offering authentic hospitality and intimate luxury. Here, comfort flows with the naturalness of a home, uniting noble materials with cinematic lighting.
+                    </p>
+                    <p class="text-gray-600 mb-10 font-light leading-relaxed text-sm md:text-base">
+                        Our philosophy is rooted in "Contemporary Classics"—styles that withstand the test of time. We layer neutral palettes with rich textures and bespoke details.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-8 mb-10">
+                        <div>
+                            <span class="block text-3xl font-serif text-[#0d0f0b]">03</span>
+                            <span class="text-xs uppercase tracking-widest text-gray-500">Pillars of Design</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-serif text-[#0d0f0b]">100%</span>
+                            <span class="text-xs uppercase tracking-widest text-gray-500">Bespoke Experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (Essence) -->
+    <section id="services" class="py-24 bg-[#f3e5d5]/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 reveal-on-scroll">
+                <span class="text-xs tracking-[0.2em] uppercase text-[#C5A065] font-semibold mb-3 block">Essence</span>
+                <h2 class="text-3xl md:text-4xl font-serif text-[#0d0f0b] tracking-tight">Our Amenities</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div
+                    class="group p-8 bg-white border border-[#e8d9cb]/50 hover:border-[#C5A065] transition-all duration-500 hover:shadow-xl hover:-translate-y-2 reveal-on-scroll">
+                    <div class="mb-6 text-[#0d0f0b] group-hover:text-[#C5A065] transition-colors">
+                        <iconify-icon icon="solar:wineglass-linear" width="40" stroke-width="1"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-serif mb-3">Gastronomy</h3>
+                    <p class="text-xs leading-relaxed text-gray-500 font-light">
+                        Curated flavors that reflect the culinary scene of Mexico with European sophistication.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div
+                    class="group p-8 bg-white border border-[#e8d9cb]/50 hover:border-[#C5A065] transition-all duration-500 hover:shadow-xl hover:-translate-y-2 reveal-on-scroll">
+                    <div class="mb-6 text-[#0d0f0b] group-hover:text-[#C5A065] transition-colors">
+                        <iconify-icon icon="solar:gallery-minimalistic-linear" width="40" stroke-width="1"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-serif mb-3">Art & Design</h3>
+                    <p class="text-xs leading-relaxed text-gray-500 font-light">
+                        Noble materials and pieces that tell a story in every rincón of the hotel.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div
+                    class="group p-8 bg-white border border-[#e8d9cb]/50 hover:border-[#C5A065] transition-all duration-500 hover:shadow-xl hover:-translate-y-2 reveal-on-scroll">
+                    <div class="mb-6 text-[#0d0f0b] group-hover:text-[#C5A065] transition-colors">
+                        <iconify-icon icon="solar:cup-hot-linear" width="40" stroke-width="1"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-serif mb-3">Slow Living</h3>
+                    <p class="text-xs leading-relaxed text-gray-500 font-light">
+                        Spaces designed to disconnect and enjoy the pause without haste.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div
+                    class="group p-8 bg-white border border-[#e8d9cb]/50 hover:border-[#C5A065] transition-all duration-500 hover:shadow-xl hover:-translate-y-2 reveal-on-scroll">
+                    <div class="mb-6 text-[#0d0f0b] group-hover:text-[#C5A065] transition-colors">
+                        <iconify-icon icon="solar:medal-star-linear" width="40" stroke-width="1"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-serif mb-3">Service</h3>
+                    <p class="text-xs leading-relaxed text-gray-500 font-light">
+                        Unparalleled guest experience dedicated to discerning travelers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section (Collection) -->
+    <section id="portfolio" class="py-24 md:py-32 bg-[#fdfbf9]">
+        <div class="max-w-7xl mx-auto px-6 mb-16 flex flex-col md:flex-row justify-between items-end reveal-on-scroll">
+            <div>
+                <span class="text-xs tracking-[0.2em] uppercase text-[#C5A065] font-semibold mb-3 block">Suites</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-[#0d0f0b] tracking-tight">The Collection</h2>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+
+                <!-- Project 1 -->
+                <div class="break-inside-avoid group relative overflow-hidden cursor-pointer reveal-on-scroll">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipPSKR9Jrb-toaT_e_5WTmbvG5und1_n8P6PkFxS=s1360-w1360-h1020-rw"
+                        alt="The Master Suite"
+                        class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-[#0d0f0b]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[#C5A065] text-xs tracking-widest uppercase mb-2">Signature</span>
+                        <h3 class="text-white font-serif text-2xl">The Master Suite</h3>
+                        <p class="text-gray-300 font-light text-sm mt-2">Natural light & marble bathtubs.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="break-inside-avoid group relative overflow-hidden cursor-pointer reveal-on-scroll">
+                    <img src="https://lh3.googleusercontent.com/proxy/LwAS086FDu7c0VhOP0j6lfwUGlP8yIdNRnZdKjJ6YHMDqfjMRWy-rNnaWr1_fZSOBw1KqfTFBPnzvUJxWnd1mHHjxu_bV8EfPmtJc9QiuAGO8kESPmxUg8u-VYbkwLXuGmxmKkH_k7t6BrpoDxI4iVsWbxSfdfM=s1360-w1360-h1020-rw"
+                        alt="The Alest Suite"
+                        class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-[#0d0f0b]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[#C5A065] text-xs tracking-widest uppercase mb-2">Flagship</span>
+                        <h3 class="text-white font-serif text-2xl">The Alest Suite</h3>
+                        <p class="text-gray-300 font-light text-sm mt-2">Intimate terraces & curated design.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="break-inside-avoid group relative overflow-hidden cursor-pointer reveal-on-scroll">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipPJWSpoul5U5yQsLW_EW3dk9w6jAIiemq-MYD4h=s1360-w1360-h1020-rw"
+                        alt="Boutique Experience"
+                        class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-[#0d0f0b]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <span class="text-[#C5A065] text-xs tracking-widest uppercase mb-2">Polanco</span>
+                        <h3 class="text-white font-serif text-2xl">Facade & Entry</h3>
+                        <p class="text-gray-300 font-light text-sm mt-2">A landmark of quiet excellence.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-[#fdfbf9] relative border-t border-gray-100">
+        <div class="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+            <!-- Contact Info -->
+            <div class="relative bg-[#0d0f0b] text-white p-12 lg:p-24 flex flex-col justify-center">
+                <div class="relative z-10 reveal-on-scroll">
+                    <h2 class="text-4xl lg:text-6xl font-serif mb-8 tracking-tight">Stay With Us.</h2>
+                    <p class="text-gray-300 font-light mb-12 max-w-md">
+                        Ready to experience the quiet excellence of The Alest? Contact our concierge for reservations.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <iconify-icon icon="solar:map-point-linear" width="24" class="text-[#C5A065] mt-1">
+                            </iconify-icon>
+                            <div class="">
+                                <h4 class="font-serif text-lg">Location</h4>
+                                <p class="text-sm font-light text-gray-400">Eugenio Sue 45, Polanco, Mexico City</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <iconify-icon icon="solar:phone-calling-linear" width="24" class="text-[#C5A065] mt-1">
+                            </iconify-icon>
+                            <div class="">
+                                <h4 class="font-serif text-lg">Call Us</h4>
+                                <p class="hover:text-white transition-colors cursor-pointer text-sm font-light text-gray-400">
+                                    +52 55 9027 7343</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="p-12 lg:p-24 flex flex-col justify-center bg-[#fdfbf9]">
+                <form class="space-y-10 max-w-md mx-auto w-full reveal-on-scroll">
+                    <div class="relative">
+                        <input type="text" id="name" placeholder=" "
+                            class="custom-input block w-full bg-transparent border-b border-gray-400 py-2 focus:outline-none focus:border-[#0d0f0b] transition-colors"
+                            required="">
+                        <label for="name"
+                            class="absolute left-0 top-2 text-gray-500 text-sm transition-all duration-300 pointer-events-none uppercase tracking-widest text-[10px]">Name</label>
+                    </div>
+
+                    <div class="relative">
+                        <input type="email" id="email" placeholder=" "
+                            class="custom-input block w-full bg-transparent border-b border-gray-400 py-2 focus:outline-none focus:border-[#0d0f0b] transition-colors"
+                            required="">
+                        <label for="email"
+                            class="absolute left-0 top-2 text-gray-500 text-sm transition-all duration-300 pointer-events-none uppercase tracking-widest text-[10px]">Email</label>
+                    </div>
+
+                    <button type="button"
+                        class="group w-full py-4 bg-[#0d0f0b] text-white uppercase tracking-widest text-xs hover:bg-[#C5A065] transition-colors duration-300 flex items-center justify-center gap-2">
+                        Request Booking
+                        <iconify-icon icon="solar:letter-linear" width="16"
+                            class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0d0f0b] text-white border-t border-gray-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h3 class="text-3xl font-serif mb-2 tracking-widest">THE ALEST</h3>
+            <p class="text-[10px] text-gray-500 tracking-[0.4em] uppercase mb-12">Quiet Excellence</p>
+            <div class="w-full h-px bg-gray-800 mb-8"></div>
+            <p class="text-[10px] font-light text-gray-500 uppercase tracking-widest">© 2026 THE ALEST. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
