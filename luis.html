@@ -1,5 +1,3 @@
-<!-- prueba -->
- <!-- prueba github -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,14 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The Alest — Excelencia silenciosa</title>
+<title>The Alest — Luxury Minimal</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -26,14 +22,13 @@
 
 :root{
 
-  --bg:#050505;
-  --navy:#07111B;
-  --gold:#B08A5A;
-  --gold-light:#D8B07A;
-  --linen:#ECE6E1;
-  --soft:#BEB7B1;
-  --white:#F4F1ED;
-  --text:#A4A4A4;
+  --bg:#F5F1EC;
+  --sand:#D7C6B5;
+  --stone:#C1B6A8;
+  --soft:#746C64;
+  --black:#111111;
+  --white:#FFFFFF;
+
 }
 
 html{
@@ -41,9 +36,13 @@ html{
 }
 
 body{
+
   background:var(--bg);
-  color:white;
-  font-family:'Inter', sans-serif;
+
+  color:var(--black);
+
+  font-family:'Manrope',sans-serif;
+
   overflow-x:hidden;
 }
 
@@ -54,11 +53,11 @@ body{
 }
 
 ::-webkit-scrollbar-track{
-  background:#000;
+  background:#EEE8E1;
 }
 
 ::-webkit-scrollbar-thumb{
-  background:var(--gold);
+  background:#BCA896;
 }
 
 /* NAVBAR */
@@ -68,6 +67,8 @@ body{
   position:fixed;
 
   top:0;
+  left:0;
+
   width:100%;
 
   z-index:9999;
@@ -76,49 +77,47 @@ body{
   justify-content:space-between;
   align-items:center;
 
-  padding:28px 50px;
+  padding:28px 70px;
 
-  background:rgba(4,8,14,.72);
+  background:rgba(245,241,236,.82);
 
-  backdrop-filter:blur(14px);
+  backdrop-filter:blur(12px);
 
-  border-bottom:1px solid rgba(255,255,255,.05);
+  border-bottom:1px solid rgba(0,0,0,.05);
 }
 
 .logo{
 
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Cormorant Garamond',serif;
 
-  font-size:42px;
+  font-size:38px;
 
-  letter-spacing:5px;
+  letter-spacing:6px;
 }
 
 .logo span{
 
   display:block;
 
-  margin-top:4px;
+  margin-top:3px;
 
   font-size:11px;
 
   letter-spacing:5px;
-
-  font-family:'Inter', sans-serif;
 }
 
 .nav-links{
 
   display:flex;
 
-  gap:55px;
+  gap:50px;
 }
 
 .nav-links a{
 
   text-decoration:none;
 
-  color:#F2F2F2;
+  color:var(--black);
 
   font-size:12px;
 
@@ -126,24 +125,24 @@ body{
 
   text-transform:uppercase;
 
-  transition:.4s;
+  transition:.3s;
 }
 
 .nav-links a:hover{
-  color:var(--gold);
+  opacity:.5;
 }
 
-.book-btn{
+.reserve-btn{
 
   text-decoration:none;
 
   color:white;
 
-  padding:14px 34px;
+  background:var(--black);
+
+  padding:14px 28px;
 
   border-radius:60px;
-
-  border:1px solid rgba(255,255,255,.12);
 
   font-size:12px;
 
@@ -154,409 +153,423 @@ body{
   transition:.4s;
 }
 
-.book-btn:hover{
+.reserve-btn:hover{
 
-  background:var(--gold);
-
-  color:black;
-
-  border-color:var(--gold);
+  background:#2A2A2A;
 }
 
 /* HERO */
 
 .hero{
 
-  height:100vh;
+  min-height:100vh;
+
+  display:grid;
+
+  grid-template-columns:1.1fr 1fr;
+
+  padding-top:100px;
+}
+
+.hero-left{
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+  padding:90px;
+}
+
+.hero-mini{
+
+  text-transform:uppercase;
+
+  letter-spacing:5px;
+
+  font-size:12px;
+
+  color:var(--soft);
+
+  margin-bottom:35px;
+}
+
+.hero-title{
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:130px;
+
+  line-height:.9;
+
+  font-weight:300;
+
+  margin-bottom:40px;
+}
+
+.hero-text{
+
+  color:var(--soft);
+
+  font-size:22px;
+
+  line-height:2;
+
+  max-width:650px;
+}
+
+.hero-actions{
+
+  margin-top:50px;
+
+  display:flex;
+  gap:20px;
+}
+
+.hero-actions a{
+
+  text-decoration:none;
+
+  padding:18px 32px;
+
+  border-radius:60px;
+
+  font-size:12px;
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+
+  transition:.4s;
+}
+
+.hero-dark{
+
+  background:var(--black);
+
+  color:white;
+}
+
+.hero-light{
+
+  border:1px solid rgba(0,0,0,.1);
+
+  color:var(--black);
+}
+
+.hero-right{
 
   position:relative;
 
   overflow:hidden;
 }
 
-.hero img{
+.hero-right img{
 
   width:100%;
   height:100%;
 
   object-fit:cover;
-
-  position:absolute;
-
-  animation:heroZoom 18s ease-in-out infinite alternate;
 }
 
-@keyframes heroZoom{
+/* SECTION INTRO */
 
-  from{
-    transform:scale(1);
-  }
-
-  to{
-    transform:scale(1.08);
-  }
-
-}
-
-.hero-overlay{
-
-  position:absolute;
-  inset:0;
-
-  background:
-  linear-gradient(
-    to bottom,
-    rgba(0,0,0,.25),
-    rgba(0,0,0,.78)
-  );
-}
-
-.hero-content{
-
-  position:relative;
-
-  z-index:2;
-
-  height:100%;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-
-  text-align:center;
-
-  padding:20px;
-}
-
-.hero-mini{
-
-  color:var(--gold);
-
-  letter-spacing:8px;
-
-  font-size:12px;
-
-  text-transform:uppercase;
-
-  margin-bottom:28px;
-}
-
-.hero-title{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:170px;
-
-  font-weight:300;
-
-  line-height:.9;
-
-  letter-spacing:10px;
-}
-
-.hero-sub{
-
-  margin-top:35px;
-
-  max-width:900px;
-
-  color:#ECECEC;
-
-  line-height:2;
-
-  font-size:24px;
-}
-
-.hero-btn{
-
-  margin-top:55px;
-
-  text-decoration:none;
-
-  color:white;
-
-  border-bottom:1px solid var(--gold);
-
-  padding-bottom:10px;
-
-  letter-spacing:4px;
-
-  text-transform:uppercase;
-
-  font-size:12px;
-
-  transition:.4s;
-}
-
-.hero-btn:hover{
-  color:var(--gold);
-}
-
-/* BRAND STORY */
-
-.brand-story{
-
-  background:
-  linear-gradient(
-    135deg,
-    #090909,
-    #120F0C,
-    #090909
-  );
+.intro{
 
   padding:140px 9%;
-}
-
-.brand-grid{
 
   display:grid;
 
-  grid-template-columns:1fr 1.1fr;
+  grid-template-columns:1fr 1fr;
 
   gap:100px;
 
   align-items:center;
 }
 
-.story-image{
+.intro h2{
 
-  position:relative;
+  font-family:'Cormorant Garamond',serif;
 
-  height:760px;
-
-  overflow:hidden;
-}
-
-.story-image img{
-
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  filter:brightness(.88);
-}
-
-.story-note{
-
-  position:absolute;
-
-  bottom:45px;
-  left:45px;
-
-  font-family:'Allura', cursive;
-
-  font-size:72px;
-
-  color:white;
-}
-
-.story-content h5{
-
-  color:var(--gold);
-
-  letter-spacing:6px;
-
-  text-transform:uppercase;
-
-  font-size:12px;
-
-  margin-bottom:35px;
-}
-
-.story-content h2{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:110px;
-
-  line-height:.95;
+  font-size:90px;
 
   font-weight:300;
 
-  margin-bottom:40px;
+  line-height:1;
 }
 
-.story-content h2 span{
-  color:var(--gold);
-}
+.intro p{
 
-.story-content p{
-
-  color:#B5B5B5;
+  color:var(--soft);
 
   line-height:2;
 
-  font-size:22px;
-
-  margin-bottom:28px;
+  font-size:20px;
 }
 
-.signature-line{
+/* SUITES */
 
-  width:120px;
-  height:1px;
+.suites{
 
-  background:rgba(255,255,255,.08);
-
-  margin:55px 0;
+  padding:0 9% 140px;
 }
 
-.story-quote{
+.section-mini{
 
-  font-family:'Cormorant Garamond', serif;
+  text-transform:uppercase;
 
-  font-size:44px;
+  letter-spacing:5px;
 
-  line-height:1.4;
+  font-size:12px;
 
-  color:#F3F3F3;
+  color:var(--soft);
+
+  margin-bottom:25px;
 }
 
-/* EXPERIENCE */
+.section-title{
 
-.experience{
+  font-family:'Cormorant Garamond',serif;
 
-  background:#06111C;
+  font-size:90px;
+
+  font-weight:300;
+
+  margin-bottom:80px;
 }
 
-.exp-grid{
+.suite-card{
 
   display:grid;
 
-  grid-template-columns:repeat(3,1fr);
-}
+  grid-template-columns:1fr 1fr;
 
-.exp-card{
+  background:white;
 
-  position:relative;
-
-  min-height:720px;
+  margin-bottom:50px;
 
   overflow:hidden;
 
-  border-right:1px solid rgba(255,255,255,.05);
+  border-radius:10px;
 }
 
-.exp-card img{
+.suite-image{
 
-  position:absolute;
+  height:500px;
+
+  overflow:hidden;
+}
+
+.suite-image img{
 
   width:100%;
   height:100%;
 
   object-fit:cover;
 
-  transition:1.2s;
+  transition:1s;
 }
 
-.exp-card:hover img{
-  transform:scale(1.08);
+.suite-card:hover img{
+  transform:scale(1.05);
 }
 
-.exp-overlay{
+.suite-content{
 
-  position:absolute;
-  inset:0;
-
-  background:
-  linear-gradient(
-    to top,
-    rgba(0,0,0,.88),
-    rgba(0,0,0,.15)
-  );
-
-  padding:70px 50px;
+  padding:70px;
 
   display:flex;
   flex-direction:column;
-  justify-content:flex-end;
-}
-
-.exp-icon{
-
-  width:64px;
-  height:64px;
-
-  border-radius:50%;
-
-  border:1px solid rgba(255,255,255,.15);
-
-  display:flex;
-  align-items:center;
   justify-content:center;
-
-  color:var(--gold);
-
-  margin-bottom:40px;
-
-  backdrop-filter:blur(8px);
 }
 
-.exp-title{
+.suite-content h3{
 
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Cormorant Garamond',serif;
 
-  font-size:68px;
+  font-size:60px;
 
   font-weight:300;
 
   margin-bottom:25px;
 }
 
-.exp-text{
+.suite-content p{
 
-  color:#D4D4D4;
+  color:var(--soft);
 
   line-height:2;
 
-  font-size:19px;
+  font-size:18px;
 
   margin-bottom:35px;
 }
 
-.exp-list{
+.suite-meta{
 
-  list-style:none;
+  display:flex;
+  gap:40px;
+
+  margin-bottom:40px;
 }
 
-.exp-list li{
+.suite-meta div{
 
-  margin-bottom:16px;
+  font-size:13px;
 
-  color:#B5B5B5;
+  letter-spacing:3px;
 
-  padding-left:20px;
+  text-transform:uppercase;
+
+  color:#777;
+}
+
+.suite-content a{
+
+  width:max-content;
+
+  text-decoration:none;
+
+  color:var(--black);
+
+  border-bottom:1px solid var(--black);
+
+  padding-bottom:8px;
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+
+  font-size:12px;
+}
+
+/* MATERIALS */
+
+.materials{
+
+  padding:140px 9%;
+
+  background:#ECE4DB;
+}
+
+.material-grid{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr 1fr;
+
+  gap:35px;
+}
+
+.material-card{
+
+  background:white;
+
+  padding:40px;
+}
+
+.material-card img{
+
+  width:100%;
+  height:320px;
+
+  object-fit:cover;
+
+  margin-bottom:30px;
+}
+
+.material-card h3{
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:42px;
+
+  font-weight:300;
+
+  margin-bottom:20px;
+}
+
+.material-card p{
+
+  color:var(--soft);
+
+  line-height:2;
+}
+
+/* EXPERIENCE */
+
+.experience{
+
+  padding:140px 9%;
+}
+
+.exp-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:30px;
+}
+
+.exp-card{
+
+  background:white;
+
+  padding:45px;
+
+  min-height:300px;
+
+  border:1px solid rgba(0,0,0,.05);
+
+  transition:.4s;
+}
+
+.exp-card:hover{
+
+  transform:translateY(-6px);
+}
+
+.exp-number{
+
+  font-size:13px;
+
+  letter-spacing:4px;
+
+  color:#999;
+
+  margin-bottom:35px;
+}
+
+.exp-card h3{
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:42px;
+
+  font-weight:300;
+
+  margin-bottom:25px;
+}
+
+.exp-card p{
+
+  color:var(--soft);
+
+  line-height:2;
+}
+
+/* FULL IMAGE */
+
+.full-image{
+
+  height:80vh;
 
   position:relative;
-}
-
-.exp-list li:before{
-
-  content:"•";
-
-  color:var(--gold);
-
-  position:absolute;
-
-  left:0;
-}
-
-/* CINEMATIC */
-
-.cinematic{
-
-  position:relative;
-
-  height:75vh;
 
   overflow:hidden;
 }
 
-.cinematic img{
-
-  position:absolute;
+.full-image img{
 
   width:100%;
   height:100%;
@@ -564,12 +577,12 @@ body{
   object-fit:cover;
 }
 
-.cinematic-overlay{
+.full-overlay{
 
   position:absolute;
   inset:0;
 
-  background:rgba(0,0,0,.55);
+  background:rgba(0,0,0,.28);
 
   display:flex;
   align-items:center;
@@ -580,520 +593,160 @@ body{
   padding:40px;
 }
 
-.cinematic-overlay h2{
+.full-overlay h2{
 
-  font-family:'Cormorant Garamond', serif;
+  color:white;
 
-  font-size:100px;
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:90px;
 
   line-height:1.1;
 
-  max-width:1200px;
-
-  font-weight:300;
-}
-
-.cinematic-overlay span{
-  color:var(--gold);
-}
-
-/* MICRO EXPERIENCE */
-
-.micro{
-
-  background:#0A121B;
-
-  padding:120px 9%;
-}
-
-.micro-grid{
-
-  display:grid;
-
-  grid-template-columns:repeat(3,1fr);
-
-  gap:40px;
-}
-
-.micro-card{
-
-  background:
-  linear-gradient(
-    135deg,
-    rgba(255,255,255,.03),
-    rgba(255,255,255,.01)
-  );
-
-  border:1px solid rgba(255,255,255,.05);
-
-  padding:55px;
-
-  transition:.4s;
-}
-
-.micro-card:hover{
-
-  transform:translateY(-6px);
-
-  border-color:rgba(176,138,90,.35);
-}
-
-.micro-script{
-
-  font-family:'Allura', cursive;
-
-  color:var(--gold);
-
-  font-size:42px;
-
-  margin-bottom:12px;
-}
-
-.micro-card h3{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:50px;
-
   font-weight:300;
 
-  margin-bottom:25px;
-}
-
-.micro-card p{
-
-  color:#AFAFAF;
-
-  line-height:2;
-
-  font-size:18px;
+  max-width:1000px;
 }
 
 /* LOCATION */
 
 .location{
 
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  background:var(--linen);
-}
-
-.location-left{
-
-  padding:120px 100px;
-
-  color:#111;
-}
-
-.location-left h5{
-
-  color:var(--gold);
-
-  letter-spacing:5px;
-
-  text-transform:uppercase;
-
-  margin-bottom:30px;
-}
-
-.location-left h2{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:120px;
-
-  font-weight:300;
-
-  margin-bottom:30px;
-}
-
-.location-left p{
-
-  color:#666;
-
-  line-height:1.8;
-
-  font-size:24px;
-
-  max-width:650px;
-}
-
-.location-info{
-
-  margin-top:65px;
-}
-
-.location-item{
-
-  margin-bottom:40px;
-}
-
-.location-item h4{
-
-  margin-bottom:12px;
-
-  letter-spacing:4px;
-
-  text-transform:uppercase;
-}
-
-.location-item span{
-
-  color:#666;
-
-  line-height:2;
-
-  font-size:20px;
-}
-
-.location-right{
-
-  position:relative;
-
-  overflow:hidden;
-}
-
-.location-right img{
-
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-}
-
-.location-overlay{
-
-  position:absolute;
-  inset:0;
-
-  background:rgba(0,0,0,.3);
-
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-
-  padding:70px;
-}
-
-.location-script{
-
-  font-family:'Allura', cursive;
-
-  font-size:72px;
-
-  color:var(--gold);
-}
-
-.location-overlay h3{
-
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:88px;
-
-  font-weight:300;
-
-  margin-top:10px;
-}
-
-.location-overlay a{
-
-  margin-top:30px;
-
-  text-decoration:none;
-
-  color:white;
-
-  letter-spacing:4px;
-
-  text-transform:uppercase;
-
-  border-bottom:1px solid var(--gold);
-
-  width:max-content;
-
-  padding-bottom:10px;
-}
-
-/* CONCIERGE */
-
-.concierge{
-
-  background:
-  linear-gradient(
-    135deg,
-    #070E16,
-    #0A1826
-  );
-
-  padding:130px 9%;
-}
-
-.concierge-grid{
+  padding:140px 9%;
 
   display:grid;
 
   grid-template-columns:1fr 1fr;
 
-  gap:80px;
+  gap:90px;
 
   align-items:center;
 }
 
-.concierge-image{
-
-  height:700px;
-
-  overflow:hidden;
-}
-
-.concierge-image img{
+.location img{
 
   width:100%;
-  height:100%;
+  height:700px;
 
   object-fit:cover;
 }
 
-.concierge-content h5{
+.location-content h2{
 
-  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
 
-  letter-spacing:6px;
+  font-size:100px;
 
-  text-transform:uppercase;
+  font-weight:300;
 
   margin-bottom:30px;
 }
 
-.concierge-content h2{
+.location-content p{
 
-  font-family:'Cormorant Garamond', serif;
-
-  font-size:110px;
-
-  font-weight:300;
-
-  line-height:1;
-}
-
-.concierge-script{
-
-  font-family:'Allura', cursive;
-
-  color:var(--gold);
-
-  font-size:70px;
-
-  margin:25px 0;
-}
-
-.concierge-content p{
-
-  color:#BEBEBE;
+  color:var(--soft);
 
   line-height:2;
 
-  font-size:22px;
+  font-size:20px;
 
-  margin-bottom:45px;
+  margin-bottom:40px;
 }
 
-.concierge-actions{
+.location-info{
 
   display:flex;
-  flex-wrap:wrap;
+  flex-direction:column;
 
-  gap:18px;
+  gap:25px;
 }
 
-.concierge-actions a{
+.location-info div{
 
-  text-decoration:none;
+  color:#555;
 
-  color:white;
-
-  border:1px solid rgba(255,255,255,.1);
-
-  padding:16px 28px;
-
-  border-radius:60px;
-
-  transition:.4s;
-}
-
-.concierge-actions a:hover{
-
-  background:var(--gold);
-
-  color:black;
-
-  border-color:var(--gold);
-}
-
-/* MARQUEE */
-
-.marquee{
-
-  background:var(--gold);
-
-  overflow:hidden;
-
-  padding:22px 0;
-}
-
-.marquee-content{
-
-  display:flex;
-
-  gap:100px;
-
-  white-space:nowrap;
-
-  animation:marquee 20s linear infinite;
-}
-
-.marquee span{
-
-  color:black;
-
-  text-transform:uppercase;
-
-  letter-spacing:5px;
-
-  font-size:18px;
-
-  font-weight:600;
-}
-
-@keyframes marquee{
-
-  from{
-    transform:translateX(0);
-  }
-
-  to{
-    transform:translateX(-50%);
-  }
-
+  line-height:1.8;
 }
 
 /* FOOTER */
 
 footer{
 
-  background:#03101B;
+  background:#111111;
+
+  color:white;
 
   padding:120px 9% 60px;
 }
 
-.footer-top{
+.footer-grid{
 
   display:grid;
 
-  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  grid-template-columns:1.2fr 1fr 1fr;
 
   gap:80px;
 }
 
 .footer-logo{
 
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Cormorant Garamond',serif;
 
-  font-size:82px;
+  font-size:70px;
 
-  line-height:.9;
+  line-height:.95;
 }
 
 .footer-logo span{
 
   display:block;
 
-  margin-top:24px;
+  margin-top:20px;
 
-  color:#A9A9A9;
+  color:#9A9A9A;
 
-  line-height:1.9;
+  font-size:16px;
 
-  font-size:18px;
+  line-height:1.8;
 
-  font-family:'Inter', sans-serif;
-}
-
-.footer-quote{
-
-  margin-top:45px;
-
-  font-family:'Allura', cursive;
-
-  color:var(--gold);
-
-  font-size:52px;
+  font-family:'Manrope',sans-serif;
 }
 
 .footer-column h4{
 
   margin-bottom:30px;
 
-  text-transform:uppercase;
-
   letter-spacing:4px;
 
-  font-size:13px;
+  text-transform:uppercase;
+
+  font-size:12px;
 }
 
 .footer-column a{
 
-  display:flex;
-  align-items:center;
-  gap:14px;
+  display:block;
 
   text-decoration:none;
 
-  color:#A9A9A9;
+  color:#B8B8B8;
 
-  margin-bottom:22px;
+  margin-bottom:20px;
 
-  transition:.4s;
+  transition:.3s;
 }
 
 .footer-column a:hover{
-  color:var(--gold);
-}
-
-.footer-icon{
-
-  width:34px;
-  height:34px;
-
-  border-radius:50%;
-
-  border:1px solid rgba(255,255,255,.08);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  color:var(--gold);
-
-  transition:.4s;
-}
-
-.footer-column a:hover .footer-icon{
-
-  border-color:rgba(176,138,90,.5);
-
-  transform:translateY(-2px);
+  color:white;
 }
 
 .footer-bottom{
 
-  margin-top:90px;
+  margin-top:80px;
 
-  padding-top:40px;
+  padding-top:35px;
 
-  border-top:1px solid rgba(255,255,255,.06);
+  border-top:1px solid rgba(255,255,255,.08);
 
   display:flex;
   justify-content:space-between;
@@ -1102,57 +755,61 @@ footer{
 
 .footer-copy{
 
-  color:#727272;
+  color:#777;
 
   letter-spacing:3px;
 
-  font-size:12px;
+  font-size:11px;
 }
 
-.footer-sign{
+.footer-social{
 
-  font-family:'Allura', cursive;
-
-  color:var(--gold);
-
-  font-size:48px;
+  display:flex;
+  gap:20px;
 }
 
-/* FLOATING BUTTON */
+.footer-social a{
+
+  color:#B8B8B8;
+
+  text-decoration:none;
+
+  font-size:13px;
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+}
+
+/* FLOAT */
 
 .canary{
 
   position:fixed;
 
-  right:24px;
-  bottom:24px;
+  right:25px;
+  bottom:25px;
 
   z-index:9999;
+
+  background:white;
+
+  border-radius:60px;
+
+  padding:14px 22px;
 
   display:flex;
   align-items:center;
   gap:12px;
 
-  background:rgba(6,10,16,.7);
-
-  border:1px solid rgba(255,255,255,.06);
-
-  padding:12px 20px;
-
-  border-radius:60px;
-
-  backdrop-filter:blur(14px);
-
-  cursor:pointer;
+  box-shadow:0 10px 40px rgba(0,0,0,.08);
 
   transition:.4s;
 }
 
 .canary:hover{
 
-  transform:translateY(-3px);
-
-  border-color:rgba(176,138,90,.4);
+  transform:translateY(-4px);
 }
 
 .canary-circle{
@@ -1162,13 +819,13 @@ footer{
 
   border-radius:50%;
 
-  background:var(--gold);
+  background:var(--black);
+
+  color:white;
 
   display:flex;
   align-items:center;
   justify-content:center;
-
-  color:black;
 }
 
 .canary span{
@@ -1184,25 +841,21 @@ footer{
 
 @media(max-width:1200px){
 
-  .brand-grid,
+  .hero,
+  .intro,
   .location,
-  .concierge-grid{
+  .suite-card,
+  .footer-grid{
     grid-template-columns:1fr;
   }
 
-  .exp-grid,
-  .micro-grid,
-  .footer-top{
-    grid-template-columns:1fr;
+  .material-grid,
+  .exp-grid{
+    grid-template-columns:1fr 1fr;
   }
 
   .hero-title{
-    font-size:100px;
-  }
-
-  .story-content h2,
-  .concierge-content h2{
-    font-size:70px;
+    font-size:90px;
   }
 
 }
@@ -1217,31 +870,35 @@ footer{
     display:none;
   }
 
+  .hero-left{
+    padding:50px 30px;
+  }
+
   .hero-title{
     font-size:58px;
   }
 
-  .hero-sub{
-    font-size:18px;
-  }
-
-  .story-content h2,
-  .concierge-content h2,
-  .location-left h2{
+  .section-title,
+  .location-content h2,
+  .intro h2{
     font-size:52px;
   }
 
-  .cinematic-overlay h2{
-    font-size:48px;
+  .material-grid,
+  .exp-grid{
+    grid-template-columns:1fr;
   }
 
-  .location-left{
-    padding:70px 35px;
+  .suite-content{
+    padding:40px 30px;
   }
 
-  .story-image,
-  .concierge-image{
-    height:500px;
+  .suite-image{
+    height:350px;
+  }
+
+  .location img{
+    height:450px;
   }
 
   .footer-bottom{
@@ -1268,16 +925,16 @@ footer{
 
   <div class="nav-links">
 
-    <a href="#">Historia</a>
-    <a href="#">Esencia</a>
+    <a href="#">Inicio</a>
     <a href="#">Suites</a>
+    <a href="#">Experiencias</a>
     <a href="#">Ubicación</a>
     <a href="#">Contacto</a>
 
   </div>
 
-  <a href="#" class="book-btn">
-    Reservar →
+  <a href="#" class="reserve-btn">
+    Reservar
   </a>
 
 </nav>
@@ -1286,88 +943,211 @@ footer{
 
 <section class="hero">
 
-  <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1800&auto=format&fit=crop">
-
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
+  <div class="hero-left">
 
     <div class="hero-mini">
-      DISEÑADO PARA VIVIR SIN PRISA
+      Luxury Minimal Sanctuary
     </div>
 
     <h1 class="hero-title">
-      THE ALEST
+      THE <br>
+      ALEST
     </h1>
 
-    <p class="hero-sub">
+    <p class="hero-text">
 
-      Un refugio sofisticado y acogedor en Polanco,
-      diseñado para ofrecer hospitalidad auténtica,
-      lujo íntimo y una sensación genuina de pertenencia.
+      Un hotel boutique contemporáneo en Polanco,
+      diseñado para quienes buscan calma, diseño,
+      privacidad y hospitalidad auténtica.
 
     </p>
 
-    <a href="#" class="hero-btn">
-      Descubrir
-    </a>
+    <div class="hero-actions">
+
+      <a href="#" class="hero-dark">
+        Reservar
+      </a>
+
+      <a href="#" class="hero-light">
+        Descubrir
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="hero-right">
+
+    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1800&auto=format&fit=crop">
 
   </div>
 
 </section>
 
-<!-- STORY -->
+<!-- INTRO -->
 
-<section class="brand-story">
+<section class="intro">
 
-  <div class="brand-grid">
+  <h2>
 
-    <div class="story-image">
+    Espacios creados
+    para bajar el ritmo.
 
-      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
+  </h2>
 
-      <div class="story-note">
-        Ya estamos aquí para ti
-      </div>
+  <p>
+
+    The Alest mezcla arquitectura contemporánea,
+    materiales naturales y una experiencia de hospitalidad
+    íntima para crear un refugio elegante en el corazón
+    de la Ciudad de México.
+
+  </p>
+
+</section>
+
+<!-- SUITES -->
+
+<section class="suites">
+
+  <div class="section-mini">
+    Suites & habitaciones
+  </div>
+
+  <h2 class="section-title">
+    Diseñadas para sentirse habitadas.
+  </h2>
+
+  <div class="suite-card">
+
+    <div class="suite-image">
+
+      <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1600&auto=format&fit=crop">
 
     </div>
 
-    <div class="story-content">
+    <div class="suite-content">
 
-      <h5>Nuestra esencia</h5>
-
-      <h2>
-
-        CREEMOS EN LA <br>
-        <span>excelencia silenciosa.</span>
-
-      </h2>
+      <h3>Master Suite</h3>
 
       <p>
 
-        The Alest nació del sueño de un joven apasionado
-        por la decoración, la arquitectura y el arte de recibir.
-        Un hotel boutique donde el lujo se expresa en calma,
-        detalle y hospitalidad genuina.
+        Una suite amplia con iluminación cálida,
+        texturas suaves y un ambiente diseñado
+        para desconectar completamente.
 
       </p>
 
-      <p>
+      <div class="suite-meta">
 
-        Más que alojamiento, buscamos crear un lugar donde
-        cada huésped se sienta reconocido, recordado y recibido
-        como en casa.
-
-      </p>
-
-      <div class="signature-line"></div>
-
-      <div class="story-quote">
-
-        “Un lugar que no intenta impresionarte —
-        simplemente te entiende.”
+        <div>55 m²</div>
+        <div>King Bed</div>
+        <div>Luxury Bath</div>
 
       </div>
+
+      <a href="#">
+        Ver Suite →
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="suite-card">
+
+    <div class="suite-image">
+
+      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop">
+
+    </div>
+
+    <div class="suite-content">
+
+      <h3>Junior Suite</h3>
+
+      <p>
+
+        Un espacio íntimo con detalles artesanales,
+        luz natural y una atmósfera elegante
+        inspirada en el slow living.
+
+      </p>
+
+      <div class="suite-meta">
+
+        <div>42 m²</div>
+        <div>City View</div>
+        <div>Private Bar</div>
+
+      </div>
+
+      <a href="#">
+        Ver Suite →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- MATERIALS -->
+
+<section class="materials">
+
+  <div class="section-mini">
+    Materiales & atmósfera
+  </div>
+
+  <h2 class="section-title">
+    Arquitectura emocional.
+  </h2>
+
+  <div class="material-grid">
+
+    <div class="material-card">
+
+      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop">
+
+      <h3>Luz natural</h3>
+
+      <p>
+
+        Espacios pensados para convivir con la luz,
+        la calma y el silencio.
+
+      </p>
+
+    </div>
+
+    <div class="material-card">
+
+      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
+
+      <h3>Materiales nobles</h3>
+
+      <p>
+
+        Piedra, madera y textiles naturales
+        cuidadosamente seleccionados.
+
+      </p>
+
+    </div>
+
+    <div class="material-card">
+
+      <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop">
+
+      <h3>Quiet luxury</h3>
+
+      <p>
+
+        Un lujo que no necesita llamar la atención
+        para sentirse especial.
+
+      </p>
 
     </div>
 
@@ -1379,98 +1159,81 @@ footer{
 
 <section class="experience">
 
+  <div class="section-mini">
+    Experiencias
+  </div>
+
+  <h2 class="section-title">
+    Hospitalidad contemporánea.
+  </h2>
+
   <div class="exp-grid">
 
     <div class="exp-card">
 
-      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop">
-
-      <div class="exp-overlay">
-
-        <div class="exp-icon">✦</div>
-
-        <h3 class="exp-title">
-          Gastronomía
-        </h3>
-
-        <p class="exp-text">
-
-          Sabores curados que reflejan la vibrante
-          escena culinaria de México con sensibilidad europea.
-
-        </p>
-
-        <ul class="exp-list">
-
-          <li>Desayuno signature</li>
-          <li>Cena privada</li>
-          <li>Rituales de vino</li>
-
-        </ul>
-
+      <div class="exp-number">
+        01
       </div>
+
+      <h3>Concierge</h3>
+
+      <p>
+
+        Experiencias personalizadas
+        y atención anticipada.
+
+      </p>
 
     </div>
 
     <div class="exp-card">
 
-      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop">
-
-      <div class="exp-overlay">
-
-        <div class="exp-icon">✦</div>
-
-        <h3 class="exp-title">
-          Arte & Diseño
-        </h3>
-
-        <p class="exp-text">
-
-          Materiales nobles, iluminación cinematográfica
-          y espacios pensados para sentirse habitados.
-
-        </p>
-
-        <ul class="exp-list">
-
-          <li>Lino & madera</li>
-          <li>Objetos curados</li>
-          <li>Calidez europea</li>
-
-        </ul>
-
+      <div class="exp-number">
+        02
       </div>
+
+      <h3>Gastronomía</h3>
+
+      <p>
+
+        Cocina sofisticada inspirada
+        en sabores locales.
+
+      </p>
 
     </div>
 
     <div class="exp-card">
 
-      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
-
-      <div class="exp-overlay">
-
-        <div class="exp-icon">✦</div>
-
-        <h3 class="exp-title">
-          Slow Living
-        </h3>
-
-        <p class="exp-text">
-
-          Espacios creados para bajar el ritmo,
-          respirar profundo y reconectar contigo mismo.
-
-        </p>
-
-        <ul class="exp-list">
-
-          <li>Rincones íntimos</li>
-          <li>Confort emocional</li>
-          <li>Santuario privado</li>
-
-        </ul>
-
+      <div class="exp-number">
+        03
       </div>
+
+      <h3>Wellness</h3>
+
+      <p>
+
+        Espacios para respirar,
+        descansar y reconectar.
+
+      </p>
+
+    </div>
+
+    <div class="exp-card">
+
+      <div class="exp-number">
+        04
+      </div>
+
+      <h3>Polanco</h3>
+
+      <p>
+
+        Cultura, diseño y gastronomía
+        a solo unos pasos.
+
+      </p>
 
     </div>
 
@@ -1478,81 +1241,20 @@ footer{
 
 </section>
 
-<!-- CINEMATIC -->
+<!-- FULL IMAGE -->
 
-<section class="cinematic">
+<section class="full-image">
 
-  <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1800&auto=format&fit=crop">
+  <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=1800&auto=format&fit=crop">
 
-  <div class="cinematic-overlay">
+  <div class="full-overlay">
 
     <h2>
 
-      Un lugar que te recuerda <br>
-      <span>sin preguntar.</span>
+      Un santuario diseñado
+      para sentirse humano.
 
     </h2>
-
-  </div>
-
-</section>
-
-<!-- MICRO -->
-
-<section class="micro">
-
-  <div class="micro-grid">
-
-    <div class="micro-card">
-
-      <div class="micro-script">
-        Ritual matutino
-      </div>
-
-      <h3>Desayunos lentos</h3>
-
-      <p>
-
-        Cafés largos, luz cálida entrando por la ventana
-        y mañanas sin prisa en el corazón de Polanco.
-
-      </p>
-
-    </div>
-
-    <div class="micro-card">
-
-      <div class="micro-script">
-        Atmósfera nocturna
-      </div>
-
-      <h3>Vino & conversación</h3>
-
-      <p>
-
-        Una copa de vino, música suave y rincones
-        diseñados para conversaciones memorables.
-
-      </p>
-
-    </div>
-
-    <div class="micro-card">
-
-      <div class="micro-script">
-        Quietud
-      </div>
-
-      <h3>Espacios para respirar</h3>
-
-      <p>
-
-        Habitaciones íntimas y texturas suaves
-        que invitan a desconectar del ruido exterior.
-
-      </p>
-
-    </div>
 
   </div>
 
@@ -1562,116 +1264,39 @@ footer{
 
 <section class="location">
 
-  <div class="location-left">
+  <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1600&auto=format&fit=crop">
 
-    <h5>El santuario</h5>
+  <div class="location-content">
 
-    <h2>POLANCO</h2>
+    <div class="section-mini">
+      Ubicación
+    </div>
+
+    <h2>
+      POLANCO
+    </h2>
 
     <p>
 
-      El corazón cultural de la Ciudad de México.
-      Un barrio sofisticado que mezcla gastronomía,
-      diseño y vida contemporánea.
+      Rodeado de arquitectura contemporánea,
+      gastronomía y cultura, The Alest ofrece
+      una experiencia sofisticada en una de las
+      zonas más exclusivas de Ciudad de México.
 
     </p>
 
     <div class="location-info">
 
-      <div class="location-item">
-
-        <h4>Dirección</h4>
-
-        <span>
-
-          Eugenio Sue 45 <br>
-          Polanco, CDMX 11560
-
-        </span>
-
+      <div>
+        Eugenio Sue 45 · Polanco · CDMX
       </div>
 
-      <div class="location-item">
-
-        <h4>Contacto</h4>
-
-        <span>
-
-          +52 55 1234 5678 <br>
-          concierge@thealest.com
-
-        </span>
-
+      <div>
+        +52 55 1234 5678
       </div>
 
-    </div>
-
-  </div>
-
-  <div class="location-right">
-
-    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1600&auto=format&fit=crop">
-
-    <div class="location-overlay">
-
-      <div class="location-script">
-        Despertando sentidos
-      </div>
-
-      <h3>EL RESTAURANTE</h3>
-
-      <a href="#">
-        Descubrir menú ↗
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- CONCIERGE -->
-
-<section class="concierge">
-
-  <div class="concierge-grid">
-
-    <div class="concierge-image">
-
-      <img src="https://images.unsplash.com/photo-1522798514-97ceb8c4f1c8?q=80&w=1400&auto=format&fit=crop">
-
-    </div>
-
-    <div class="concierge-content">
-
-      <h5>Canary Service</h5>
-
-      <h2>
-
-        Un concierge diseñado <br>
-        para sentirse humano.
-
-      </h2>
-
-      <div class="concierge-script">
-        Ya estamos aquí para ti
-      </div>
-
-      <p>
-
-        Desde reservaciones privadas hasta experiencias
-        personalizadas en la ciudad, Canary Service
-        anticipa necesidades con atención genuina.
-
-      </p>
-
-      <div class="concierge-actions">
-
-        <a href="#">Traslado aeropuerto</a>
-        <a href="#">Cena privada</a>
-        <a href="#">Reservaciones</a>
-        <a href="#">Experiencias en ciudad</a>
-
+      <div>
+        concierge@thealest.com
       </div>
 
     </div>
@@ -1679,32 +1304,12 @@ footer{
   </div>
 
 </section>
-
-<!-- MARQUEE -->
-
-<div class="marquee">
-
-  <div class="marquee-content">
-
-    <span>CREEMOS EN LA EXCELENCIA SILENCIOSA</span>
-    <span>DISEÑADO PARA VIVIR SIN PRISA</span>
-    <span>UN LUGAR QUE TE RECUERDA</span>
-    <span>YA ESTAMOS AQUÍ PARA TI</span>
-
-    <span>CREEMOS EN LA EXCELENCIA SILENCIOSA</span>
-    <span>DISEÑADO PARA VIVIR SIN PRISA</span>
-    <span>UN LUGAR QUE TE RECUERDA</span>
-    <span>YA ESTAMOS AQUÍ PARA TI</span>
-
-  </div>
-
-</div>
 
 <!-- FOOTER -->
 
 <footer>
 
-  <div class="footer-top">
+  <div class="footer-grid">
 
     <div>
 
@@ -1714,68 +1319,23 @@ footer{
 
         <span>
 
-          MEXICO CITY <br>
-          BOUTIQUE HOTEL & SANCTUARY
+          Boutique Hotel <br>
+          Mexico City
 
         </span>
 
       </div>
 
-      <div class="footer-quote">
-        Un lugar que te recuerda.
-      </div>
-
     </div>
 
     <div class="footer-column">
 
-      <h4>Explorar</h4>
+      <h4>Navegación</h4>
 
-      <a href="#">
-        <div class="footer-icon">✦</div>
-        Inicio
-      </a>
-
-      <a href="#">
-        <div class="footer-icon">✦</div>
-        Suites
-      </a>
-
-      <a href="#">
-        <div class="footer-icon">✦</div>
-        Historia
-      </a>
-
-      <a href="#">
-        <div class="footer-icon">✦</div>
-        Ubicación
-      </a>
-
-    </div>
-
-    <div class="footer-column">
-
-      <h4>Experiencias</h4>
-
-      <a href="#">
-        <div class="footer-icon">✦</div>
-        Restaurante
-      </a>
-
-      <a href="#">
-        <div class="footer-icon">✦</div>
-        El Bar
-      </a>
-
-      <a href="#">
-        <div class="footer-icon">✦</div>
-        Concierge
-      </a>
-
-      <a href="#">
-        <div class="footer-icon">✦</div>
-        Cena privada
-      </a>
+      <a href="#">Inicio</a>
+      <a href="#">Suites</a>
+      <a href="#">Experiencias</a>
+      <a href="#">Ubicación</a>
 
     </div>
 
@@ -1783,71 +1343,10 @@ footer{
 
       <h4>Redes</h4>
 
-      <a href="#">
-
-        <div class="footer-icon">
-
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-
-            <rect x="2" y="2" width="20" height="20" rx="5"></rect>
-            <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-
-          </svg>
-
-        </div>
-
-        Instagram
-
-      </a>
-
-      <a href="#">
-
-        <div class="footer-icon">
-
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-
-            <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.5-3.88 3.78-3.88 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.62.77-1.62 1.56V12h2.76l-.44 2.89h-2.32v6.99A10 10 0 0 0 22 12z"/>
-
-          </svg>
-
-        </div>
-
-        Facebook
-
-      </a>
-
-      <a href="#">
-
-        <div class="footer-icon">
-
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-
-            <path d="M21 7.5a5.5 5.5 0 0 1-3.9 5.26 6.3 6.3 0 0 1 .04.74A7.5 7.5 0 0 1 9.6 21c-1.48 0-2.86-.43-4.02-1.17.2.02.4.03.61.03 1.22 0 2.34-.41 3.23-1.11a2.64 2.64 0 0 1-2.47-1.83c.17.03.34.05.52.05.25 0 .49-.03.72-.09A2.63 2.63 0 0 1 6.1 14.3v-.03c.35.2.75.32 1.17.33a2.63 2.63 0 0 1-.81-3.5 7.47 7.47 0 0 0 5.42 2.75 2.64 2.64 0 0 1 4.5-2.4 5.3 5.3 0 0 0 1.67-.64 2.64 2.64 0 0 1-1.16 1.46A5.25 5.25 0 0 0 21 7.5z"/>
-
-          </svg>
-
-        </div>
-
-        X / Twitter
-
-      </a>
-
-      <a href="#">
-
-        <div class="footer-icon">
-
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-
-            <path d="M12 2a10 10 0 0 0-3.16 19.49c-.05-.83-.1-2.1.02-3l1.08-4.58S9.66 13 9.66 12c0-.91.53-1.6 1.18-1.6.56 0 .83.42.83.93 0 .57-.36 1.42-.55 2.2-.16.67.34 1.22 1 1.22 1.2 0 2.13-1.27 2.13-3.1 0-1.62-1.16-2.76-2.82-2.76-1.92 0-3.04 1.44-3.04 2.92 0 .58.22 1.2.5 1.53a.2.2 0 0 1 .05.2l-.2.82c-.03.13-.1.16-.24.1-.88-.4-1.43-1.66-1.43-2.67 0-2.18 1.58-4.18 4.56-4.18 2.4 0 4.26 1.7 4.26 3.97 0 2.37-1.5 4.28-3.57 4.28-.7 0-1.35-.36-1.58-.79l-.43 1.64c-.15.58-.57 1.3-.84 1.74A10 10 0 1 0 12 2z"/>
-
-          </svg>
-
-        </div>
-
-        Pinterest
-
-      </a>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Pinterest</a>
+      <a href="#">X / Twitter</a>
 
     </div>
 
@@ -1859,8 +1358,12 @@ footer{
       © 2026 THE ALEST. TODOS LOS DERECHOS RESERVADOS.
     </div>
 
-    <div class="footer-sign">
-      By The Alest
+    <div class="footer-social">
+
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Pinterest</a>
+
     </div>
 
   </div>
