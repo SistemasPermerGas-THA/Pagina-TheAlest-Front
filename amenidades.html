@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>The Alest | Luxury Experience</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="resources/css/font-awesome.min.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root{
+            --gold:#c5a059;
+            --black:#111111;
+            --white:#ffffff;
+            --gray:#777;
+            --soft:#f5f3ef;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family:'Montserrat', sans-serif;
+            background:var(--soft);
+            color:var(--black);
+            overflow-x:hidden;
+            cursor:none;
+        }
+
+        a:hover{
+            text-decoration:none;
+        }
+
+        /* =====================================================
+           CURSOR
+        ======================================================*/
+
+        .cursor{
+            width:20px;
+            height:20px;
+            border:1px solid var(--gold);
+            border-radius:50%;
+            position:fixed;
+            pointer-events:none;
+            transform:translate(-50%, -50%);
+            z-index:999999;
+            transition:
+                    width .3s ease,
+                    height .3s ease,
+                    background .3s ease,
+                    transform .15s ease;
+        }
+
+        .cursor-grow{
+            width:70px;
+            height:70px;
+            background:rgba(197,160,89,.15);
+            backdrop-filter:blur(3px);
+        }
+
+        /* =====================================================
+           LOADER
+        ======================================================*/
+
+        .loader-screen{
+            position:fixed;
+            inset:0;
+            background:#111;
+            z-index:9999999;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+        }
+
+        .loader-logo{
+            font-family:'Cormorant Garamond', serif;
+            color:white;
+            font-size:60px;
+            letter-spacing:10px;
+            animation:pulse 2s infinite;
+        }
+
+        .loader-line{
+            width:0;
+            height:1px;
+            background:var(--gold);
+            margin-top:20px;
+            animation:loadLine 2s forwards;
+        }
+
+        @keyframes loadLine{
+            to{
+                width:280px;
+            }
+        }
+
+        @keyframes pulse{
+            50%{
+                opacity:.5;
+            }
+        }
+
+        /* =====================================================
+           NAVBAR
+        ======================================================*/
+
+        .nav-luxury{
+            position:fixed;
+            top:0;
+            width:100%;
+            z-index:9999;
+            padding:35px 60px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            transition:.4s;
+        }
+
+        .nav-luxury.scrolled{
+            background:rgba(17,17,17,.95);
+            backdrop-filter:blur(15px);
+            padding:20px 60px;
+        }
+
+        .logo{
+            color:white;
+            font-family:'Cormorant Garamond', serif;
+            font-size:28px;
+            letter-spacing:8px;
+            text-decoration:none;
+        }
+
+        .nav-links a{
+            color:white;
+            margin-left:40px;
+            text-transform:uppercase;
+            font-size:11px;
+            letter-spacing:3px;
+            position:relative;
+            transition:.3s;
+        }
+
+        .nav-links a::after{
+            content:'';
+            position:absolute;
+            left:0;
+            bottom:-8px;
+            width:0;
+            height:1px;
+            background:var(--gold);
+            transition:.4s;
+        }
+
+        .nav-links a:hover::after{
+            width:100%;
+        }
+
+        .nav-links a:hover{
+            color:var(--gold);
+        }
+
+        /* =====================================================
+           HERO
+        ======================================================*/
+
+        .hero-v3{
+            height:100vh;
+            position:relative;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            overflow:hidden;
+            background:black;
+        }
+
+        .hero-v3 video{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            opacity:.6;
+            transform:scale(1.1);
+        }
+
+        .hero-v3::before{
+            content:'';
+            position:absolute;
+            inset:0;
+            background:
+                    linear-gradient(
+                            to bottom,
+                            rgba(0,0,0,.2),
+                            rgba(0,0,0,.7)
+                    );
+            z-index:1;
+        }
+
+        .hero-v3::after{
+            content:'';
+            position:absolute;
+            inset:0;
+            background:
+                    radial-gradient(
+                            circle at center,
+                            transparent,
+                            rgba(0,0,0,.75)
+                    );
+            z-index:1;
+        }
+
+        .hero-content{
+            position:relative;
+            z-index:5;
+            text-align:center;
+            color:white;
+            width:90%;
+            animation:fadeLuxury 2s ease;
+        }
+
+        @keyframes fadeLuxury{
+            from{
+                opacity:0;
+                transform:translateY(50px);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        .hero-tag{
+            letter-spacing:10px;
+            text-transform:uppercase;
+            font-size:12px;
+            color:var(--gold);
+            margin-bottom:25px;
+            animation:floating 4s ease-in-out infinite;
+        }
+
+        @keyframes floating{
+            50%{
+                transform:translateY(-10px);
+            }
+        }
+
+        .hero-title{
+            font-family:'Cormorant Garamond', serif;
+            font-size:clamp(60px, 10vw, 130px);
+            line-height:.9;
+            font-weight:300;
+            text-shadow:0 10px 40px rgba(0,0,0,.5);
+        }
+
+        .hero-title i{
+            font-style:italic;
+        }
+
+        .hero-description{
+            max-width:800px;
+            margin:40px auto;
+            line-height:2;
+            opacity:.9;
+            font-size:15px;
+        }
+
+        .btn-luxury{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            padding:18px 45px;
+            border:1px solid rgba(255,255,255,.25);
+            color:white;
+            text-transform:uppercase;
+            letter-spacing:4px;
+            font-size:11px;
+            background:rgba(255,255,255,.08);
+            backdrop-filter:blur(12px);
+            transition:.4s;
+        }
+
+        .btn-luxury:hover{
+            background:var(--gold);
+            color:white;
+            border-color:var(--gold);
+            transform:translateY(-5px);
+            box-shadow:0 20px 40px rgba(197,160,89,.35);
+        }
+
+        /* =====================================================
+           SCROLL INDICATOR
+        ======================================================*/
+
+        .scroll-indicator{
+            position:absolute;
+            bottom:40px;
+            left:50%;
+            transform:translateX(-50%);
+            z-index:10;
+        }
+
+        .scroll-indicator span{
+            display:block;
+            width:1px;
+            height:70px;
+            background:rgba(255,255,255,.3);
+            position:relative;
+            overflow:hidden;
+        }
+
+        .scroll-indicator span::after{
+            content:'';
+            position:absolute;
+            top:-100%;
+            left:0;
+            width:100%;
+            height:100%;
+            background:var(--gold);
+            animation:scrollAnim 2s infinite;
+        }
+
+        @keyframes scrollAnim{
+            to{
+                top:100%;
+            }
+        }
+
+        /* =====================================================
+           SECTION TITLE
+        ======================================================*/
+
+        .section-editorial{
+            padding:140px 0;
+            background:white;
+        }
+
+        .editorial-header{
+            margin-bottom:100px;
+        }
+
+        .editorial-header h2{
+            font-family:'Cormorant Garamond', serif;
+            font-size:85px;
+            line-height:1;
+            font-weight:300;
+        }
+
+        .line{
+            width:80px;
+            height:1px;
+            background:var(--gold);
+            margin-top:30px;
+        }
+
+        /* =====================================================
+           TABS
+        ======================================================*/
+
+        .nav-services-v3{
+            border:none;
+            display:flex;
+            gap:40px;
+            margin-bottom:80px;
+        }
+
+        .nav-services-v3 li a{
+            border:none !important;
+            background:none !important;
+            color:#999;
+            font-size:11px;
+            text-transform:uppercase;
+            letter-spacing:4px;
+            padding:10px 0;
+            transition:.3s;
+        }
+
+        .nav-services-v3 li.active a{
+            color:#111 !important;
+            border-bottom:1px solid var(--gold) !important;
+        }
+
+        /* =====================================================
+           CARDS
+        ======================================================*/
+
+        .service-card-v3{
+            position:relative;
+            margin-bottom:120px;
+            transition:1s cubic-bezier(.19,1,.22,1);
+        }
+
+        .service-card-v3:hover{
+            transform:translateY(-15px);
+        }
+
+        .card-img-box{
+            position:relative;
+            height:600px;
+            overflow:hidden;
+        }
+
+        .card-img-box::before{
+            content:'';
+            position:absolute;
+            inset:0;
+            background:
+                    linear-gradient(
+                            to top,
+                            rgba(0,0,0,.55),
+                            transparent
+                    );
+            z-index:1;
+        }
+
+        .card-img-box img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            filter:grayscale(100%);
+            transition:1.5s cubic-bezier(.19,1,.22,1);
+        }
+
+        .service-card-v3:hover img{
+            transform:scale(1.08);
+            filter:grayscale(0%);
+        }
+
+        .card-info-floating{
+            position:absolute;
+            right:-5%;
+            bottom:-50px;
+            width:50%;
+            padding:60px;
+            background:rgba(255,255,255,.8);
+            backdrop-filter:blur(20px);
+            box-shadow:20px 20px 60px rgba(0,0,0,.06);
+            border:1px solid rgba(255,255,255,.25);
+        }
+
+        .card-info-floating h6{
+            color:var(--gold);
+            letter-spacing:3px;
+            margin-bottom:10px;
+        }
+
+        .card-info-floating h3{
+            font-family:'Cormorant Garamond', serif;
+            font-size:48px;
+            margin-bottom:20px;
+        }
+
+        .card-info-floating p{
+            line-height:2;
+            color:#666;
+            margin-bottom:30px;
+        }
+
+        .btn-minimal{
+            display:inline-block;
+            font-size:10px;
+            letter-spacing:4px;
+            text-transform:uppercase;
+            color:#111;
+            border-bottom:1px solid var(--gold);
+            padding-bottom:5px;
+            position:relative;
+            overflow:hidden;
+            transition:.4s;
+        }
+
+        .btn-minimal::before{
+            content:'';
+            position:absolute;
+            left:-100%;
+            top:0;
+            width:100%;
+            height:100%;
+            background:var(--gold);
+            z-index:-1;
+            transition:.5s;
+        }
+
+        .btn-minimal:hover::before{
+            left:0;
+        }
+
+        .btn-minimal:hover{
+            color:white;
+            padding-left:15px;
+            padding-right:15px;
+        }
+
+        /* =====================================================
+           IMMERSIVE SECTION
+        ======================================================*/
+
+        .immersive-section{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            min-height:850px;
+        }
+
+        .immersive-image{
+            overflow:hidden;
+        }
+
+        .immersive-image img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            transition:2s;
+        }
+
+        .immersive-section:hover img{
+            transform:scale(1.08);
+        }
+
+        .immersive-content{
+            background:#111;
+            color:white;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            padding:100px;
+        }
+
+        .immersive-content span{
+            color:var(--gold);
+            letter-spacing:5px;
+            text-transform:uppercase;
+            font-size:11px;
+        }
+
+        .immersive-content h2{
+            font-family:'Cormorant Garamond', serif;
+            font-size:85px;
+            line-height:1;
+            margin:30px 0;
+            font-weight:300;
+        }
+
+        .immersive-content p{
+            line-height:2;
+            opacity:.75;
+            margin-bottom:40px;
+        }
+
+        /* =====================================================
+           FOOTER
+        ======================================================*/
+
+        footer{
+            background:#0d0d0d;
+            color:white;
+            padding:120px 60px;
+            position:relative;
+            overflow:hidden;
+        }
+
+        footer::before{
+            content:'';
+            position:absolute;
+            inset:0;
+            background:
+                    radial-gradient(
+                            circle at top,
+                            rgba(197,160,89,.15),
+                            transparent
+                    );
+        }
+
+        .footer-logo{
+            font-family:'Cormorant Garamond', serif;
+            font-size:50px;
+            letter-spacing:10px;
+            margin-bottom:40px;
+            position:relative;
+            z-index:2;
+        }
+
+        footer p,
+        footer a{
+            position:relative;
+            z-index:2;
+        }
+
+        footer a{
+            color:white;
+            margin-left:20px;
+            transition:.3s;
+        }
+
+        footer a:hover{
+            color:var(--gold);
+        }
+
+        /* =====================================================
+           MODAL
+        ======================================================*/
+
+        .modal-overlay-custom{
+            display:none;
+            position:fixed;
+            inset:0;
+            background:rgba(0,0,0,.92);
+            z-index:99999;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .modal-container-full{
+            width:90%;
+            max-width:1200px;
+            height:85vh;
+            background:white;
+            position:relative;
+            overflow-y:auto;
+        }
+
+        .modal-close-v3{
+            position:absolute;
+            top:20px;
+            right:20px;
+            border:none;
+            background:none;
+            font-size:40px;
+            z-index:10;
+            cursor:pointer;
+        }
+
+        /* =====================================================
+           MOBILE
+        ======================================================*/
+
+        @media(max-width:768px){
+
+            body{
+                cursor:auto;
+            }
+
+            .cursor{
+                display:none;
+            }
+
+            .nav-luxury{
+                padding:20px;
+            }
+
+            .nav-luxury.scrolled{
+                padding:15px 20px;
+            }
+
+            .nav-links{
+                display:none;
+            }
+
+            .hero-title{
+                font-size:58px;
+            }
+
+            .editorial-header h2{
+                font-size:55px;
+            }
+
+            .card-img-box{
+                height:350px;
+            }
+
+            .card-info-floating{
+                position:relative;
+                width:100%;
+                right:0;
+                bottom:0;
+                padding:35px;
+            }
+
+            .immersive-section{
+                grid-template-columns:1fr;
+            }
+
+            .immersive-content{
+                padding:60px 30px;
+            }
+
+            .immersive-content h2{
+                font-size:55px;
+            }
+
+            footer{
+                padding:80px 30px;
+                text-align:center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     LOADER
+====================================================== -->
+
+<div class="loader-screen">
+
+    <div class="loader-logo">
+        THE ALEST
+    </div>
+
+    <div class="loader-line"></div>
+
+</div>
+
+<!-- =====================================================
+     CURSOR
+====================================================== -->
+
+<div class="cursor"></div>
+
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
+
+<nav class="nav-luxury">
+
+    
+    <a href="#" class="logo">
+        THE ALEST
+    </a>
+
+   <a href="file:///Users/zulivniruizlopez/Documents/PLANTILLA/index.html" style="color: #d4af37;">Hotel</a>     
+    <a href="file:///Users/zulivniruizlopez/Documents/PLANTILLA/rooms.html" style="color: #d4af37;">Rooms & Suites</a><li>
+    <a href="file:///Users/zulivniruizlopez/Documents/PLANTILLA/dining.html" style="color: #d4af37;">Dining</a></li>
+<a href="file:///Users/zulivniruizlopez/Documents/PLANTILLA/amenidades.html" style="color: #d4af37;">Amenities & Services</a>
+<a href="#">Neighborhood</a>
+<a href="#">Experiences</a>
+
+
+
+</nav>
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="hero-v3">
+
+    <video autoplay muted loop playsinline>
+        <source src="resources/video/luxury.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+
+        <div class="hero-tag">
+            SERVICES & EXPERIENCES
+        </div>
+
+        <h1 class="hero-title">
+            El Arte de la <br>
+            <i>Hospitalidad</i>
+        </h1>
+
+        <div class="hero-description">
+            Arquitectura contemporánea,
+            hospitalidad impecable y experiencias
+            diseñadas para despertar todos los sentidos.
+        </div>
+
+        <a href="#" class="btn-luxury">
+            DESCUBRIR EXPERIENCIA
+        </a>
+
+    </div>
+
+    <div class="scroll-indicator">
+        <span></span>
+    </div>
+
+</section>
+
+<!-- =====================================================
+     SERVICES
+====================================================== -->
+
+<section class="section-editorial">
+
+    <div class="container">
+
+        <div class="editorial-header">
+
+            <h2>
+                Servicios a <br>
+                la Medida
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+        <!-- Tabs -->
+
+        <ul class="nav nav-services-v3" role="tablist">
+
+            <li class="active">
+                <a href="#comfort" data-toggle="tab">
+                    In-Suite
+                </a>
+            </li>
+
+            <li>
+                <a href="#wellness" data-toggle="tab">
+                    Wellness
+                </a>
+            </li>
+
+            <li>
+                <a href="#guest" data-toggle="tab">
+                    Guest Services
+                </a>
+            </li>
+
+        </ul>
+
+        <!-- Content -->
+
+        <div class="tab-content">
+
+            <div role="tabpanel"
+                 class="tab-pane fade in active"
+                 id="comfort">
+
+                <div class="row">
+
+                    <div class="col-md-10 col-md-offset-1">
+
+                        <div class="service-card-v3">
+
+                            <div class="card-img-box">
+
+                                <img src="resources/img/Cuidadoderopa.png" alt="Luxury Service">
+
+                            </div>
+
+                            <div class="card-info-floating">
+
+                                <h6>
+                                    EXPERIENCIA EXCLUSIVA
+                                </h6>
+
+                                <h3>
+                                    Cuidado Textil <br>
+                                    Premium
+                                </h3>
+
+                                <p>
+                                    Preservamos la integridad
+                                    de sus prendas con técnicas
+                                    artesanales y atención
+                                    personalizada las 24 horas.
+                                </p>
+
+                                <a href="javascript:void(0)"
+                                   class="btn-minimal openCustomModal">
+
+                                    Descubrir Servicio
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     IMMERSIVE SECTION
+====================================================== -->
+
+<section class="immersive-section">
+
+    <div class="immersive-image">
+
+        <img src="resources/img/spa.jpg" alt="Spa">
+
+    </div>
+
+    <div class="immersive-content">
+
+        <span>
+            SPA & WELLNESS
+        </span>
+
+        <h2>
+            Una experiencia
+            diseñada para
+            despertar los sentidos
+        </h2>
+
+        <p>
+            Aromas exclusivos,
+            texturas naturales y espacios
+            concebidos para el bienestar absoluto.
+        </p>
+
+        <a href="#" class="btn-luxury">
+            DESCUBRIR SPA
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+        THE ALEST
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-6">
+
+            <p style="font-size:12px; opacity:.5; letter-spacing:3px;">
+                POLANCO, CIUDAD DE MÉXICO
+            </p>
+
+        </div>
+
+        <div class="col-sm-6 text-right">
+
+            <a href="#">
+                <i class="fa fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa fa-facebook"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa fa-tripadvisor"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- =====================================================
+     MODAL
+====================================================== -->
+
+<div id="customModal" class="modal-overlay-custom">
+
+    <div class="modal-container-full">
+
+        <button class="modal-close-v3"
+                id="closeModal">
+
+            ×
+
+        </button>
+
+        <div id="modalDynamicContent"
+             style="width:100%; padding:80px;">
+
+            <h2 style="font-family:'Cormorant Garamond', serif; font-size:60px;">
+                Servicio Premium
+            </h2>
+
+            <p style="margin-top:20px; line-height:2;">
+                Aquí puedes cargar contenido dinámico,
+                imágenes, galerías o formularios premium.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+     SCRIPTS
+====================================================== -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script>
+
+    // NAVBAR
+
+    $(window).scroll(function(){
+
+        if($(this).scrollTop() > 50){
+
+            $('.nav-luxury').addClass('scrolled');
+
+        }else{
+
+            $('.nav-luxury').removeClass('scrolled');
+
+        }
+
+    });
+
+    // LOADER
+
+    $(window).on('load', function(){
+
+        $('.loader-screen').fadeOut(1200);
+
+    });
+
+    // CURSOR
+
+    const cursor = document.querySelector('.cursor');
+
+    document.addEventListener('mousemove', e => {
+
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+
+    });
+
+    document.querySelectorAll('a, button').forEach(el => {
+
+        el.addEventListener('mouseenter', () => {
+
+            cursor.classList.add('cursor-grow');
+
+        });
+
+        el.addEventListener('mouseleave', () => {
+
+            cursor.classList.remove('cursor-grow');
+
+        });
+
+    });
+
+    // PARALLAX HERO
+
+    window.addEventListener('scroll', function(){
+
+        const scrolled = window.pageYOffset;
+
+        document.querySelector('.hero-v3 video').style.transform =
+            'translateY(' + (scrolled * 0.25) + 'px) scale(1.1)';
+
+    });
+
+    // MODAL
+
+    $('.openCustomModal').on('click', function(){
+
+        $('#customModal')
+            .css('display', 'flex')
+            .hide()
+            .fadeIn();
+
+    });
+
+    $('#closeModal').on('click', function(){
+
+        $('#customModal').fadeOut();
+
+    });
+
+</script>
+
+</body>
+</html>
